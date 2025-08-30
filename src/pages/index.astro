@@ -2,49 +2,186 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+// --- DADOS GLOBAIS DA PÁGINA ---
+const whatsapp = "55SEUNUMEROAQUI"; // ✅ Substitua pelo seu número
+
+// --- SERVIÇOS PRINCIPAIS ---
+const servicos = [
+    {
+        icon: "mdi--whatsapp",
+        titulo: "Catálogo de Vendas no WhatsApp",
+        descricao: "Transformamos seu WhatsApp em uma vitrine profissional e otimizada, guiando seu cliente do interesse à compra de forma fluida."
+    },
+    {
+        icon: "mdi--trending-up",
+        titulo: "Gestão de Redes Sociais & Conteúdo",
+        descricao: "Criamos e gerenciamos conteúdo que gera autoridade, engaja sua audiência e transforma seguidores em clientes fiéis."
+    },
+    {
+        icon: "mdi--web",
+        titulo: "Sites e Lojas Virtuais de Alta Conversão",
+        descricao: "Desenvolvemos plataformas online rápidas, modernas e focadas em um único objetivo: gerar vendas e capturar leads."
+    },
+    {
+        icon: "mdi--rocket-launch-outline",
+        titulo: "Infraestrutura Digital & Performance",
+        descricao: "Cuidamos de tudo, do registro de domínio a campanhas de anúncios, para garantir que sua marca tenha a máxima visibilidade."
+    }
+];
+
+// --- DEPOIMENTOS DE CLIENTES ---
+const avaliacoes = [
+    {
+        nome: "Carla Martins",
+        empresa: "CEO, Bella Moda",
+        foto: "/images/cliente_liderazap_1.jpg", // ✅ Adicione a imagem
+        texto: "A Lidera ZAP não entregou apenas um catálogo, entregou um aumento de 40% nas vendas pelo WhatsApp. Foi um divisor de águas para nós. Indispensável!"
+    },
+    {
+        nome: "Roberto Silva",
+        empresa: "Sócio, Sabor Divino",
+        foto: "/images/cliente_liderazap_2.jpg", // ✅ Adicione a imagem
+        texto: "Nossas redes sociais eram amadoras. Hoje, temos uma presença profissional que atrai o público certo. O resultado no engajamento e nos pedidos foi imediato."
+    }
+];
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <BaseHead
+            title="Lidera ZAP | Pronto para Liderar suas Vendas?"
+            description="Chega de perder clientes por falta de estratégia. Fale com um de nossos especialistas e receba um diagnóstico gratuito do seu potencial de vendas no WhatsApp."
+    />
+    <style is:inline>
+        :root {
+            --verde-principal: #1a936f; /* Verde profissional e suave */
+            --verde-hover: #15795b;
+            --fundo-suave: #f8fbfb;
+            --cinza-texto: #5a6d7d;
+        }
+        .bg-subtle-gradient {
+            background: linear-gradient(135deg, #ffffff 0%, var(--fundo-suave) 100%);
+        }
+        .text-accent-green {
+            color: var(--verde-principal);
+        }
+        .btn-primary-clean {
+            background-color: var(--verde-principal);
+            color: #ffffff;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(26, 147, 111, 0.2);
+        }
+        .btn-primary-clean:hover {
+            background-color: var(--verde-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(26, 147, 111, 0.3);
+        }
+        .card-clean {
+            background: #ffffff;
+            border: 1px solid #e9ecef;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        .card-clean:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+        .gradient-text-clean {
+            background: linear-gradient(90deg, #11998e 0%, #38ef7d 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800 font-sans antialiased">
+<Header/>
+
+<main>
+
+    <section class="w-full pt-32 pb-24 md:pt-48 md:pb-36 bg-subtle-gradient">
+        <div class="max-w-4xl mx-auto px-6 flex flex-col items-center text-center">
+            <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-gray-900 text-balance">
+                Pronto para <span class="gradient-text-clean">Liderar</span> suas Vendas?
+            </h1>
+            <p class="mt-6 text-lg md:text-xl text-[var(--cinza-texto)] max-w-2xl">
+                Chega de perder clientes por falta de estratégia. Fale com um de nossos especialistas agora e receba um diagnóstico gratuito do seu potencial de vendas no WhatsApp.
+            </p>
+            <a href={`https://wa.me/${whatsapp}?text=Quero um diagnóstico gratuito para minhas vendas no WhatsApp!`} target="_blank" rel="noopener" class="mt-10 btn-primary-clean font-bold px-10 py-4 rounded-full text-lg">
+                Receber Diagnóstico Gratuito
+            </a>
+        </div>
+    </section>
+
+    <section id="planos" class="w-full py-20 md:py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-base font-semibold text-accent-green uppercase tracking-wider">Nossas Soluções</h2>
+                <p class="mt-2 text-4xl md:text-5xl font-extrabold text-gray-900 text-balance">
+                    Tudo que Você Precisa para Vender Mais
+                </p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
+                {servicos.map(servico => (
+                        <div class="card-clean rounded-2xl p-8 flex flex-col md:flex-row items-center text-center md:text-left gap-6">
+                            <div class="flex-shrink-0 flex items-center justify-center w-20 h-20 rounded-xl bg-subtle-gradient">
+                                <span class=`icon-[${servico.icon}] text-4xl text-accent-green`></span>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-2">{servico.titulo}</h3>
+                                <p class="text-[var(--cinza-texto)]">{servico.descricao}</p>
+                            </div>
+                        </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <section id="duvidas" class="w-full py-20 md:py-28 bg-subtle-gradient">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col items-center">
+            <div class="text-center mb-16">
+                <h2 class="text-base font-semibold text-accent-green uppercase tracking-wider">Prova Social</h2>
+                <p class="mt-2 text-4xl md:text-5xl font-extrabold text-gray-900 text-balance">
+                    Histórias de Sucesso de Nossos Clientes
+                </p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full">
+                {avaliacoes.map(a => (
+                        <div class="card-clean rounded-2xl p-8">
+                            <div class="flex items-center mb-4">
+                                <img src={a.foto} alt={`Foto de ${a.nome}`} class="w-16 h-16 rounded-full object-cover mr-4 border-2 border-green-100" loading="lazy"/>
+                                <div>
+                                    <p class="font-bold text-lg text-gray-900">{a.nome}</p>
+                                    <p class="text-[var(--cinza-texto)]">{a.empresa}</p>
+                                </div>
+                            </div>
+                            <p class="text-lg text-gray-700 italic">"{a.texto}"</p>
+                        </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <section id="quem-somos" class="w-full py-20 md:py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="bg-accent-green rounded-2xl p-10 md:p-16 text-center shadow-2xl shadow-green-200/50">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-white text-balance">
+                    Vamos Conversar?
+                </h2>
+                <p class="mt-4 text-lg text-white/90 max-w-2xl mx-auto">
+                    Sua jornada para aumentar as vendas e fortalecer sua marca começa com um simples passo. Estamos prontos para ouvir você.
+                </p>
+                <a href={`https://wa.me/${whatsapp}?text=Quero um diagnóstico gratuito para minhas vendas no WhatsApp!`}
+                   target="_blank"
+                   rel="noopener"
+                   class="mt-8 inline-block bg-white hover:bg-gray-100 text-accent-green font-bold px-10 py-4 rounded-full text-lg transition-transform hover:scale-105 shadow-lg">
+                    Agendar Minha Consultoria
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+<Footer/>
+
+</body>
 </html>
