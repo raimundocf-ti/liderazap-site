@@ -1,34 +1,69 @@
 ---
-import HeaderLink from './HeaderLink.astro';
+/** Header.astro — LideraZap */
+const whatsapp = '5532998408646'; // seu número sem + e sem espaços
+const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent(msg)}`;
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md shadow-sm">
-    <div class="max-w-6xl mx-auto px-6">
-        <nav class="flex items-center justify-between h-20">
-            <a href="/">
-                <img src="/lidera-zap.png" alt="Logo Lidera ZAP" class="h-10 w-auto" />
+    <div class="max-w-7xl mx-auto px-6">
+        <nav class="flex items-center justify-between h-16 md:h-20">
+            <!-- Logo -->
+            <a href="/" class="flex items-center gap-3 shrink-0">
+                <img src="/images/logo-liderazap.png" alt="LideraZap" class="h-14 md:h-14 w-auto" />
             </a>
 
-            <div class="hidden md:flex items-center gap-8">
-                <HeaderLink href="/">Home</HeaderLink>
-                <HeaderLink href="#duvidas">Dúvidas</HeaderLink>
-                <HeaderLink href="#planos">Planos</HeaderLink>
-                <HeaderLink href="#quem-somos">Quem somos</HeaderLink>
+            <!-- Navegação (desktop) -->
+            <div class="hidden md:flex items-center gap-6">
+                <a href="/" class="transition-colors hover:text-primary">Home</a>
+                <a href="#servicos" class="transition-colors hover:text-primary">Serviços</a>
+                <a href="#sobre" class="transition-colors hover:text-primary">Sobre</a>
+                <a href="#contato" class="transition-colors hover:text-primary">Contato</a>
             </div>
+
+            <!-- CTA (desktop) -->
+            <a href={wa('Quero falar com um especialista')}
+               class="hidden md:inline-flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-lg font-semibold shadow hover:opacity-95 focus-visible:ring-2 ring-primary">
+                <iconify-icon icon="mdi:whatsapp" width="20" height="20"></iconify-icon>
+                WhatsApp
+            </a>
+
+            <!-- Botão menu (mobile) -->
+            <button id="menu-btn"
+                    class="md:hidden inline-flex items-center justify-center p-2 rounded-md hover:bg-gray-100 focus-visible:ring-2 ring-primary"
+                    aria-controls="menu" aria-expanded="false">
+                <span class="sr-only">Abrir menu</span>
+                <iconify-icon icon="mdi:menu" width="24" height="24"></iconify-icon>
+            </button>
         </nav>
     </div>
+
+    <!-- Menu mobile -->
+    <nav id="menu" class="md:hidden hidden">
+        <div class="px-4 pb-4 pt-2 space-y-1">
+            <a href="/" class="block px-3 py-2 rounded-md font-medium hover:bg-gray-100 transition-colors">Home</a>
+            <a href="#servicos" class="block px-3 py-2 rounded-md font-medium hover:bg-gray-100 transition-colors">Serviços</a>
+            <a href="#sobre" class="block px-3 py-2 rounded-md font-medium hover:bg-gray-100 transition-colors">Sobre</a>
+            <a href="#contato" class="block px-3 py-2 rounded-md font-medium hover:bg-gray-100 transition-colors">Contato</a>
+            <a href={wa('Quero falar com um especialista')}
+               class="inline-flex w-full items-center justify-center gap-2 bg-primary text-white px-4 py-2 rounded-lg font-semibold shadow hover:opacity-95">
+                <iconify-icon icon="mdi:whatsapp" width="20" height="20"></iconify-icon>
+                WhatsApp
+            </a>
+        </div>
+    </nav>
 </header>
-<style>
-    nav a {
-        color: var(--cinza-texto);
-        font-weight: 500;
-        transition: color 0.3s ease;
-    }
-    nav a:hover {
-        color: var(--verde-principal);
-    }
-    nav a.active {
-        color: var(--verde-principal);
-        font-weight: 600;
-    }
+
+<style is:inline>
+    header a { color:#0f172a; font-weight:500; text-decoration:none; }
+    header a:hover { color:var(--primary); }
 </style>
+
+<script is:inline>
+    const btn = document.getElementById('menu-btn');
+    const nav = document.getElementById('menu');
+    btn?.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        nav.classList.toggle('hidden');
+    });
+</script>

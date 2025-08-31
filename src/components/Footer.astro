@@ -1,20 +1,18 @@
 ---
-const today = new Date();
+const year = new Date().getFullYear();
 ---
 
-<footer class="w-full py-12 bg-subtle-gradient">
-    <div class="max-w-6xl mx-auto px-6 text-center">
-        <p class="text-[var(--cinza-texto)]">
-            &copy; {today.getFullYear()} Lidera ZAP. Todos os direitos reservados.
+<footer class="w-full py-12 bg-subtle">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+        <p class="text-[var(--text-muted)]">
+            &copy; {year} LideraZap. Todos os direitos reservados.
         </p>
-        <div class="social-links mt-4 flex justify-center gap-6">
-            <a href="#" target="_blank" class="text-[var(--cinza-texto)] hover:text-accent-green transition-colors">
-                <span class="sr-only">Instagram</span>
-                <span class="icon-[mdi--instagram] text-2xl"></span>
+        <div class="mt-4 flex justify-center gap-6">
+            <a href="#" target="_blank" rel="noopener" class="text-[var(--text-muted)] hover:text-primary transition-colors" aria-label="Instagram">
+                <iconify-icon icon="mdi:instagram" width="24" height="24"></iconify-icon>
             </a>
-            <a href="#" target="_blank" class="text-[var(--cinza-texto)] hover:text-accent-green transition-colors">
-                <span class="sr-only">Facebook</span>
-                <span class="icon-[mdi--facebook] text-2xl"></span>
+            <a href="#" target="_blank" rel="noopener" class="text-[var(--text-muted)] hover:text-primary transition-colors" aria-label="Facebook">
+                <iconify-icon icon="mdi:facebook" width="24" height="24"></iconify-icon>
             </a>
         </div>
     </div>
