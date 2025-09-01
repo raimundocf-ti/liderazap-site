@@ -1,5 +1,5 @@
 ---
-/* Mantém o import global */
+/* Importa CSS global */
 import '../styles/global.css';
 
 interface Props {
@@ -8,30 +8,45 @@ interface Props {
     image?: string;
 }
 
-const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
+const { title, description, image = '/images/og-default.jpg' } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 
-<!-- Global Metadata -->
+<!-- Meta básicas -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <link rel="icon" type="image/png" href="/images/favicon.png" />
 <meta name="generator" content={Astro.generator} />
 
-<!-- Fonts: Inter (substitui Atkinson) -->
+<!-- Pré-aplica tema ANTES do CSS (evita flash) -->
+<script is:inline>
+    (function(){
+        try{
+            var saved = localStorage.getItem('lz_theme');
+            var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            var theme = saved || (prefersDark ? 'dark' : 'light');
+            document.documentElement.classList.toggle('dark', theme === 'dark'); // Tailwind
+            document.documentElement.setAttribute('data-theme', theme);          // compat
+        }catch(e){}
+    })();
+</script>
+
+<!-- Fonte: Inter -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<!-- Canonical URL -->
+<!-- Canonical -->
 <link rel="canonical" href={canonicalURL} />
 
-<!-- Primary Meta Tags -->
+<!-- SEO -->
 <title>{title}</title>
 <meta name="title" content={title} />
 <meta name="description" content={description} />
+<meta name="theme-color" content="#6C5CE7" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#0b0c10" media="(prefers-color-scheme: dark)" />
 
-<!-- Open Graph / Facebook -->
+<!-- Open Graph -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
@@ -39,21 +54,17 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 <meta property="og:image" content={new URL(image, Astro.url)} />
 
 <!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
+<meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content={Astro.url} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
 
-<!-- Iconify Web Component (deixa ícones funcionais sem plugin) -->
+<!-- Iconify -->
 <script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js" defer></script>
 
 <style is:inline>
-    :root{
-        --primary:#6C5CE7;
-        --text-muted:#5a6d7d;
-    }
-    body{ font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif; }
+    :root{ --primary:#6C5CE7; --text-muted:#5a6d7d; }
     .bg-primary{ background-color:var(--primary) }
     .text-primary{ color:var(--primary) }
     .ring-primary{ --tw-ring-color:var(--primary) }

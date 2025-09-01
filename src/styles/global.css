@@ -1,2 +1,65 @@
 @import "tailwindcss";
-@plugin "@iconify/tailwind4";
+
+/* ===========================
+   Variáveis & base
+=========================== */
+:root {
+    --primary: #6C5CE7;
+    --text-muted: #5a6d7d;
+}
+
+body {
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+}
+
+/* ===========================
+   Suporte de tema (compat)
+   - Tailwind usa .dark no <html>
+   - Mantemos data-theme="dark" para seus seletores existentes
+=========================== */
+html.dark body,
+html[data-theme='dark'] body {
+    background: #0b0c10;
+    color: #f3f4f6;
+}
+
+.bg-subtle { background: linear-gradient(135deg, #ffffff 0%, #f7f8ff 100%); }
+html.dark .bg-subtle,
+html[data-theme='dark'] .bg-subtle {
+    background:
+            radial-gradient(1200px 600px at 10% -10%, #1f1c3a 0%, transparent 60%),
+            radial-gradient(900px 500px at 80% 0%, #0a0f2b 0%, transparent 60%),
+            linear-gradient(0deg, #0b0c10, #0b0c10);
+}
+
+.card { background-color: white; }
+html.dark .card,
+html[data-theme='dark'] .card { background-color: rgb(17 24 39 / 0.6); }
+
+/* Helpers */
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+.text-primary { color: var(--primary); }
+.bg-primary { background-color: var(--primary); }
+.ring-primary { --tw-ring-color: var(--primary); }
+
+/* Grade sutil usada no hero */
+.bg-grid {
+    background-color: #f9fafb;
+    background-image: radial-gradient(#d1d5db 1px, transparent 1px);
+    background-size: 16px 16px;
+}
+html.dark .bg-grid,
+html[data-theme='dark'] .bg-grid {
+    background-color: #111827;
+    background-image: radial-gradient(#374151 1px, transparent 1px);
+}
+
+/* Botão flutuante do WhatsApp */
+.fab-whatsapp {
+    position: fixed; right: 1rem; bottom: 1rem; z-index: 60;
+    display: inline-flex; align-items: center; gap: .5rem;
+    background: var(--primary); color: white; border-radius: 9999px;
+    padding: .875rem 1rem; box-shadow: 0 10px 24px rgb(108 92 231 / .35);
+}
+.fab-whatsapp:hover { filter: brightness(.95); transform: translateY(-1px); }

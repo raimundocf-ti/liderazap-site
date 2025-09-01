@@ -3,7 +3,7 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-const whatsapp = '5532998408646'; // seu número sem + e sem espaços
+const whatsapp = '5532998408646';
 const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent(msg)}`;
 ---
 
@@ -13,29 +13,20 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
             title="LideraZap — Transformando Negócios Digitais"
             description="Loja no WhatsApp, gestão de redes e presença online feita por especialistas. Sem complicação, direto ao ponto."
     />
-    <style is:inline>
-        :root { --primary:#6C5CE7; }
-        .bg-primary{ background-color:var(--primary) }
-        .text-primary{ color:var(--primary) }
-        .border-primary{ border-color:var(--primary) }
-        .ring-primary{ --tw-ring-color:var(--primary) }
-        .hide-scrollbar::-webkit-scrollbar{ display:none }
-        .hide-scrollbar{ -ms-overflow-style:none; scrollbar-width:none }
-    </style>
 </head>
 
-<body class="bg-gray-50 text-gray-900 antialiased">
-<!-- Header via componente -->
+<body class="bg-gray-50 text-gray-900 antialiased dark:bg-gray-950 dark:text-gray-100">
+<!-- Header -->
 <Header />
 
 <main class="pt-20 md:pt-24">
-    <!-- Hero -->
-    <section class="relative w-full bg-gray-50 py-16 md:py-24">
-        <div class="absolute inset-0 -z-10 overflow-hidden">
-            <svg class="absolute left-1/2 top-0 h-full w-full -translate-x-1/2" viewBox="0 0 1024 1024" aria-hidden="true">
-                <circle cx="512" cy="512" r="512" fill="url(#gradient-radial-hero)" fill-opacity="0.18"></circle>
+    <!-- HERO -->
+    <section class="relative w-full py-20 md:py-28 overflow-hidden">
+        <div class="absolute inset-0 -z-10 bg-grid">
+            <svg class="absolute left-1/2 -top-24 h-[900px] w-[1400px] -translate-x-1/2" viewBox="0 0 1024 1024" aria-hidden="true">
+                <circle cx="512" cy="512" r="512" fill="url(#g)" fill-opacity="0.22"></circle>
                 <defs>
-                    <radialGradient id="gradient-radial-hero">
+                    <radialGradient id="g">
                         <stop stop-color="#8B5CF6"></stop>
                         <stop offset="1" stop-color="#6D28D9"></stop>
                     </radialGradient>
@@ -43,114 +34,165 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
             </svg>
         </div>
 
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <span class="inline-block text-base md:text-lg font-semibold text-primary">A Revolução Digital do Seu Negócio</span>
-            <h1 class="mt-3 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-balance">
-                Tenha sua loja virtual <span class="whitespace-nowrap">direto no WhatsApp</span>
-            </h1>
-            <p class="mt-4 text-lg md:text-xl text-gray-700">
-                Soluções definitivas para WhatsApp Business, redes sociais e presença online — sem enrolação, com especialista de verdade.
-            </p>
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            <div class="lg:col-span-7 text-center lg:text-left">
+                <span class="inline-block text-sm md:text-base font-semibold text-primary">A Revolução Digital do Seu Negócio</span>
+                <h1 class="mt-3 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-balance text-gray-900 dark:text-white">
+                    Tenha sua loja virtual <span class="whitespace-nowrap">direto no WhatsApp</span>
+                </h1>
+                <p class="mt-4 text-lg md:text-xl text-gray-700 dark:text-gray-300">
+                    Soluções definitivas para WhatsApp Business, redes sociais e presença online — sem enrolação, com especialista de verdade.
+                </p>
+                <div class="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
+                    <a href={wa('Quero aumentar minhas vendas no WhatsApp')} target="_blank" rel="noopener"
+                       class="inline-flex items-center gap-3 bg-primary hover:opacity-90 text-white font-bold px-6 py-3 rounded-xl shadow transition-transform hover:scale-[1.02] focus-visible:ring-2 ring-primary">
+                        <iconify-icon icon="mdi:whatsapp" width="24" height="24"></iconify-icon>
+                        Falar com um especialista
+                    </a>
+                    <a href="#servicos" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-gray-300 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-primary hover:text-primary">
+                        <iconify-icon icon="mdi:lightning-bolt" width="20" height="20"></iconify-icon>
+                        Ver serviços
+                    </a>
+                </div>
+            </div>
 
-            <!-- Callout -->
-            <div class="mt-10 bg-white rounded-2xl shadow-xl border border-primary/30 p-6 md:p-8">
-                <div class="grid grid-cols-1 md:grid-cols-12 items-center gap-6">
-                    <div class="md:col-span-2 flex justify-center">
-                        <iconify-icon icon="mdi:whatsapp" width="72" height="72" class="text-primary"></iconify-icon>
-                    </div>
-                    <div class="md:col-span-6 text-center md:text-left">
-                        <h3 class="text-xl md:text-2xl font-bold text-gray-900">Precisa de uma solução rápida?</h3>
-                        <p class="text-gray-600 mt-1">Sem robôs e sem menus confusos. Você fala direto com um especialista.</p>
-                    </div>
-                    <div class="md:col-span-4 flex justify-center md:justify-end">
-                        <a href={wa('')}
-                           target="_blank" rel="noopener"
-                           class="inline-flex items-center gap-3 bg-primary hover:opacity-90 text-white font-bold px-6 py-3 rounded-lg shadow transition-transform hover:scale-[1.02] focus:outline-none focus-visible:ring-2 ring-primary">
-                            <iconify-icon icon="mdi:whatsapp" width="24" height="24"></iconify-icon>
-                            <span>(32) 9 9840-8646</span>
-                        </a>
+            <!-- Mockup -->
+            <div class="lg:col-span-5">
+                <div class="relative mx-auto max-w-md">
+                    <div class="absolute -inset-1 bg-gradient-to-tr from-purple-500/40 to-indigo-400/40 blur-2xl rounded-[2rem] -z-10"></div>
+                    <div class="bg-white/90 dark:bg-gray-900/80 rounded-[2rem] border border-white/60 dark:border-gray-800 shadow-xl p-4">
+                        <div class="aspect-[9/19.5] rounded-[1.6rem] bg-gray-100 dark:bg-gray-800 grid place-items-center">
+                            <div class="text-center px-6">
+                                <iconify-icon icon="mdi:whatsapp" width="56" height="56" class="text-primary"></iconify-icon>
+                                <p class="mt-3 text-gray-700 dark:text-gray-300">Seu Catálogo de Vendas no WhatsApp</p>
+                                <p class="text-sm text-gray-500 dark:text-gray-400">Organizado, visual e pronto para converter.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Serviços -->
-    <section id="servicos" class="w-full py-16 md:py-24 bg-gradient-to-br from-gray-50 via-white to-gray-100">
-        <div class="max-w-7xl mx-auto px-6 md:px-10">
+    <!-- SERVIÇOS -->
+    <section id="servicos" class="w-full py-16 md:py-24 bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-950 dark:via-gray-950 dark:to-gray-900">
+        <div class="max-w-7xl mx-auto px-6">
             <h2 class="text-center text-sm md:text-base font-semibold text-primary">Nossos Serviços</h2>
-            <p class="mx-auto mt-2 max-w-2xl text-center text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900">
+            <p class="mx-auto mt-2 max-w-2xl text-center text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white">
                 Soluções para transformar seu negócio no digital
             </p>
 
-            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Card 1 -->
-                <article class="bg-white rounded-2xl shadow-md p-8 border border-gray-100 text-center hover:shadow-lg transition">
-                    <div class="bg-primary/10 rounded-full w-20 h-20 mx-auto flex items-center justify-center mb-6">
-                        <iconify-icon icon="mdi:instagram" width="42" height="42" class="text-primary"></iconify-icon>
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+                <!-- Redes Sociais -->
+                <article class="card rounded-2xl shadow-md p-8 border border-gray-100 text-left hover:shadow-xl transition dark:border-gray-800">
+                    <div class="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                        <iconify-icon icon="mdi:instagram" width="34" height="34" class="text-primary"></iconify-icon>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900">Gestão de Redes Sociais</h3>
-                    <p class="mt-3 text-gray-600">
-                        Estratégia, criação de conteúdo e acompanhamento profissional para manter sua marca relevante e engajadora.
-                    </p>
-                    <ul class="mt-5 space-y-2 text-sm text-gray-700 text-left max-w-sm mx-auto">
-                        <li class="flex items-center gap-2">
-                            <iconify-icon icon="mdi:check" class="text-primary" width="16"></iconify-icon>
-                            Posts e Reels criativos
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <iconify-icon icon="mdi:check" class="text-primary" width="16"></iconify-icon>
-                            Planejamento de campanhas
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <iconify-icon icon="mdi:check" class="text-primary" width="16"></iconify-icon>
-                            Relatórios de desempenho
-                        </li>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Gestão de Redes Sociais</h3>
+                    <p class="mt-3 text-gray-600 dark:text-gray-300">Estratégia, conteúdo e acompanhamento para manter sua marca relevante e engajadora.</p>
+                    <ul class="mt-5 space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                        <li class="flex items-center gap-2"><iconify-icon icon="mdi:check" width="16" class="text-primary"></iconify-icon> Posts e Reels criativos</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="mdi:check" width="16" class="text-primary"></iconify-icon> Planejamento de campanhas</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="mdi:check" width="16" class="text-primary"></iconify-icon> Relatórios de desempenho</li>
                     </ul>
+                    <div class="mt-6">
+                        <a href="/gestao-redes" class="inline-flex items-center gap-2 text-primary font-semibold hover:opacity-90">
+                            Ver detalhes
+                            <iconify-icon icon="mdi:arrow-right" width="18"></iconify-icon>
+                        </a>
+                    </div>
                 </article>
 
-                <!-- Card 2 -->
-                <article class="bg-white rounded-2xl shadow-md p-8 border border-gray-100 text-center hover:shadow-lg transition">
-                    <div class="bg-primary/10 rounded-full w-20 h-20 mx-auto flex items-center justify-center mb-6">
-                        <iconify-icon icon="mdi:whatsapp" width="42" height="42" class="text-primary"></iconify-icon>
+                <!-- Catálogo WhatsApp -->
+                <article class="card rounded-2xl shadow-md p-8 border border-gray-100 text-left hover:shadow-xl transition dark:border-gray-800">
+                    <div class="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                        <iconify-icon icon="mdi:whatsapp" width="34" height="34" class="text-primary"></iconify-icon>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900">Catálogo de Vendas no WhatsApp</h3>
-                    <p class="mt-3 text-gray-600">
-                        Transforme seu WhatsApp Business em uma loja virtual prática, acessível e integrada às redes sociais.
-                    </p>
-                    <ul class="mt-5 space-y-2 text-sm text-gray-700 text-left max-w-sm mx-auto">
-                        <li class="flex items-center gap-2">
-                            <iconify-icon icon="mdi:check" class="text-primary" width="16"></iconify-icon>
-                            Criação e organização de catálogos
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <iconify-icon icon="mdi:check" class="text-primary" width="16"></iconify-icon>
-                            Funil de conversão otimizado
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <iconify-icon icon="mdi:check" class="text-primary" width="16"></iconify-icon>
-                            Consultoria para aumentar vendas
-                        </li>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Catálogo de Vendas no WhatsApp</h3>
+                    <p class="mt-3 text-gray-600 dark:text-gray-300">Transforme seu WhatsApp Business em uma loja virtual prática e integrada.</p>
+                    <ul class="mt-5 space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                        <li class="flex items-center gap-2"><iconify-icon icon="mdi:check" width="16" class="text-primary"></iconify-icon> Criação e organização de catálogos</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="mdi:check" width="16" class="text-primary"></iconify-icon> Funil de conversão otimizado</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="mdi:check" width="16" class="text-primary"></iconify-icon> Consultoria para aumentar vendas</li>
+                    </ul>
+                    <div class="mt-6">
+                        <a href={wa('Quero montar meu catálogo no WhatsApp')} target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-lg font-semibold shadow hover:opacity-95 focus-visible:ring-2 ring-primary">
+                            <iconify-icon icon="mdi:whatsapp" width="18"></iconify-icon>
+                            Começar agora
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Sites/Landing Pages -->
+                <article class="card rounded-2xl shadow-md p-8 border border-gray-100 text-left hover:shadow-xl transition dark:border-gray-800">
+                    <div class="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                        <iconify-icon icon="mdi:monitor-dashboard" width="34" height="34" class="text-primary"></iconify-icon>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Sites e Landing Pages</h3>
+                    <p class="mt-3 text-gray-600 dark:text-gray-300">Páginas rápidas, bonitas e com SEO — alinhadas ao funil do WhatsApp.</p>
+                    <ul class="mt-5 space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                        <li class="flex items-center gap-2"><iconify-icon icon="mdi:check" width="16" class="text-primary"></iconify-icon> Landing com foco em conversão</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="mdi:check" width="16" class="text-primary"></iconify-icon> Integrações e pixels</li>
+                        <li class="flex items-center gap-2"><iconify-icon icon="mdi:check" width="16" class="text-primary"></iconify-icon> Performance e SEO</li>
                     </ul>
                 </article>
             </div>
         </div>
     </section>
 
-    <!-- AVALIAÇÕES GOOGLE -->
-    <section id="avaliacoes" class="w-full py-16 md:py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6 md:px-10">
+    <!-- SOBRE -->
+    <section id="sobre" class="w-full py-16 md:py-24 bg-white dark:bg-gray-950">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white">
+                    Sobre a <span class="text-primary">LideraZap</span>
+                </h2>
+                <p class="mt-4 text-gray-700 dark:text-gray-300">
+                    Somos especialistas em transformar a comunicação do seu negócio em vendas. Montamos o seu catálogo no WhatsApp,
+                    estruturamos o conteúdo e o fluxo de respostas, e criamos campanhas que geram resultado.
+                </p>
+                <ul class="mt-6 space-y-3 text-gray-700 dark:text-gray-300">
+                    <li class="flex items-center gap-2"><iconify-icon icon="mdi:check-decagram" width="18" class="text-primary"></iconify-icon> Foco total em conversão</li>
+                    <li class="flex items-center gap-2"><iconify-icon icon="mdi:check-decagram" width="18" class="text-primary"></iconify-icon> Processos simples e sem complicação</li>
+                    <li class="flex items-center gap-2"><iconify-icon icon="mdi:check-decagram" width="18" class="text-primary"></iconify-icon> Atendimento humano, direto no WhatsApp</li>
+                </ul>
+            </div>
+
+            <div class="relative">
+                <div class="absolute -inset-1 bg-gradient-to-tr from-indigo-500/30 to-purple-500/30 blur-xl rounded-3xl -z-10"></div>
+                <div class="bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-3xl p-6 shadow-xl">
+                    <div class="grid grid-cols-3 gap-6 text-center text-gray-900 dark:text-white">
+                        <div>
+                            <div class="text-3xl font-extrabold">+120</div>
+                            <div class="mt-1 text-sm text-gray-500 dark:text-gray-400">itens configurados</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-extrabold">+30</div>
+                            <div class="mt-1 text-sm text-gray-500 dark:text-gray-400">catálogos ativos</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-extrabold">100%</div>
+                            <div class="mt-1 text-sm text-gray-500 dark:text-gray-400">suporte humano</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AVALIAÇÕES -->
+    <section id="avaliacoes" class="w-full py-16 md:py-24 bg-white dark:bg-gray-950">
+        <div class="max-w-7xl mx-auto px-6">
             <div class="text-center">
-            <span class="inline-flex items-center gap-2 text-sm md:text-base font-semibold uppercase tracking-wide text-primary">
-              <iconify-icon icon="mdi:google" width="20" height="20" class="text-primary"></iconify-icon>
-              Avaliações no Google
-            </span>
-                <h2 class="mt-2 text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900">
+          <span class="inline-flex items-center gap-2 text-sm md:text-base font-semibold uppercase tracking-wide text-primary">
+            <iconify-icon icon="mdi:google" width="20" height="20" class="text-primary"></iconify-icon>
+            Avaliações no Google
+          </span>
+                <h2 class="mt-2 text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white">
                     O que dizem sobre a <span class="text-primary">LideraZap</span>
                 </h2>
 
-                <!-- Badge de rating -->
-                <div class="mt-4 inline-flex items-center gap-3 rounded-full border border-gray-200 px-4 py-2 bg-white shadow-sm">
+                <div class="mt-4 inline-flex items-center gap-3 rounded-full border border-gray-200 dark:border-gray-800 px-4 py-2 bg-white dark:bg-gray-900 shadow-sm">
                     <div class="flex items-center gap-1" aria-label="Classificação média 5 de 5">
                         <iconify-icon icon="mdi:star" width="18" height="18" class="text-yellow-400"></iconify-icon>
                         <iconify-icon icon="mdi:star" width="18" height="18" class="text-yellow-400"></iconify-icon>
@@ -158,32 +200,29 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
                         <iconify-icon icon="mdi:star" width="18" height="18" class="text-yellow-400"></iconify-icon>
                         <iconify-icon icon="mdi:star" width="18" height="18" class="text-yellow-400"></iconify-icon>
                     </div>
-                    <span class="text-sm text-gray-700">
-                <strong class="font-semibold">5.0</strong> / 5 — baseado em <span class="font-semibold">N</span> avaliações
-              </span>
+                    <span class="text-sm text-gray-700 dark:text-gray-300">
+              <strong class="font-semibold">5.0</strong> / 5 — baseado em <span class="font-semibold">N</span> avaliações
+            </span>
                 </div>
 
-                <!-- Botão "ver todas" -->
                 <div class="mt-5">
                     <a href="SUA_URL_DE_AVALIACOES_GOOGLE" target="_blank" rel="noopener"
-                       class="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:opacity-90 focus:outline-none focus-visible:ring-2 ring-primary rounded-lg px-3 py-2">
+                       class="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:opacity-90 focus-visible:ring-2 ring-primary rounded-lg px-3 py-2">
                         <iconify-icon icon="mdi:open-in-new" width="18" height="18"></iconify-icon>
                         Ver todas no Google
                     </a>
                 </div>
             </div>
 
-            <!-- Lista/Carrossel horizontal -->
             <div class="mt-10 overflow-x-auto hide-scrollbar" role="region" aria-label="Depoimentos">
                 <ul class="grid grid-cols-1 md:grid-cols-3 gap-6 min-w-[320px] md:min-w-0">
                     <!-- Card 1 -->
-                    <li class="bg-white rounded-2xl border border-gray-200 shadow-sm p-6">
+                    <li class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm p-6">
                         <div class="flex items-center gap-4">
-                            <img src="/images/avatars/cliente-1.jpg" alt="Foto de cliente"
-                                 class="h-12 w-12 rounded-full object-cover bg-gray-100" loading="lazy" />
+                            <img src="/images/avatars/cliente-1.jpg" alt="Foto de cliente" class="h-12 w-12 rounded-full object-cover bg-gray-100 dark:bg-gray-700" loading="lazy" />
                             <div>
-                                <p class="font-semibold text-gray-900">Nome do Cliente</p>
-                                <p class="text-xs text-gray-500">Data da avaliação</p>
+                                <p class="font-semibold text-gray-900 dark:text-white">Nome do Cliente</p>
+                                <p class="text-xs text-gray-500 dark:text-gray-400">Data da avaliação</p>
                             </div>
                         </div>
                         <div class="mt-3 flex items-center gap-0.5" aria-label="5 de 5">
@@ -193,24 +232,20 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
                             <iconify-icon icon="mdi:star" width="18" height="18" class="text-yellow-400"></iconify-icon>
                             <iconify-icon icon="mdi:star" width="18" height="18" class="text-yellow-400"></iconify-icon>
                         </div>
-                        <p class="mt-3 text-gray-700 leading-relaxed">
-                            “Atendimento excelente e muito profissional. A equipe da LideraZap organizou nosso WhatsApp de vendas
-                            e em poucos dias já vimos resultado.”
-                        </p>
-                        <div class="mt-4 flex items-center gap-2 text-xs text-gray-500">
+                        <p class="mt-3 text-gray-700 dark:text-gray-300 leading-relaxed">“Atendimento excelente e muito profissional. A equipe da LideraZap organizou nosso WhatsApp de vendas e em poucos dias já vimos resultado.”</p>
+                        <div class="mt-4 flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
                             <iconify-icon icon="mdi:google" width="16" height="16"></iconify-icon>
                             <span>Avaliação do Google</span>
                         </div>
                     </li>
 
                     <!-- Card 2 -->
-                    <li class="bg-white rounded-2xl border border-gray-200 shadow-sm p-6">
+                    <li class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm p-6">
                         <div class="flex items-center gap-4">
-                            <img src="/images/avatars/cliente-2.jpg" alt="Foto de cliente"
-                                 class="h-12 w-12 rounded-full object-cover bg-gray-100" loading="lazy" />
+                            <img src="/images/avatars/cliente-2.jpg" alt="Foto de cliente" class="h-12 w-12 rounded-full object-cover bg-gray-100 dark:bg-gray-700" loading="lazy" />
                             <div>
-                                <p class="font-semibold text-gray-900">Nome do Cliente</p>
-                                <p class="text-xs text-gray-500">Data da avaliação</p>
+                                <p class="font-semibold text-gray-900 dark:text-white">Nome do Cliente</p>
+                                <p class="text-xs text-gray-500 dark:text-gray-400">Data da avaliação</p>
                             </div>
                         </div>
                         <div class="mt-3 flex items-center gap-0.5" aria-label="5 de 5">
@@ -220,24 +255,20 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
                             <iconify-icon icon="mdi:star" width="18" height="18" class="text-yellow-400"></iconify-icon>
                             <iconify-icon icon="mdi:star" width="18" height="18" class="text-yellow-400"></iconify-icon>
                         </div>
-                        <p class="mt-3 text-gray-700 leading-relaxed">
-                            “Muito atenciosos! Montaram nosso catálogo do WhatsApp e explicaram como manter tudo atualizado.
-                            Recomendo demais.”
-                        </p>
-                        <div class="mt-4 flex items-center gap-2 text-xs text-gray-500">
+                        <p class="mt-3 text-gray-700 dark:text-gray-300 leading-relaxed">“Muito atenciosos! Montaram nosso catálogo do WhatsApp e explicaram como manter tudo atualizado. Recomendo demais.”</p>
+                        <div class="mt-4 flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
                             <iconify-icon icon="mdi:google" width="16" height="16"></iconify-icon>
                             <span>Avaliação do Google</span>
                         </div>
                     </li>
 
                     <!-- Card 3 -->
-                    <li class="bg-white rounded-2xl border border-gray-200 shadow-sm p-6">
+                    <li class="bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-sm p-6">
                         <div class="flex items-center gap-4">
-                            <img src="/images/avatars/cliente-3.jpg" alt="Foto de cliente"
-                                 class="h-12 w-12 rounded-full object-cover bg-gray-100" loading="lazy" />
+                            <img src="/images/avatars/cliente-3.jpg" alt="Foto de cliente" class="h-12 w-12 rounded-full object-cover bg-gray-100 dark:bg-gray-700" loading="lazy" />
                             <div>
-                                <p class="font-semibold text-gray-900">Nome do Cliente</p>
-                                <p class="text-xs text-gray-500">Data da avaliação</p>
+                                <p class="font-semibold text-gray-900 dark:text-white">Nome do Cliente</p>
+                                <p class="text-xs text-gray-500 dark:text-gray-400">Data da avaliação</p>
                             </div>
                         </div>
                         <div class="mt-3 flex items-center gap-0.5" aria-label="5 de 5">
@@ -247,11 +278,8 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
                             <iconify-icon icon="mdi:star" width="18" height="18" class="text-yellow-400"></iconify-icon>
                             <iconify-icon icon="mdi:star" width="18" height="18" class="text-yellow-400"></iconify-icon>
                         </div>
-                        <p class="mt-3 text-gray-700 leading-relaxed">
-                            “A consultoria foi direta e objetiva. Ajustaram nosso funil e as respostas rápidas do WhatsApp.
-                            Resultado prático e mensurável.”
-                        </p>
-                        <div class="mt-4 flex items-center gap-2 text-xs text-gray-500">
+                        <p class="mt-3 text-gray-700 dark:text-gray-300 leading-relaxed">“A consultoria foi direta e objetiva. Ajustaram nosso funil e as respostas rápidas do WhatsApp. Resultado prático e mensurável.”</p>
+                        <div class="mt-4 flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
                             <iconify-icon icon="mdi:google" width="16" height="16"></iconify-icon>
                             <span>Avaliação do Google</span>
                         </div>
@@ -259,58 +287,41 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
                 </ul>
             </div>
 
-            <!-- CTA secundária -->
-            <div class="mt-8 text-center">
-                <a href="SUA_URL_DE_AVALIACOES_GOOGLE" target="_blank" rel="noopener"
-                   class="inline-flex items-center gap-2 bg-gray-900 text-white px-5 py-3 rounded-lg font-semibold shadow hover:opacity-95 focus:outline-none focus-visible:ring-2 ring-primary">
-                    <iconify-icon icon="mdi:google" width="20" height="20"></iconify-icon>
-                    Ler mais avaliações no Google
-                </a>
-            </div>
-        </div>
-
-        <!-- JSON-LD opcional (preencha com seus dados reais antes de publicar) -->
-        <script type="application/ld+json" is:inline>
-            {
-                "@context": "https://schema.org",
-                "@type": "LocalBusiness",
-                "name": "LideraZap",
-                "url": "https://SEU_DOMINIO",
-                "aggregateRating": {
-                "@type": "AggregateRating",
-                    "ratingValue": "5.0",
-                    "reviewCount": "N"
-            },
-                "review": [
+            <!-- JSON-LD (preencha reviewCount N ao publicar) -->
+            <script type="application/ld+json" is:inline>
                 {
-                    "@type": "Review",
-                    "author": "Nome do Cliente",
-                    "reviewRating": {"@type": "Rating", "ratingValue": "5"},
-                    "reviewBody": "Atendimento excelente e muito profissional..."
+                    "@context": "https://schema.org",
+                    "@type": "LocalBusiness",
+                    "name": "LideraZap",
+                    "url": "https://liderazap.com/",
+                    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "N" }
                 }
-            ]
-            }
-        </script>
+            </script>
+        </div>
     </section>
 
-    <!-- Contato -->
+    <!-- CONTATO / CTA FINAL -->
     <section id="contato" class="w-full py-16 md:py-24 bg-primary text-white">
         <div class="max-w-3xl mx-auto px-6 text-center">
             <iconify-icon icon="mdi:whatsapp" width="80" height="80" class="text-white/95 inline-block mb-4"></iconify-icon>
             <h2 class="text-4xl md:text-5xl font-extrabold text-balance">Pronto para impulsionar seu negócio?</h2>
             <p class="mt-4 text-lg md:text-xl text-white/90">Sem formulários e sem espera. Clique e fale direto no WhatsApp.</p>
-
-            <a href={wa('Olá! Gostaria de saber mais sobre os serviços da LideraZap.')}
-               target="_blank" rel="noopener"
-               class="mt-8 inline-flex items-center gap-3 bg-white text-primary px-8 py-4 rounded-full font-extrabold shadow-lg transition-transform hover:scale-[1.02] hover:bg-gray-100 focus:outline-none focus-visible:ring-2 ring-white/70">
-                <iconify-icon icon="mdi:whatsapp" width="28" height="28"></iconify-icon>
+            <a href={wa('Olá! Gostaria de saber mais sobre os serviços da LideraZap.')} target="_blank" rel="noopener"
+               class="mt-8 inline-flex items-center gap-3 bg-white text-primary px-8 py-4 rounded-full font-extrabold shadow-lg transition-transform hover:scale-[1.02] hover:bg-gray-100 focus-visible:ring-2 ring-white/70">
+                <iconify-icon icon="mdi:whatsapp" width="26" height="26"></iconify-icon>
                 <span class="text-xl">(32) 9 9840-8646</span>
             </a>
         </div>
     </section>
 </main>
 
-<!-- Footer via componente -->
+<!-- Botão flutuante WhatsApp -->
+<a href={wa('Olá! Vim pelo site.')} target="_blank" rel="noopener" class="fab-whatsapp">
+    <iconify-icon icon="mdi:whatsapp" width="22" height="22"></iconify-icon>
+    <span class="font-semibold">Fale conosco</span>
+</a>
+
+<!-- Footer -->
 <Footer />
 </body>
 </html>
