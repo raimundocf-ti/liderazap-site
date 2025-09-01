@@ -7,15 +7,13 @@ const whatsapp = '5532998408646';
 const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent(msg)}`;
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md shadow-sm dark:bg-gray-900/70">
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md shadow-sm">
     <div class="max-w-7xl mx-auto px-6">
         <nav class="flex items-center justify-between h-16 md:h-20">
-            <!-- Logo -->
             <a href="/" class="flex items-center gap-3 shrink-0" aria-label="LideraZap — Início">
                 <img src="/images/logo-liderazap.png" alt="LideraZap" class="h-12 md:h-14 w-auto" />
             </a>
 
-            <!-- Navegação (desktop) -->
             <div class="hidden md:flex items-center gap-6 text-[15px]">
                 <HeaderLink href="/">Home</HeaderLink>
                 <HeaderLink href="#servicos">Serviços</HeaderLink>
@@ -25,12 +23,6 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
             </div>
 
             <div class="hidden md:flex items-center gap-3">
-                <!-- Alternar tema -->
-                <button id="theme-toggle" class="inline-flex items-center justify-center p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 focus-visible:ring-2 ring-primary" aria-pressed="false" title="Alternar tema">
-                    <iconify-icon icon="mdi:weather-night" width="22" height="22" class="block dark:hidden"></iconify-icon>
-                    <iconify-icon icon="mdi:white-balance-sunny" width="22" height="22" class="hidden dark:block"></iconify-icon>
-                </button>
-                <!-- CTA WhatsApp -->
                 <a href={wa('Quero falar com um especialista')} target="_blank" rel="noopener"
                    class="inline-flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-lg font-semibold shadow hover:opacity-95 focus-visible:ring-2 ring-primary">
                     <iconify-icon icon="mdi:whatsapp" width="20" height="20"></iconify-icon>
@@ -38,16 +30,14 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
                 </a>
             </div>
 
-            <!-- Botão menu (mobile) -->
-            <button id="menu-btn" class="md:hidden inline-flex items-center justify-center p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 focus-visible:ring-2 ring-primary" aria-controls="menu" aria-expanded="false">
+            <button id="menu-btn" class="md:hidden inline-flex items-center justify-center p-2 rounded-md hover:bg-gray-100 focus-visible:ring-2 ring-primary" aria-controls="menu" aria-expanded="false">
                 <span class="sr-only">Abrir menu</span>
                 <iconify-icon icon="mdi:menu" width="24" height="24"></iconify-icon>
             </button>
         </nav>
     </div>
 
-    <!-- Menu mobile -->
-    <nav id="menu" class="md:hidden hidden bg-white/95 backdrop-blur-md shadow-sm dark:bg-gray-900/95">
+    <nav id="menu" class="md:hidden hidden bg-white/95 backdrop-blur-md shadow-sm">
         <div class="px-4 pb-4 pt-2 space-y-1">
             <NavLink href="/">Home</NavLink>
             <NavLink href="#servicos">Serviços</NavLink>
@@ -55,9 +45,6 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
             <NavLink href="#avaliacoes">Avaliações</NavLink>
             <NavLink href="#contato">Contato</NavLink>
             <div class="flex items-center gap-2 pt-2">
-                <button id="theme-toggle-mobile" class="inline-flex items-center justify-center p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 focus-visible:ring-2 ring-primary" aria-pressed="false" title="Alternar tema">
-                    <iconify-icon icon="mdi:theme-light-dark" width="20" height="20"></iconify-icon>
-                </button>
                 <a href={wa('Quero falar com um especialista')} class="inline-flex flex-1 items-center justify-center gap-2 bg-primary text-white px-4 py-2 rounded-lg font-semibold shadow hover:opacity-95">
                     <iconify-icon icon="mdi:whatsapp" width="20" height="20"></iconify-icon>
                     WhatsApp
@@ -70,7 +57,6 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
 <style is:inline>
     header a { color:#0f172a; font-weight:500; text-decoration:none; }
     header a:hover { color:var(--primary); }
-    :root.dark header a { color:#e5e7eb; }
 </style>
 
 <script is:inline>
@@ -82,21 +68,4 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
         btn.setAttribute('aria-expanded', String(!expanded));
         nav.classList.toggle('hidden');
     });
-
-    // Tema (persistência + compat: .dark + data-theme)
-    function applyTheme(t) {
-        document.documentElement.classList.toggle('dark', t === 'dark'); // Tailwind
-        document.documentElement.setAttribute('data-theme', t);          // compat
-    }
-    const saved = localStorage.getItem('lz_theme');
-    if (saved) applyTheme(saved);
-
-    [document.getElementById('theme-toggle'), document.getElementById('theme-toggle-mobile')]
-        .filter(Boolean)
-        .forEach(el => el.addEventListener('click', () => {
-            const current = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
-            const next = current === 'dark' ? 'light' : 'dark';
-            applyTheme(next);
-            localStorage.setItem('lz_theme', next);
-        }));
 </script>
