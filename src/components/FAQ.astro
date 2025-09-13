@@ -1,0 +1,39 @@
+---
+export interface FAQItem { q: string; a: string; }
+export interface Props { items: FAQItem[]; jsonLdId?: string; }
+
+const { items, jsonLdId = "https://liderazap.com/faq" } = Astro.props;
+
+// JSON-LD (FAQPage)
+const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": jsonLdId,
+    "mainEntity": items.map((it) => ({
+        "@type": "Question",
+        "name": it.q,
+        "acceptedAnswer": { "@type": "Answer", "text": it.a }
+    }))
+};
+---
+
+<section class="section">
+    <div class="container max-w-4xl">
+        <h2 class="text-2xl md:text-3xl font-bold tracking-tight">Perguntas frequentes</h2>
+        <div class="mt-6 divide-y divide-zinc-200/70 dark:divide-zinc-700/50 rounded-2xl border border-zinc-200/70 dark:border-zinc-700/50 bg-white dark:bg-zinc-900">
+            {items.map((it, i) => (
+                    <details class="group p-5 open:bg-zinc-50 dark:open:bg-zinc-900/60" {...(i === 0 ? { open: true } : {})}>
+                        <summary class="flex cursor-pointer items-center justify-between text-base font-medium list-none">
+                            <span>{it.q}</span>
+                            <span class="icon-[mdi--chevron-down] transition group-open:rotate-180"></span>
+                        </summary>
+                        <div class="pt-3 text-sm text-zinc-700 dark:text-zinc-300 leading-relaxed">{it.a}</div>
+                    </details>
+            ))}
+        </div>
+    </div>
+
+    <script type="application/ld+json">
+        {JSON.stringify(faqJsonLd)}
+    </script>
+</section>

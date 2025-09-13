@@ -179,7 +179,7 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
                             <span class="icon-[mdi--check-circle] text-green-500"></span>
                         </li>
                         <li class="flex items-center justify-between">
-                            <span class="flex items-center gap-2"><span class="icon-[simple-icons--threads] text-black"></span> Threads</span>
+                            <span class="flex items-center gap-2"><span class="icon-[simple-icons--threads]"></span> Threads</span>
                             <span class="icon-[mdi--check-circle] text-green-500"></span>
                         </li>
                         <li class="flex items-center justify-between">
@@ -285,11 +285,11 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
 
                     <!-- Redes sociais -->
                     <h4 class="mt-5 font-semibold text-gray-800 dark:text-gray-200">Redes sociais</h4>
-                    <ul class="mt-2 space-y-2 text-sm">
+                    <ul class="mt-2 space-y-2 text-sm text-gray-700 dark:text-gray-300">
                         <!-- Todos inclusos -->
                         <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--facebook] text-blue-600"></span> Facebook</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
                         <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--instagram] text-pink-500"></span> Instagram</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
-                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[simple-icons--threads] text-black"></span> Threads</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[simple-icons--threads]"></span> Threads</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
                         <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--pinterest] text-red-600"></span> Pinterest</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
                         <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--linkedin] text-blue-600"></span> LinkedIn</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
                         <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--tiktok]"></span> TikTok</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
@@ -340,69 +340,75 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
                     </div>
                 </div>
 
-                <!-- ============== PLANO PROFISSIONAL ============== -->
-                <div class="card p-8 text-left flex flex-col border-2 border-primary shadow-lg relative">
-                    <span class="absolute top-0 right-0 bg-primary text-white text-xs font-bold px-3 py-1 rounded-bl-lg">Mais Vendido</span>
-                    <div class="flex items-center gap-3">
-                        <span class="icon-[mdi--crown] text-primary text-[32px]"></span>
-                        <h3 class="text-xl font-semibold">Plano Profissional</h3>
-                    </div>
-                    <p class="mt-2 text-gray-600 dark:text-gray-300">Tudo incluso para presença digital completa.</p>
+                <!-- ============== PLANO PROFISSIONAL (DESTAQUE) ============== -->
+                <div class="group relative">
+                    <!-- Glow gradiente -->
+                    <div class="absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-purple-500 via-fuchsia-500 to-indigo-500 opacity-60 blur group-hover:opacity-80 transition"></div>
 
-                    <!-- Redes sociais -->
-                    <h4 class="mt-5 font-semibold text-gray-800 dark:text-gray-200">Redes sociais</h4>
-                    <ul class="mt-2 space-y-2 text-sm">
-                        <!-- Todos inclusos -->
-                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--facebook] text-blue-600"></span> Facebook</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
-                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--instagram] text-pink-500"></span> Instagram</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
-                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[simple-icons--threads] text-black"></span> Threads</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
-                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--pinterest] text-red-600"></span> Pinterest</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
-                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--linkedin] text-blue-600"></span> LinkedIn</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
-                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--tiktok]"></span> TikTok</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
-                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--youtube] text-red-600"></span> YouTube</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
-                    </ul>
+                    <div class="relative card p-8 text-left flex flex-col border-2 border-transparent hover:border-white/50 dark:hover:border-white/10 transition">
+                        <span class="absolute top-0 right-0 bg-primary text-white text-xs font-bold px-3 py-1 rounded-bl-lg">Mais Vendido</span>
 
-                    <!-- Conteúdo -->
-                    <h4 class="mt-5 font-semibold text-gray-800 dark:text-gray-200">Conteúdo</h4>
-                    <ul class="mt-2 space-y-2 text-sm">
-                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--calendar-edit] text-primary"></span> 12 postagens semanais</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
-                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--image-multiple-outline] text-primary"></span> 12 banners Stories</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
-                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--image-outline] text-primary"></span> 12 banners Feed</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
-                    </ul>
+                        <div class="flex items-center gap-3">
+                            <span class="icon-[mdi--crown] text-primary text-[32px]"></span>
+                            <h3 class="text-xl font-semibold">Plano Profissional</h3>
+                        </div>
+                        <p class="mt-2 text-gray-600 dark:text-gray-300">Tudo incluso para presença digital completa.</p>
 
-                    <!-- Relatórios -->
-                    <h4 class="mt-5 font-semibold text-gray-800 dark:text-gray-200">Relatórios</h4>
-                    <ul class="mt-2 space-y-2 text-sm">
-                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--chart-line] text-primary"></span> Orgânicos</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
-                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--chart-areaspline] text-primary"></span> ADS (Tráfego Pago)</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
-                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--file-pdf-box] text-primary"></span> PDF ou Link</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
-                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--calendar-clock] text-primary"></span> Agendamento</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
-                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--view-dashboard-outline] text-primary"></span> Dashboards personalizados</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
-                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--account-box-multiple-outline] text-primary"></span> Portal do Cliente White Label</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
-                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--account-search-outline] text-primary"></span> Análise de Concorrentes</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
-                    </ul>
+                        <!-- Redes sociais -->
+                        <h4 class="mt-5 font-semibold text-gray-800 dark:text-gray-200">Redes sociais</h4>
+                        <ul class="mt-2 space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                            <!-- Todos inclusos -->
+                            <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--facebook] text-blue-600"></span> Facebook</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                            <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--instagram] text-pink-500"></span> Instagram</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                            <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[simple-icons--threads]"></span> Threads</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                            <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--pinterest] text-red-600"></span> Pinterest</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                            <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--linkedin] text-blue-600"></span> LinkedIn</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                            <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--tiktok]"></span> TikTok</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                            <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--youtube] text-red-600"></span> YouTube</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                        </ul>
 
-                    <!-- Atendimento -->
-                    <h4 class="mt-5 font-semibold text-gray-800 dark:text-gray-200">Atendimento</h4>
-                    <ul class="mt-2 space-y-2 text-sm">
-                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--email-outline] text-primary"></span> E-mail</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
-                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--chat-outline] text-primary"></span> Chat</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
-                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--phone-outline] text-primary"></span> Telefone</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
-                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--whatsapp] text-green-500"></span> WhatsApp (VIP)</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
-                    </ul>
+                        <!-- Conteúdo -->
+                        <h4 class="mt-5 font-semibold text-gray-800 dark:text-gray-200">Conteúdo</h4>
+                        <ul class="mt-2 space-y-2 text-sm">
+                            <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--calendar-edit] text-primary"></span> 12 postagens semanais</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                            <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--image-multiple-outline] text-primary"></span> 12 banners Stories</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                            <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--image-outline] text-primary"></span> 12 banners Feed</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                        </ul>
 
-                    <!-- Extras -->
-                    <h4 class="mt-5 font-semibold text-gray-800 dark:text-gray-200">Extras</h4>
-                    <ul class="mt-2 space-y-2 text-sm">
-                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--email-lock] text-primary"></span> 15 e-mails profissionais (15GB)</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
-                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--cloud-outline] text-primary"></span> Hospedagem e domínio</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
-                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--palette-outline] text-primary"></span> Logomarca</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
-                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--web] text-primary"></span> Site / Loja virtual</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
-                    </ul>
+                        <!-- Relatórios -->
+                        <h4 class="mt-5 font-semibold text-gray-800 dark:text-gray-200">Relatórios</h4>
+                        <ul class="mt-2 space-y-2 text-sm">
+                            <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--chart-line] text-primary"></span> Orgânicos</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                            <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--chart-areaspline] text-primary"></span> ADS (Tráfego Pago)</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                            <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--file-pdf-box] text-primary"></span> PDF ou Link</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                            <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--calendar-clock] text-primary"></span> Agendamento</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                            <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--view-dashboard-outline] text-primary"></span> Dashboards personalizados</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                            <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--account-box-multiple-outline] text-primary"></span> Portal do Cliente White Label</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                            <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--account-search-outline] text-primary"></span> Análise de Concorrentes</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                        </ul>
 
-                    <div class="mt-6">
-                        <p class="text-2xl font-bold text-primary">R$ 1.250/mês</p>
-                        <a href="#contato" class="btn btn-primary w-full mt-3 justify-center">Contratar</a>
+                        <!-- Atendimento -->
+                        <h4 class="mt-5 font-semibold text-gray-800 dark:text-gray-200">Atendimento</h4>
+                        <ul class="mt-2 space-y-2 text-sm">
+                            <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--email-outline] text-primary"></span> E-mail</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                            <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--chat-outline] text-primary"></span> Chat</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                            <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--phone-outline] text-primary"></span> Telefone</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                            <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--whatsapp] text-green-500"></span> WhatsApp (VIP)</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                        </ul>
+
+                        <!-- Extras -->
+                        <h4 class="mt-5 font-semibold text-gray-800 dark:text-gray-200">Extras</h4>
+                        <ul class="mt-2 space-y-2 text-sm">
+                            <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--email-lock] text-primary"></span> 15 e-mails profissionais (15GB)</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                            <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--cloud-outline] text-primary"></span> Hospedagem e domínio</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                            <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--palette-outline] text-primary"></span> Logomarca</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                            <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--web] text-primary"></span> Site / Loja virtual</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                        </ul>
+
+                        <div class="mt-6">
+                            <p class="text-2xl font-bold text-primary">R$ 1.250/mês</p>
+                            <a href="#contato" class="btn btn-primary w-full mt-3 justify-center">Contratar</a>
+                        </div>
                     </div>
                 </div>
 
