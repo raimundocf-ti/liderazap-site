@@ -2,9 +2,7 @@
 type Props = { href: string; class?: string; };
 const { href, class: cls, ...rest } = Astro.props as Props;
 ---
-<a href={href} class={['transition-colors', cls].filter(Boolean).join(' ')} {...rest}>
+<a href={href} class={['relative transition-colors hover:text-primary', cls].filter(Boolean).join(' ')} {...rest}>
     <slot />
+    <span class="absolute left-0 -bottom-0.5 h-[2px] w-0 bg-primary transition-all group-hover:w-full"></span>
 </a>
-<style is:inline>
-    a { text-decoration: none; }
-</style>

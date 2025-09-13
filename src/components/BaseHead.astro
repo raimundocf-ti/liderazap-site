@@ -1,17 +1,13 @@
 ---
-// BaseHead.astro — versão completa p/ social + SEO
 import '../styles/global.css';
 
 interface Props {
     title: string;
     description: string;
-    // imagem OG padrão (1200x630). Você pode trocar por página via prop
     image?: string;
 }
 
 const { title, description, image = '/images/og/banner-og-1200x630.jpg' } = Astro.props;
-
-// URL canônica (requer "site" definido em astro.config.mjs)
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const absoluteImage = new URL(image, Astro.site ?? Astro.url);
 ---
@@ -22,50 +18,35 @@ const absoluteImage = new URL(image, Astro.site ?? Astro.url);
 
 <link rel="canonical" href={canonicalURL} />
 <title>{title}</title>
-<meta name="title" content={title} />
 <meta name="description" content={description} />
 <meta name="robots" content="index,follow" />
 
-<!-- Favicon & App Icons -->
+<!-- Ícones -->
 <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32x32.png" />
-<link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png" />
 <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-touch-icon.png" />
-<link rel="mask-icon" href="/images/icons/safari-pinned-tab.svg" color="#6C5CE7" />
 <link rel="manifest" href="/site.webmanifest" />
-<meta name="theme-color" content="#6C5CE7" media="(prefers-color-scheme: light)" />
-<meta name="theme-color" content="#2a247a" media="(prefers-color-scheme: dark)" />
-<meta name="msapplication-TileColor" content="#6C5CE7" />
+<meta name="theme-color" content="#6C5CE7" />
 
 <!-- Tipografia -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-<!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
+<!-- Open Graph -->
 <meta property="og:type" content="website" />
-<meta property="og:locale" content="pt_BR" />
 <meta property="og:site_name" content="LideraZap" />
 <meta property="og:url" content={canonicalURL} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={absoluteImage} />
-<meta property="og:image:secure_url" content={absoluteImage} />
-<meta property="og:image:type" content="image/jpeg" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
 
-<!-- Imagem quadrada adicional (opcional, alguns apps preferem) -->
-<meta property="og:image" content={new URL('/images/og/banner-og-1080x1080.jpg', Astro.site ?? Astro.url)} />
-<meta property="og:image:width" content="1080" />
-<meta property="og:image:height" content="1080" />
-
-<!-- Twitter / X -->
+<!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={absoluteImage} />
 
-<!-- Dados estruturados (ajuste os campos conforme necessário) -->
+<!-- Schema -->
 <script type="application/ld+json">
     {JSON.stringify({
         "@context": "https://schema.org",
@@ -76,17 +57,3 @@ const absoluteImage = new URL(image, Astro.site ?? Astro.url);
         "sameAs": ["https://wa.me/5532998408646"]
     })}
 </script>
-
-<!-- (Opcional) Iconify, se estiver usando ícones -->
-<script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js" defer></script>
-
-<style is:inline>
-    :root{
-        --primary:#6C5CE7;
-        --text-muted:#5a6d7d;
-    }
-    .bg-primary{ background-color:var(--primary) }
-    .text-primary{ color:var(--primary) }
-    .ring-primary{ --tw-ring-color:var(--primary) }
-    .bg-subtle{ background:linear-gradient(135deg,#ffffff 0%,#f7f8ff 100%) }
-</style>

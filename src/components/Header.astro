@@ -1,5 +1,4 @@
 ---
-/** Header.astro — LideraZap */
 import HeaderLink from './HeaderLink.astro';
 import NavLink from './NavLink.astro';
 
@@ -7,13 +6,15 @@ const whatsapp = '5532998408646';
 const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent(msg)}`;
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md shadow-sm">
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/70 dark:bg-zinc-900/70 backdrop-blur-md shadow-sm">
     <div class="max-w-7xl mx-auto px-6">
         <nav class="flex items-center justify-between h-16 md:h-20">
+            <!-- Logo -->
             <a href="/" class="flex items-center gap-3 shrink-0" aria-label="LideraZap — Início">
-                <img src="/images/logo-liderazap.png" alt="LideraZap" class="h-12 md:h-14 w-auto" />
+                <img src="/images/logo-liderazap.png" alt="LideraZap" class="h-10 md:h-12 w-auto" />
             </a>
 
+            <!-- Menu desktop -->
             <div class="hidden md:flex items-center gap-6 text-[15px]">
                 <HeaderLink href="/">Home</HeaderLink>
                 <HeaderLink href="#servicos">Serviços</HeaderLink>
@@ -22,22 +23,29 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
                 <HeaderLink href="#contato">Contato</HeaderLink>
             </div>
 
+            <!-- Ações -->
             <div class="hidden md:flex items-center gap-3">
+                <button id="theme-toggle" class="p-2 rounded-md hover:bg-gray-100 dark:hover:bg-zinc-800">
+                    <span class="icon-[mdi--weather-night] hidden dark:inline text-[20px]"></span>
+                    <span class="icon-[mdi--white-balance-sunny] inline dark:hidden text-[20px]"></span>
+                </button>
                 <a href={wa('Quero falar com um especialista')} target="_blank" rel="noopener"
-                   class="inline-flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-lg font-semibold shadow hover:opacity-95 focus-visible:ring-2 ring-primary">
-                    <iconify-icon icon="mdi:whatsapp" width="20" height="20"></iconify-icon>
+                   class="btn btn-primary">
+                    <span class="icon-[mdi--whatsapp] text-[18px]"></span>
                     WhatsApp
                 </a>
             </div>
 
-            <button id="menu-btn" class="md:hidden inline-flex items-center justify-center p-2 rounded-md hover:bg-gray-100 focus-visible:ring-2 ring-primary" aria-controls="menu" aria-expanded="false">
+            <!-- Mobile button -->
+            <button id="menu-btn" class="md:hidden p-2 rounded-md hover:bg-gray-100 dark:hover:bg-zinc-800" aria-controls="menu" aria-expanded="false">
                 <span class="sr-only">Abrir menu</span>
-                <iconify-icon icon="mdi:menu" width="24" height="24"></iconify-icon>
+                <span class="icon-[mdi--menu] text-[24px]"></span>
             </button>
         </nav>
     </div>
 
-    <nav id="menu" class="md:hidden hidden bg-white/95 backdrop-blur-md shadow-sm">
+    <!-- Mobile menu -->
+    <nav id="menu" class="md:hidden hidden bg-white/95 dark:bg-zinc-900/95 backdrop-blur-md shadow-sm">
         <div class="px-4 pb-4 pt-2 space-y-1">
             <NavLink href="/">Home</NavLink>
             <NavLink href="#servicos">Serviços</NavLink>
@@ -45,8 +53,9 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
             <NavLink href="#avaliacoes">Avaliações</NavLink>
             <NavLink href="#contato">Contato</NavLink>
             <div class="flex items-center gap-2 pt-2">
-                <a href={wa('Quero falar com um especialista')} class="inline-flex flex-1 items-center justify-center gap-2 bg-primary text-white px-4 py-2 rounded-lg font-semibold shadow hover:opacity-95">
-                    <iconify-icon icon="mdi:whatsapp" width="20" height="20"></iconify-icon>
+                <a href={wa('Quero falar com um especialista')}
+                   class="flex-1 btn btn-primary justify-center">
+                    <span class="icon-[mdi--whatsapp] text-[18px]"></span>
                     WhatsApp
                 </a>
             </div>
@@ -54,18 +63,19 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
     </nav>
 </header>
 
-<style is:inline>
-    header a { color:#0f172a; font-weight:500; text-decoration:none; }
-    header a:hover { color:var(--primary); }
-</style>
-
 <script is:inline>
-    // Menu mobile
+    // menu mobile
     const btn = document.getElementById('menu-btn');
     const nav = document.getElementById('menu');
     btn?.addEventListener('click', () => {
         const expanded = btn.getAttribute('aria-expanded') === 'true';
         btn.setAttribute('aria-expanded', String(!expanded));
         nav.classList.toggle('hidden');
+    });
+
+    // toggle tema
+    const themeBtn = document.getElementById('theme-toggle');
+    themeBtn?.addEventListener('click', () => {
+        document.documentElement.classList.toggle('dark');
     });
 </script>

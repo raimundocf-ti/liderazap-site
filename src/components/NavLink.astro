@@ -2,9 +2,6 @@
 type Props = { href: string; class?: string; };
 const { href, class: cls, ...rest } = Astro.props as Props;
 ---
-<a href={href} class={['transition-colors', cls].filter(Boolean).join(' ')} {...rest}>
+<a href={href} class={['block py-2 transition-colors hover:text-primary', cls].filter(Boolean).join(' ')} {...rest}>
     <slot />
 </a>
-<style is:inline>
-    a { text-decoration: none; }
-</style>

@@ -1,40 +1,123 @@
 @import "tailwindcss";
 @plugin "@iconify/tailwind4";
+
 /* ===========================
-   Variáveis & base
+   Design tokens (Light/Dark)
 =========================== */
 :root {
-    --primary: #6C5CE7;
+    --primary: #6C5CE7;     /* Roxo LideraZap */
     --text-muted: #5a6d7d;
+    --surface: #ffffff;
+    --surface-2: #f7f7fb;
+    --card: rgba(255,255,255,.72);
+    --card-border: rgba(255,255,255,.5);
+    --shadow: 0 12px 40px -10px rgb(108 92 231 / .35);
 }
 
+:root.dark {
+    --primary: #7d6cf3;
+    --text-muted: #8a98a6;
+    --surface: #0c0d10;
+    --surface-2: #0f1117;
+    --card: rgba(17, 18, 24, .72);
+    --card-border: rgba(255,255,255,.08);
+    --shadow: 0 18px 50px -8px rgb(90 78 210 / .45);
+}
+
+/* ===========================
+   Base
+=========================== */
+html { scroll-behavior: smooth; }
 body {
     font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+    background: var(--surface-2);
+    color: rgb(17 24 39 / 1);
 }
-
-.bg-subtle { background: linear-gradient(135deg, #ffffff 0%, #f7f8ff 100%); }
-
-.card { background-color: white; }
+:root.dark body { color: rgb(229 231 235 / 1); }
 
 /* Helpers */
+.text-primary  { color: var(--primary); }
+.bg-primary    { background-color: var(--primary); }
+.ring-primary  { --tw-ring-color: var(--primary); }
 .hide-scrollbar::-webkit-scrollbar { display: none; }
 .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-.text-primary { color: var(--primary); }
-.bg-primary { background-color: var(--primary); }
-.ring-primary { --tw-ring-color: var(--primary); }
 
-/* Grade sutil usada no hero */
-.bg-grid {
-    background-color: #f9fafb;
-    background-image: radial-gradient(#d1d5db 1px, transparent 1px);
-    background-size: 16px 16px;
+/* ===========================
+   Gradiente animado do Hero
+=========================== */
+.hero-gradient {
+    position: absolute; inset: -30% -10% -10% -10%; z-index: -1;
+    background:
+            radial-gradient(60% 60% at 10% 10%, rgba(124,58,237,.35), transparent 60%),
+            radial-gradient(50% 50% at 90% 20%, rgba(99,102,241,.35), transparent 60%),
+            radial-gradient(40% 60% at 50% 100%, rgba(147,51,234,.28), transparent 60%);
+    filter: blur(40px);
+    animation: blobMove 22s ease-in-out infinite alternate;
+}
+@keyframes blobMove {
+    0%   { transform: translate3d(0,0,0) scale(1); }
+    50%  { transform: translate3d(0,-2%,0) scale(1.02); }
+    100% { transform: translate3d(1%,2%,0) scale(1.04); }
 }
 
-/* Botão flutuante do WhatsApp */
+/* ===========================
+   Glass & Cards
+=========================== */
+.card {
+    background: var(--card);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--card-border);
+    border-radius: 1.25rem;
+    box-shadow: var(--shadow);
+}
+.card-hover:hover { transform: translateY(-4px); box-shadow: 0 18px 60px -20px rgb(108 92 231 / .5); }
+
+/* ===========================
+   Botão flutuante WhatsApp
+=========================== */
 .fab-whatsapp {
     position: fixed; right: 1rem; bottom: 1rem; z-index: 60;
     display: inline-flex; align-items: center; gap: .5rem;
     background: var(--primary); color: white; border-radius: 9999px;
     padding: .875rem 1rem; box-shadow: 0 10px 24px rgb(108 92 231 / .35);
+    transition: transform .2s ease, filter .2s ease, box-shadow .2s ease;
 }
-.fab-whatsapp:hover { filter: brightness(.95); transform: translateY(-1px); }
+.fab-whatsapp:hover { filter: brightness(.95); transform: translateY(-1px) scale(1.02); }
+
+/* ===========================
+   Seções utilitárias
+=========================== */
+.section {
+    padding-block: clamp(3.5rem, 6vw, 6.5rem);
+}
+.container {
+    width: 100%;
+    max-width: 72rem;
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+}
+
+/* ===========================
+   Mini-UI
+=========================== */
+.badge {
+    display: inline-flex; align-items: center; gap: .5rem;
+    padding: .375rem .75rem; border-radius: 9999px;
+    background: color-mix(in oklab, var(--primary) 10%, transparent);
+    color: var(--primary); font-weight: 600; font-size: .875rem;
+}
+
+.btn {
+    display: inline-flex; align-items: center; gap: .6rem;
+    font-weight: 800; border-radius: .9rem; padding: .875rem 1.25rem;
+    transition: transform .15s ease, filter .15s ease, box-shadow .15s ease;
+}
+.btn-primary {
+    background: var(--primary); color: white;
+    box-shadow: 0 10px 24px -8px rgb(108 92 231 / .45);
+}
+.btn-primary:hover { filter: brightness(.98); transform: translateY(-1px); }
+.btn-ghost {
+    color: var(--primary); border: 1px solid color-mix(in oklab, var(--primary) 35%, transparent);
+    background: color-mix(in oklab, var(--primary) 6%, transparent);
+}

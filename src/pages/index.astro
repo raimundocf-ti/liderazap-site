@@ -15,159 +15,444 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
     />
 </head>
 
-<body class="bg-gray-50 text-gray-900 antialiased">
+<body class="antialiased bg-[var(--surface-2)] text-gray-900 dark:text-gray-100">
 <Header />
 
-<main class="pt-20 md:pt-24">
-    <!-- HERO -->
-    <span class="icon-[mdi-light--home]"></span>
-    <section class="relative w-full py-20 md:py-28 overflow-hidden">
-        <div class="absolute inset-0 -z-10 bg-grid">
-            <svg class="absolute left-1/2 -top-24 h-[900px] w-[1400px] -translate-x-1/2" viewBox="0 0 1024 1024" aria-hidden="true">
-                <circle cx="512" cy="512" r="512" fill="url(#g)" fill-opacity="0.22"></circle>
-                <defs>
-                    <radialGradient id="g">
-                        <stop stop-color="#8B5CF6"></stop>
-                        <stop offset="1" stop-color="#6D28D9"></stop>
-                    </radialGradient>
-                </defs>
-            </svg>
-        </div>
+<main>
+    <!-- ================= HERO ================= -->
+    <section class="relative overflow-hidden section pt-24 md:pt-28">
+        <div class="hero-gradient"></div>
 
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div class="container grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            <!-- Texto -->
             <div class="lg:col-span-7 text-center lg:text-left">
-                <span class="inline-block text-sm md:text-base font-semibold text-primary">A Revolução Digital do Seu Negócio</span>
-                <h1 class="mt-3 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-balance text-gray-900">
-                    Tenha sua loja virtual <span class="whitespace-nowrap">direto no WhatsApp</span>
+      <span class="badge">
+        <span class="icon-[mdi--sparkles] text-[18px]"></span>
+        A Revolução Digital do Seu Negócio
+      </span>
+
+                <h1 class="mt-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-balance">
+                    Loja virtual <span class="whitespace-nowrap">direto no WhatsApp</span>
                 </h1>
-                <p class="mt-4 text-lg md:text-xl text-gray-700">
+
+                <p class="mt-4 text-lg md:text-xl text-gray-700/90 dark:text-gray-300">
                     Soluções definitivas para WhatsApp Business, redes sociais e presença online — sem enrolação, com especialista de verdade.
                 </p>
+
                 <div class="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
-                    <a href={wa('Quero aumentar minhas vendas no WhatsApp')} target="_blank" rel="noopener"
-                       class="inline-flex items-center gap-3 bg-primary hover:opacity-90 text-white font-bold px-6 py-3 rounded-xl shadow transition-transform hover:scale-[1.02] focus-visible:ring-2 ring-primary">
-                        <span class="icon-[mdi--whatsapp] w-6 h-6"></span>
+                    <a href={wa('Quero aumentar minhas vendas no WhatsApp')}
+                       target="_blank" rel="noopener"
+                       class="btn btn-primary">
+                        <span class="icon-[mdi--whatsapp] text-[22px]"></span>
                         Falar com um especialista
                     </a>
-                    <a href="#servicos" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-gray-300 text-gray-700 hover:border-primary hover:text-primary">
-                        <span class="icon-[mdi--lightning-bolt] w-5 h-5"></span>
+
+                    <a href="#servicos" class="btn btn-ghost">
+                        <span class="icon-[mdi--lightning-bolt] text-[18px]"></span>
                         Ver serviços
                     </a>
                 </div>
+
+                <!-- Selo confiança -->
+                <div class="mt-6 inline-flex items-center gap-3 rounded-full border border-white/60 dark:border-white/10 bg-white/60 dark:bg-white/5 backdrop-blur px-4 py-2">
+                    <div class="flex items-center gap-1" aria-label="Classificação média 5 de 5">
+                        {[...Array(5)].map(() => <span class="icon-[mdi--star] text-yellow-400 text-[18px]"></span>)}
+                    </div>
+                    <span class="text-sm text-gray-700 dark:text-gray-300">
+          <strong class="font-semibold">5.0</strong> / 5 — clientes satisfeitos
+        </span>
+                </div>
             </div>
 
-            <div class="lg:col-span-5">
-                <div class="relative mx-auto max-w-md">
-                    <div class="absolute -inset-1 bg-gradient-to-tr from-purple-500/40 to-indigo-400/40 blur-2xl rounded-[2rem] -z-10"></div>
-                    <div class="bg-white/90 rounded-[2rem] border border-white/60 shadow-xl p-4">
-                        <div class="aspect-[9/14.5] rounded-[1.6rem] bg-gray-100 flex items-center justify-center overflow-hidden">
-                            <img src="/images/mulher-com-sacola.png" alt="Mulher feliz com sacolas de compra saindo do celular" class="h-full w-auto object-cover"/>
-                        </div>
-                    </div>
-                </div>
+            <!-- Imagem livre -->
+            <div class="lg:col-span-5 flex justify-center lg:justify-end">
+                <img src="/images/hero-1-img.png"
+                     alt="Cliente feliz realizando compras pelo WhatsApp"
+                     class="max-h-[480px] w-auto object-contain drop-shadow-xl"/>
             </div>
         </div>
     </section>
 
-    <!-- SERVIÇOS -->
-    <section id="servicos" class="w-full py-16 md:py-24 bg-gradient-to-br from-gray-50 via-white to-gray-100">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-center text-sm md:text-base font-semibold text-primary">Nossos Serviços</h2>
-            <p class="mx-auto mt-2 max-w-2xl text-center text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900">
-                Soluções para transformar seu negócio no digital
-            </p>
+
+    <!-- ================= SERVIÇOS ================= -->
+    <section id="servicos" class="section">
+        <div class="container">
+            <div class="text-center max-w-3xl mx-auto">
+                <h2 class="text-sm md:text-base font-semibold text-primary">Nossos Serviços</h2>
+                <p class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight">
+                    Soluções para transformar seu negócio no digital
+                </p>
+            </div>
 
             <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
                 <!-- Gestão de Redes -->
-                <article class="card rounded-2xl shadow-md p-8 border border-gray-100 text-left hover:shadow-xl transition">
-                    <div class="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                <article class="card card-hover p-8 text-left">
+                    <div class="rounded-full w-16 h-16 grid place-items-center mb-6 bg-[color-mix(in_oklab,var(--primary)_16%,transparent)]">
                         <span class="icon-[mdi--instagram] text-primary text-[34px]"></span>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900">Gestão de Redes Sociais</h3>
-                    <p class="mt-3 text-gray-600">Estratégia, conteúdo e acompanhamento para manter sua marca relevante e engajadora.</p>
-                    <ul class="mt-5 space-y-2 text-sm text-gray-700">
-                        <li class="flex items-center gap-2"><span class="icon-[mdi--check] text-primary w-4 h-4"></span> Posts e Reels criativos</li>
-                        <li class="flex items-center gap-2"><span class="icon-[mdi--check] text-primary w-4 h-4"></span> Planejamento de campanhas</li>
-                        <li class="flex items-center gap-2"><span class="icon-[mdi--check] text-primary w-4 h-4"></span> Relatórios de desempenho</li>
+                    <h3 class="text-xl font-semibold">Gestão de Redes Sociais</h3>
+                    <p class="mt-3 text-gray-600 dark:text-gray-300">Estratégia, conteúdo e acompanhamento para manter sua marca relevante e engajadora.</p>
+                    <ul class="mt-5 space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                        <li class="flex items-center gap-2"><span class="icon-[mdi--check] text-primary text-[16px]"></span> Posts e Reels criativos</li>
+                        <li class="flex items-center gap-2"><span class="icon-[mdi--check] text-primary text-[16px]"></span> Planejamento de campanhas</li>
+                        <li class="flex items-center gap-2"><span class="icon-[mdi--check] text-primary text-[16px]"></span> Relatórios de desempenho</li>
                     </ul>
                     <div class="mt-6">
                         <a href="/gestao-redes" class="inline-flex items-center gap-2 text-primary font-semibold hover:opacity-90">
                             Ver detalhes
-                            <span class="icon-[mdi--arrow-right] w-5 h-5"></span>
+                            <span class="icon-[mdi--arrow-right] text-[18px]"></span>
                         </a>
                     </div>
                 </article>
 
                 <!-- Catálogo WhatsApp -->
-                <article class="card rounded-2xl shadow-md p-8 border border-gray-100 text-left hover:shadow-xl transition">
-                    <div class="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                <article class="card card-hover p-8 text-left">
+                    <div class="rounded-full w-16 h-16 grid place-items-center mb-6 bg-[color-mix(in_oklab,var(--primary)_16%,transparent)]">
                         <span class="icon-[mdi--whatsapp] text-primary text-[34px]"></span>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900">Catálogo de Vendas no WhatsApp</h3>
-                    <p class="mt-3 text-gray-600">Transforme seu WhatsApp Business em uma loja virtual prática e integrada.</p>
-                    <ul class="mt-5 space-y-2 text-sm text-gray-700">
-                        <li class="flex items-center gap-2"><span class="icon-[mdi--check] text-primary w-4 h-4"></span> Criação e organização de catálogos</li>
-                        <li class="flex items-center gap-2"><span class="icon-[mdi--check] text-primary w-4 h-4"></span> Funil de conversão otimizado</li>
-                        <li class="flex items-center gap-2"><span class="icon-[mdi--check] text-primary w-4 h-4"></span> Consultoria para aumentar vendas</li>
+                    <h3 class="text-xl font-semibold">Catálogo de Vendas no WhatsApp</h3>
+                    <p class="mt-3 text-gray-600 dark:text-gray-300">Transforme seu WhatsApp Business em uma loja virtual prática e integrada.</p>
+                    <ul class="mt-5 space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                        <li class="flex items-center gap-2"><span class="icon-[mdi--check] text-primary text-[16px]"></span> Criação e organização de catálogos</li>
+                        <li class="flex items-center gap-2"><span class="icon-[mdi--check] text-primary text-[16px]"></span> Funil de conversão otimizado</li>
+                        <li class="flex items-center gap-2"><span class="icon-[mdi--check] text-primary text-[16px]"></span> Consultoria para aumentar vendas</li>
                     </ul>
                     <div class="mt-6">
                         <a href={wa('Quero montar meu catálogo no WhatsApp')} target="_blank" rel="noopener"
-                           class="inline-flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-lg font-semibold shadow hover:opacity-95 focus-visible:ring-2 ring-primary">
-                            <span class="icon-[mdi--whatsapp] w-5 h-5"></span>
+                           class="btn btn-primary">
+                            <span class="icon-[mdi--whatsapp] text-[18px]"></span>
                             Começar agora
                         </a>
                     </div>
                 </article>
 
                 <!-- Sites e Landings -->
-                <article class="card rounded-2xl shadow-md p-8 border border-gray-100 text-left hover:shadow-xl transition">
-                    <div class="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                <article class="card card-hover p-8 text-left">
+                    <div class="rounded-full w-16 h-16 grid place-items-center mb-6 bg-[color-mix(in_oklab,var(--primary)_16%,transparent)]">
                         <span class="icon-[mdi--monitor-dashboard] text-primary text-[34px]"></span>
                     </div>
-                    <h3 class="text-xl font-semibold text-gray-900">Sites e Landing Pages</h3>
-                    <p class="mt-3 text-gray-600">Páginas rápidas, bonitas e com SEO — alinhadas ao funil do WhatsApp.</p>
-                    <ul class="mt-5 space-y-2 text-sm text-gray-700">
-                        <li class="flex items-center gap-2"><span class="icon-[mdi--check] text-primary w-4 h-4"></span> Landing com foco em conversão</li>
-                        <li class="flex items-center gap-2"><span class="icon-[mdi--check] text-primary w-4 h-4"></span> Integrações e pixels</li>
-                        <li class="flex items-center gap-2"><span class="icon-[mdi--check] text-primary w-4 h-4"></span> Performance e SEO</li>
+                    <h3 class="text-xl font-semibold">Sites e Landing Pages</h3>
+                    <p class="mt-3 text-gray-600 dark:text-gray-300">Páginas rápidas, bonitas e com SEO — alinhadas ao funil do WhatsApp.</p>
+                    <ul class="mt-5 space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                        <li class="flex items-center gap-2"><span class="icon-[mdi--check] text-primary text-[16px]"></span> Landing com foco em conversão</li>
+                        <li class="flex items-center gap-2"><span class="icon-[mdi--check] text-primary text-[16px]"></span> Integrações e pixels</li>
+                        <li class="flex items-center gap-2"><span class="icon-[mdi--check] text-primary text-[16px]"></span> Performance e SEO</li>
                     </ul>
                 </article>
             </div>
         </div>
     </section>
 
-    <!-- SOBRE -->
-    <section id="sobre" class="w-full py-16 md:py-24 bg-white">
-        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+
+
+
+
+
+    <!-- ================= PLANOS ================= -->
+    <section id="planos" class="section bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-zinc-900 dark:via-zinc-950 dark:to-zinc-900">
+        <div class="container text-center">
+            <h2 class="text-sm md:text-base font-semibold text-primary">Nossos Planos</h2>
+            <p class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight">
+                Compare os recursos de cada plano
+            </p>
+
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+
+                <!-- ============== PLANO INICIAL ============== -->
+                <div class="card p-8 text-left flex flex-col">
+                    <div class="flex items-center gap-3">
+                        <span class="icon-[mdi--account] text-primary text-[32px]"></span>
+                        <h3 class="text-xl font-semibold">Plano Inicial</h3>
+                    </div>
+                    <p class="mt-2 text-gray-600 dark:text-gray-300">Para começar sua presença digital.</p>
+
+                    <!-- Redes sociais -->
+                    <h4 class="mt-5 font-semibold text-gray-800 dark:text-gray-200">Redes sociais</h4>
+                    <ul class="mt-2 space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                        <!-- Inclusos -->
+                        <li class="flex items-center justify-between">
+                            <span class="flex items-center gap-2"><span class="icon-[mdi--facebook] text-blue-600"></span> Facebook</span>
+                            <span class="icon-[mdi--check-circle] text-green-500"></span>
+                        </li>
+                        <li class="flex items-center justify-between">
+                            <span class="flex items-center gap-2"><span class="icon-[mdi--instagram] text-pink-500"></span> Instagram</span>
+                            <span class="icon-[mdi--check-circle] text-green-500"></span>
+                        </li>
+                        <li class="flex items-center justify-between">
+                            <span class="flex items-center gap-2"><span class="icon-[simple-icons--threads] text-black"></span> Threads</span>
+                            <span class="icon-[mdi--check-circle] text-green-500"></span>
+                        </li>
+                        <li class="flex items-center justify-between">
+                            <span class="flex items-center gap-2"><span class="icon-[mdi--pinterest] text-red-600"></span> Pinterest</span>
+                            <span class="icon-[mdi--check-circle] text-green-500"></span>
+                        </li>
+                        <!-- Não inclusos -->
+                        <li class="flex items-center justify-between opacity-75">
+                            <span class="flex items-center gap-2"><span class="icon-[mdi--linkedin] text-gray-400"></span> LinkedIn</span>
+                            <span class="icon-[mdi--close-circle-outline] text-gray-400"></span>
+                        </li>
+                        <li class="flex items-center justify-between opacity-75">
+                            <span class="flex items-center gap-2"><span class="icon-[mdi--tiktok] text-gray-400"></span> TikTok</span>
+                            <span class="icon-[mdi--close-circle-outline] text-gray-400"></span>
+                        </li>
+                        <li class="flex items-center justify-between opacity-75">
+                            <span class="flex items-center gap-2"><span class="icon-[mdi--youtube] text-gray-400"></span> YouTube</span>
+                            <span class="icon-[mdi--close-circle-outline] text-gray-400"></span>
+                        </li>
+                    </ul>
+
+                    <!-- Conteúdo -->
+                    <h4 class="mt-5 font-semibold text-gray-800 dark:text-gray-200">Conteúdo</h4>
+                    <ul class="mt-2 space-y-2 text-sm">
+                        <li class="flex items-center justify-between">
+                            <span class="flex items-center gap-2"><span class="icon-[mdi--calendar-edit] text-primary"></span> 6 postagens semanais</span>
+                            <span class="icon-[mdi--check-circle] text-green-500"></span>
+                        </li>
+                        <li class="flex items-center justify-between">
+                            <span class="flex items-center gap-2"><span class="icon-[mdi--image-multiple-outline] text-primary"></span> 6 banners Stories</span>
+                            <span class="icon-[mdi--check-circle] text-green-500"></span>
+                        </li>
+                        <li class="flex items-center justify-between">
+                            <span class="flex items-center gap-2"><span class="icon-[mdi--image-outline] text-primary"></span> 6 banners Feed</span>
+                            <span class="icon-[mdi--check-circle] text-green-500"></span>
+                        </li>
+                    </ul>
+
+                    <!-- Relatórios -->
+                    <h4 class="mt-5 font-semibold text-gray-800 dark:text-gray-200">Relatórios</h4>
+                    <ul class="mt-2 space-y-2 text-sm">
+                        <li class="flex items-center justify-between">
+                            <span class="flex items-center gap-2"><span class="icon-[mdi--chart-line] text-primary"></span> Orgânicos</span>
+                            <span class="icon-[mdi--check-circle] text-green-500"></span>
+                        </li>
+                        <li class="flex items-center justify-between">
+                            <span class="flex items-center gap-2"><span class="icon-[mdi--chart-areaspline] text-primary"></span> ADS (Tráfego Pago)</span>
+                            <span class="icon-[mdi--check-circle] text-green-500"></span>
+                        </li>
+                        <li class="flex items-center justify-between">
+                            <span class="flex items-center gap-2"><span class="icon-[mdi--file-pdf-box] text-primary"></span> PDF ou Link</span>
+                            <span class="icon-[mdi--check-circle] text-green-500"></span>
+                        </li>
+                        <li class="flex items-center justify-between opacity-75">
+                            <span class="flex items-center gap-2"><span class="icon-[mdi--calendar-clock] text-gray-400"></span> Agendamento</span>
+                            <span class="icon-[mdi--close-circle-outline] text-gray-400"></span>
+                        </li>
+                        <li class="flex items-center justify-between opacity-75">
+                            <span class="flex items-center gap-2"><span class="icon-[mdi--view-dashboard-outline] text-gray-400"></span> Dashboards personalizados</span>
+                            <span class="icon-[mdi--close-circle-outline] text-gray-400"></span>
+                        </li>
+                        <li class="flex items-center justify-between opacity-75">
+                            <span class="flex items-center gap-2"><span class="icon-[mdi--account-box-multiple-outline] text-gray-400"></span> Portal do Cliente White Label</span>
+                            <span class="icon-[mdi--close-circle-outline] text-gray-400"></span>
+                        </li>
+                        <li class="flex items-center justify-between opacity-75">
+                            <span class="flex items-center gap-2"><span class="icon-[mdi--account-search-outline] text-gray-400"></span> Análise de Concorrentes</span>
+                            <span class="icon-[mdi--close-circle-outline] text-gray-400"></span>
+                        </li>
+                    </ul>
+
+                    <!-- Atendimento -->
+                    <h4 class="mt-5 font-semibold text-gray-800 dark:text-gray-200">Atendimento</h4>
+                    <ul class="mt-2 space-y-2 text-sm">
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--email-outline] text-primary"></span> E-mail</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--chat-outline] text-primary"></span> Chat</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--phone-outline] text-primary"></span> Telefone</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--whatsapp] text-green-500"></span> WhatsApp</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                    </ul>
+
+                    <!-- Extras -->
+                    <h4 class="mt-5 font-semibold text-gray-800 dark:text-gray-200">Extras</h4>
+                    <ul class="mt-2 space-y-2 text-sm">
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--email-lock] text-primary"></span> 1 e-mail profissional</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                        <li class="flex items-center justify-between opacity-75"><span class="flex items-center gap-2"><span class="icon-[mdi--cloud-outline] text-gray-400"></span> Hospedagem e domínio</span><span class="icon-[mdi--close-circle-outline] text-gray-400"></span></li>
+                        <li class="flex items-center justify-between opacity-75"><span class="flex items-center gap-2"><span class="icon-[mdi--palette-outline] text-gray-400"></span> Logomarca</span><span class="icon-[mdi--close-circle-outline] text-gray-400"></span></li>
+                        <li class="flex items-center justify-between opacity-75"><span class="flex items-center gap-2"><span class="icon-[mdi--web-off] text-gray-400"></span> Site / Loja virtual</span><span class="icon-[mdi--close-circle-outline] text-gray-400"></span></li>
+                    </ul>
+
+                    <div class="mt-6">
+                        <p class="text-2xl font-bold text-primary">R$ 340/mês</p>
+                        <a href="#contato" class="btn btn-primary w-full mt-3 justify-center">Assinar Plano</a>
+                    </div>
+                </div>
+
+                <!-- ============== PLANO ESSENCIAL ============== -->
+                <div class="card p-8 text-left flex flex-col">
+                    <div class="flex items-center gap-3">
+                        <span class="icon-[mdi--chart-line] text-primary text-[32px]"></span>
+                        <h3 class="text-xl font-semibold">Plano Essencial</h3>
+                    </div>
+                    <p class="mt-2 text-gray-600 dark:text-gray-300">Mais canais, relatórios completos e recursos extras.</p>
+
+                    <!-- Redes sociais -->
+                    <h4 class="mt-5 font-semibold text-gray-800 dark:text-gray-200">Redes sociais</h4>
+                    <ul class="mt-2 space-y-2 text-sm">
+                        <!-- Todos inclusos -->
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--facebook] text-blue-600"></span> Facebook</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--instagram] text-pink-500"></span> Instagram</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[simple-icons--threads] text-black"></span> Threads</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--pinterest] text-red-600"></span> Pinterest</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--linkedin] text-blue-600"></span> LinkedIn</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--tiktok]"></span> TikTok</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--youtube] text-red-600"></span> YouTube</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                    </ul>
+
+                    <!-- Conteúdo -->
+                    <h4 class="mt-5 font-semibold text-gray-800 dark:text-gray-200">Conteúdo</h4>
+                    <ul class="mt-2 space-y-2 text-sm">
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--calendar-edit] text-primary"></span> 6 postagens semanais</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--image-multiple-outline] text-primary"></span> 6 banners Stories</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--image-outline] text-primary"></span> 6 banners Feed</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                    </ul>
+
+                    <!-- Relatórios -->
+                    <h4 class="mt-5 font-semibold text-gray-800 dark:text-gray-200">Relatórios</h4>
+                    <ul class="mt-2 space-y-2 text-sm">
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--chart-line] text-primary"></span> Orgânicos</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--chart-areaspline] text-primary"></span> ADS (Tráfego Pago)</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--file-pdf-box] text-primary"></span> PDF ou Link</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--calendar-clock] text-primary"></span> Agendamento</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--view-dashboard-outline] text-primary"></span> Dashboards personalizados</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--account-box-multiple-outline] text-primary"></span> Portal do Cliente White Label</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--account-search-outline] text-primary"></span> Análise de Concorrentes</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                    </ul>
+
+                    <!-- Atendimento -->
+                    <h4 class="mt-5 font-semibold text-gray-800 dark:text-gray-200">Atendimento</h4>
+                    <ul class="mt-2 space-y-2 text-sm">
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--email-outline] text-primary"></span> E-mail</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--chat-outline] text-primary"></span> Chat</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--phone-outline] text-primary"></span> Telefone</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--whatsapp] text-green-500"></span> WhatsApp</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                    </ul>
+
+                    <!-- Extras -->
+                    <h4 class="mt-5 font-semibold text-gray-800 dark:text-gray-200">Extras</h4>
+                    <ul class="mt-2 space-y-2 text-sm">
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--email-lock] text-primary"></span> 8 e-mails profissionais</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                        <li class="flex items-center justify-between opacity-75"><span class="flex items-center gap-2"><span class="icon-[mdi--cloud-outline] text-gray-400"></span> Hospedagem e domínio</span><span class="icon-[mdi--close-circle-outline] text-gray-400"></span></li>
+                        <li class="flex items-center justify-between opacity-75"><span class="flex items-center gap-2"><span class="icon-[mdi--palette-outline] text-gray-400"></span> Logomarca</span><span class="icon-[mdi--close-circle-outline] text-gray-400"></span></li>
+                        <li class="flex items-center justify-between opacity-75"><span class="flex items-center gap-2"><span class="icon-[mdi--web-off] text-gray-400"></span> Site / Loja virtual</span><span class="icon-[mdi--close-circle-outline] text-gray-400"></span></li>
+                    </ul>
+
+                    <div class="mt-6">
+                        <p class="text-2xl font-bold text-primary">R$ 680/mês</p>
+                        <a href="#contato" class="btn btn-primary w-full mt-3 justify-center">Assinar Plano</a>
+                    </div>
+                </div>
+
+                <!-- ============== PLANO PROFISSIONAL ============== -->
+                <div class="card p-8 text-left flex flex-col border-2 border-primary shadow-lg relative">
+                    <span class="absolute top-0 right-0 bg-primary text-white text-xs font-bold px-3 py-1 rounded-bl-lg">Mais Vendido</span>
+                    <div class="flex items-center gap-3">
+                        <span class="icon-[mdi--crown] text-primary text-[32px]"></span>
+                        <h3 class="text-xl font-semibold">Plano Profissional</h3>
+                    </div>
+                    <p class="mt-2 text-gray-600 dark:text-gray-300">Tudo incluso para presença digital completa.</p>
+
+                    <!-- Redes sociais -->
+                    <h4 class="mt-5 font-semibold text-gray-800 dark:text-gray-200">Redes sociais</h4>
+                    <ul class="mt-2 space-y-2 text-sm">
+                        <!-- Todos inclusos -->
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--facebook] text-blue-600"></span> Facebook</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--instagram] text-pink-500"></span> Instagram</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[simple-icons--threads] text-black"></span> Threads</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--pinterest] text-red-600"></span> Pinterest</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--linkedin] text-blue-600"></span> LinkedIn</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--tiktok]"></span> TikTok</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--youtube] text-red-600"></span> YouTube</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                    </ul>
+
+                    <!-- Conteúdo -->
+                    <h4 class="mt-5 font-semibold text-gray-800 dark:text-gray-200">Conteúdo</h4>
+                    <ul class="mt-2 space-y-2 text-sm">
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--calendar-edit] text-primary"></span> 12 postagens semanais</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--image-multiple-outline] text-primary"></span> 12 banners Stories</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--image-outline] text-primary"></span> 12 banners Feed</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                    </ul>
+
+                    <!-- Relatórios -->
+                    <h4 class="mt-5 font-semibold text-gray-800 dark:text-gray-200">Relatórios</h4>
+                    <ul class="mt-2 space-y-2 text-sm">
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--chart-line] text-primary"></span> Orgânicos</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--chart-areaspline] text-primary"></span> ADS (Tráfego Pago)</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--file-pdf-box] text-primary"></span> PDF ou Link</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--calendar-clock] text-primary"></span> Agendamento</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--view-dashboard-outline] text-primary"></span> Dashboards personalizados</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--account-box-multiple-outline] text-primary"></span> Portal do Cliente White Label</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--account-search-outline] text-primary"></span> Análise de Concorrentes</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                    </ul>
+
+                    <!-- Atendimento -->
+                    <h4 class="mt-5 font-semibold text-gray-800 dark:text-gray-200">Atendimento</h4>
+                    <ul class="mt-2 space-y-2 text-sm">
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--email-outline] text-primary"></span> E-mail</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--chat-outline] text-primary"></span> Chat</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--phone-outline] text-primary"></span> Telefone</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--whatsapp] text-green-500"></span> WhatsApp (VIP)</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                    </ul>
+
+                    <!-- Extras -->
+                    <h4 class="mt-5 font-semibold text-gray-800 dark:text-gray-200">Extras</h4>
+                    <ul class="mt-2 space-y-2 text-sm">
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--email-lock] text-primary"></span> 15 e-mails profissionais (15GB)</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--cloud-outline] text-primary"></span> Hospedagem e domínio</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--palette-outline] text-primary"></span> Logomarca</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                        <li class="flex items-center justify-between"><span class="flex items-center gap-2"><span class="icon-[mdi--web] text-primary"></span> Site / Loja virtual</span><span class="icon-[mdi--check-circle] text-green-500"></span></li>
+                    </ul>
+
+                    <div class="mt-6">
+                        <p class="text-2xl font-bold text-primary">R$ 1.250/mês</p>
+                        <a href="#contato" class="btn btn-primary w-full mt-3 justify-center">Contratar</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- ================= SOBRE ================= -->
+    <section id="sobre" class="section">
+        <div class="container grid md:grid-cols-2 gap-10 items-center">
             <div>
-                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900">
+                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">
                     Sobre a <span class="text-primary">LideraZap</span>
                 </h2>
-                <p class="mt-4 text-gray-700">
-                    Somos especialistas em transformar a comunicação do seu negócio em vendas. Montamos o seu catálogo no WhatsApp, estruturamos o conteúdo e o fluxo de respostas, e criamos campanhas que geram resultado.
+                <p class="mt-4 text-gray-700 dark:text-gray-300">
+                    Somos especialistas em transformar a comunicação do seu negócio em vendas. Montamos o catálogo no WhatsApp, estruturamos conteúdo e fluxo de respostas, e criamos campanhas que geram resultado.
                 </p>
-                <ul class="mt-6 space-y-3 text-gray-700">
-                    <li class="flex items-center gap-2"><span class="icon-[mdi--check-decagram] text-primary w-5 h-5"></span> Foco total em conversão</li>
-                    <li class="flex items-center gap-2"><span class="icon-[mdi--check-decagram] text-primary w-5 h-5"></span> Processos simples e sem complicação</li>
-                    <li class="flex items-center gap-2"><span class="icon-[mdi--check-decagram] text-primary w-5 h-5"></span> Atendimento humano, direto no WhatsApp</li>
+                <ul class="mt-6 space-y-3 text-gray-700 dark:text-gray-300">
+                    <li class="flex items-center gap-2"><span class="icon-[mdi--check-decagram] text-primary text-[20px]"></span> Foco total em conversão</li>
+                    <li class="flex items-center gap-2"><span class="icon-[mdi--check-decagram] text-primary text-[20px]"></span> Processos simples e sem complicação</li>
+                    <li class="flex items-center gap-2"><span class="icon-[mdi--check-decagram] text-primary text-[20px]"></span> Atendimento humano, direto no WhatsApp</li>
                 </ul>
             </div>
 
             <div class="relative">
                 <div class="absolute -inset-1 bg-gradient-to-tr from-indigo-500/30 to-purple-500/30 blur-xl rounded-3xl -z-10"></div>
-                <div class="bg-white border border-gray-100 rounded-3xl p-6 shadow-xl">
-                    <div class="grid grid-cols-3 gap-6 text-center text-gray-900">
+                <div class="card p-6">
+                    <div class="grid grid-cols-3 gap-6 text-center">
                         <div>
                             <div class="text-3xl font-extrabold">+120</div>
-                            <div class="mt-1 text-sm text-gray-500">itens configurados</div>
+                            <div class="mt-1 text-sm text-gray-500 dark:text-gray-400">itens configurados</div>
                         </div>
                         <div>
                             <div class="text-3xl font-extrabold">+30</div>
-                            <div class="mt-1 text-sm text-gray-500">catálogos ativos</div>
+                            <div class="mt-1 text-sm text-gray-500 dark:text-gray-400">catálogos ativos</div>
                         </div>
                         <div>
                             <div class="text-3xl font-extrabold">100%</div>
-                            <div class="mt-1 text-sm text-gray-500">suporte humano</div>
+                            <div class="mt-1 text-sm text-gray-500 dark:text-gray-400">suporte humano</div>
                         </div>
                     </div>
                 </div>
@@ -175,61 +460,57 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
         </div>
     </section>
 
-    <!-- AVALIAÇÕES -->
-    <section id="avaliacoes" class="w-full py-16 md:py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
+    <!-- ================= AVALIAÇÕES ================= -->
+    <section id="avaliacoes" class="section">
+        <div class="container">
             <div class="text-center">
-                <span class="inline-flex items-center gap-2 text-sm md:text-base font-semibold uppercase tracking-wide text-primary">
-                    <span class="icon-[mdi--google] w-5 h-5 text-primary"></span>
-                    Avaliações no Google
-                </span>
-                <h2 class="mt-2 text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900">
+          <span class="badge">
+            <span class="icon-[mdi--google] text-[18px]"></span>
+            Avaliações no Google
+          </span>
+                <h2 class="mt-2 text-3xl md:text-4xl font-extrabold tracking-tight">
                     O que dizem sobre a <span class="text-primary">LideraZap</span>
                 </h2>
 
-                <div class="mt-4 inline-flex items-center gap-3 rounded-full border border-gray-200 px-4 py-2 bg-white shadow-sm">
+                <div class="mt-4 inline-flex items-center gap-3 rounded-full border border-white/60 dark:border-white/10 bg-white/60 dark:bg-white/5 backdrop-blur px-4 py-2">
                     <div class="flex items-center gap-1" aria-label="Classificação média 5 de 5">
-                        {[...Array(5)].map((_, i) => (
-                                <span class="icon-[mdi--star] text-yellow-400 w-5 h-5"></span>
-                        ))}
+                        {[...Array(5)].map(() => <span class="icon-[mdi--star] text-yellow-400 text-[18px]"></span>)}
                     </div>
-                    <span class="text-sm text-gray-700">
-                        <strong class="font-semibold">5.0</strong> / 5 — baseado em <span class="font-semibold">N</span> avaliações
-                    </span>
+                    <span class="text-sm text-gray-700 dark:text-gray-300">
+              <strong class="font-semibold">5.0</strong> / 5 — baseado em <span class="font-semibold">N</span> avaliações
+            </span>
                 </div>
 
                 <div class="mt-5">
                     <a href="SUA_URL_DE_AVALIACOES_GOOGLE" target="_blank" rel="noopener"
-                       class="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:opacity-90 focus-visible:ring-2 ring-primary rounded-lg px-3 py-2">
-                        <span class="icon-[mdi--open-in-new] w-5 h-5"></span>
+                       class="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:opacity-90">
+                        <span class="icon-[mdi--open-in-new] text-[18px]"></span>
                         Ver todas no Google
                     </a>
                 </div>
             </div>
 
-            <!-- CLIENTES -->
+            <!-- Carrossel -->
             <div class="mt-10 overflow-x-auto hide-scrollbar" role="region" aria-label="Depoimentos">
                 <ul class="grid grid-cols-1 md:grid-cols-3 gap-6 min-w-[320px] md:min-w-0">
                     {["cliente-1.jpg","cliente-2.jpg","cliente-3.jpg"].map((img, i) => (
-                            <li class="bg-white rounded-2xl border border-gray-200 shadow-sm p-6">
+                            <li class="card p-6">
                                 <div class="flex items-center gap-4">
                                     <img src={`/images/avatars/${img}`} alt="Foto de cliente"
-                                         class="h-12 w-12 rounded-full object-cover bg-gray-100"
+                                         class="h-12 w-12 rounded-full object-cover bg-gray-100 dark:bg-zinc-800"
                                          loading="lazy"
                                          onerror={`this.src='https://placehold.co/150x150?text=Cliente+${i+1}'`} />
                                     <div>
-                                        <p class="font-semibold text-gray-900">Nome do Cliente</p>
-                                        <p class="text-xs text-gray-500">Data da avaliação</p>
+                                        <p class="font-semibold">Nome do Cliente</p>
+                                        <p class="text-xs text-gray-500 dark:text-gray-400">Data da avaliação</p>
                                     </div>
                                 </div>
                                 <div class="mt-3 flex items-center gap-0.5" aria-label="5 de 5">
-                                    {[...Array(5)].map(() => (
-                                            <span class="icon-[mdi--star] text-yellow-400 w-5 h-5"></span>
-                                    ))}
+                                    {[...Array(5)].map(() => <span class="icon-[mdi--star] text-yellow-400 text-[18px]"></span>)}
                                 </div>
-                                <p class="mt-3 text-gray-700 leading-relaxed">“Comentário de exemplo sobre os serviços da LideraZap.”</p>
-                                <div class="mt-4 flex items-center gap-2 text-xs text-gray-500">
-                                    <span class="icon-[mdi--google] w-4 h-4"></span>
+                                <p class="mt-3 text-gray-700 dark:text-gray-300 leading-relaxed">“Comentário de exemplo sobre os serviços da LideraZap.”</p>
+                                <div class="mt-4 flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
+                                    <span class="icon-[mdi--google] text-[16px]"></span>
                                     <span>Avaliação do Google</span>
                                 </div>
                             </li>
@@ -249,24 +530,27 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
         </div>
     </section>
 
-    <!-- CONTATO -->
-    <section id="contato" class="w-full py-16 md:py-24 bg-primary text-white">
-        <div class="max-w-3xl mx-auto px-6 text-center">
-            <span class="icon-[mdi--whatsapp] text-white/95 text-[80px] inline-block mb-4"></span>
-            <h2 class="text-4xl md:text-5xl font-extrabold text-balance">Pronto para impulsionar seu negócio?</h2>
-            <p class="mt-4 text-lg md:text-xl text-white/90">Sem formulários e sem espera. Clique e fale direto no WhatsApp.</p>
-            <a href={wa('Olá! Gostaria de saber mais sobre os serviços da LideraZap.')} target="_blank" rel="noopener"
-               class="mt-8 inline-flex items-center gap-3 bg-white text-primary px-8 py-4 rounded-full font-extrabold shadow-lg transition-transform hover:scale-[1.02] hover:bg-gray-100 focus-visible:ring-2 ring-white/70">
-                <span class="icon-[mdi--whatsapp] w-6 h-6"></span>
-                <span class="text-xl">(32) 9 9840-8646</span>
-            </a>
+    <!-- ================= CTA FINAL ================= -->
+    <section id="contato" class="section">
+        <div class="container text-center">
+            <div class="card p-10">
+                <span class="icon-[mdi--whatsapp] text-[72px] text-primary inline-block mb-4"></span>
+                <h2 class="text-4xl md:text-5xl font-extrabold text-balance">Pronto para impulsionar seu negócio?</h2>
+                <p class="mt-4 text-lg md:text-xl text-gray-700 dark:text-gray-300">Sem formulários e sem espera. Clique e fale direto no WhatsApp.</p>
+                <a href={wa('Olá! Gostaria de saber mais sobre os serviços da LideraZap.')}
+                   target="_blank" rel="noopener"
+                   class="mt-8 btn btn-primary text-lg px-8 py-4">
+                    <span class="icon-[mdi--whatsapp] text-[22px]"></span>
+                    (32) 9 9840-8646
+                </a>
+            </div>
         </div>
     </section>
 </main>
 
 <!-- BOTÃO FIXO WHATSAPP -->
 <a href={wa('Olá! Vim pelo site.')} target="_blank" rel="noopener" class="fab-whatsapp">
-    <span class="icon-[mdi--whatsapp] w-5 h-5"></span>
+    <span class="icon-[mdi--whatsapp] text-[18px]"></span>
     <span class="font-semibold">Fale conosco</span>
 </a>
 
