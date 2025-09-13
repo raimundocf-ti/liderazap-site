@@ -2,7 +2,6 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { Icon } from "astro-iconify";
 
 const whatsapp = '5532998408646';
 const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent(msg)}`;
@@ -21,6 +20,7 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
 
 <main class="pt-20 md:pt-24">
     <!-- HERO -->
+    <span class="icon-[mdi-light--home]"></span>
     <section class="relative w-full py-20 md:py-28 overflow-hidden">
         <div class="absolute inset-0 -z-10 bg-grid">
             <svg class="absolute left-1/2 -top-24 h-[900px] w-[1400px] -translate-x-1/2" viewBox="0 0 1024 1024" aria-hidden="true">
@@ -46,11 +46,11 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
                 <div class="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
                     <a href={wa('Quero aumentar minhas vendas no WhatsApp')} target="_blank" rel="noopener"
                        class="inline-flex items-center gap-3 bg-primary hover:opacity-90 text-white font-bold px-6 py-3 rounded-xl shadow transition-transform hover:scale-[1.02] focus-visible:ring-2 ring-primary">
-                        <Icon icon="mdi:whatsapp" width="24" height="24" />
+                        <span class="icon-[mdi--whatsapp] w-6 h-6"></span>
                         Falar com um especialista
                     </a>
                     <a href="#servicos" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-gray-300 text-gray-700 hover:border-primary hover:text-primary">
-                        <Icon icon="mdi:lightning-bolt" width="20" height="20" />
+                        <span class="icon-[mdi--lightning-bolt] w-5 h-5"></span>
                         Ver serviços
                     </a>
                 </div>
@@ -81,19 +81,19 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
                 <!-- Gestão de Redes -->
                 <article class="card rounded-2xl shadow-md p-8 border border-gray-100 text-left hover:shadow-xl transition">
                     <div class="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center mb-6">
-                        <Icon icon="mdi:instagram" width="34" class="text-primary" />
+                        <span class="icon-[mdi--instagram] text-primary text-[34px]"></span>
                     </div>
                     <h3 class="text-xl font-semibold text-gray-900">Gestão de Redes Sociais</h3>
                     <p class="mt-3 text-gray-600">Estratégia, conteúdo e acompanhamento para manter sua marca relevante e engajadora.</p>
                     <ul class="mt-5 space-y-2 text-sm text-gray-700">
-                        <li class="flex items-center gap-2"><Icon icon="mdi:check" width="16" class="text-primary" /> Posts e Reels criativos</li>
-                        <li class="flex items-center gap-2"><Icon icon="mdi:check" width="16" class="text-primary" /> Planejamento de campanhas</li>
-                        <li class="flex items-center gap-2"><Icon icon="mdi:check" width="16" class="text-primary" /> Relatórios de desempenho</li>
+                        <li class="flex items-center gap-2"><span class="icon-[mdi--check] text-primary w-4 h-4"></span> Posts e Reels criativos</li>
+                        <li class="flex items-center gap-2"><span class="icon-[mdi--check] text-primary w-4 h-4"></span> Planejamento de campanhas</li>
+                        <li class="flex items-center gap-2"><span class="icon-[mdi--check] text-primary w-4 h-4"></span> Relatórios de desempenho</li>
                     </ul>
                     <div class="mt-6">
                         <a href="/gestao-redes" class="inline-flex items-center gap-2 text-primary font-semibold hover:opacity-90">
                             Ver detalhes
-                            <Icon icon="mdi:arrow-right" width="18" />
+                            <span class="icon-[mdi--arrow-right] w-5 h-5"></span>
                         </a>
                     </div>
                 </article>
@@ -101,19 +101,19 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
                 <!-- Catálogo WhatsApp -->
                 <article class="card rounded-2xl shadow-md p-8 border border-gray-100 text-left hover:shadow-xl transition">
                     <div class="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center mb-6">
-                        <Icon icon="mdi:whatsapp" width="34" class="text-primary" />
+                        <span class="icon-[mdi--whatsapp] text-primary text-[34px]"></span>
                     </div>
                     <h3 class="text-xl font-semibold text-gray-900">Catálogo de Vendas no WhatsApp</h3>
                     <p class="mt-3 text-gray-600">Transforme seu WhatsApp Business em uma loja virtual prática e integrada.</p>
                     <ul class="mt-5 space-y-2 text-sm text-gray-700">
-                        <li class="flex items-center gap-2"><Icon icon="mdi:check" width="16" class="text-primary" /> Criação e organização de catálogos</li>
-                        <li class="flex items-center gap-2"><Icon icon="mdi:check" width="16" class="text-primary" /> Funil de conversão otimizado</li>
-                        <li class="flex items-center gap-2"><Icon icon="mdi:check" width="16" class="text-primary" /> Consultoria para aumentar vendas</li>
+                        <li class="flex items-center gap-2"><span class="icon-[mdi--check] text-primary w-4 h-4"></span> Criação e organização de catálogos</li>
+                        <li class="flex items-center gap-2"><span class="icon-[mdi--check] text-primary w-4 h-4"></span> Funil de conversão otimizado</li>
+                        <li class="flex items-center gap-2"><span class="icon-[mdi--check] text-primary w-4 h-4"></span> Consultoria para aumentar vendas</li>
                     </ul>
                     <div class="mt-6">
                         <a href={wa('Quero montar meu catálogo no WhatsApp')} target="_blank" rel="noopener"
                            class="inline-flex items-center gap-2 bg-primary text-white px-4 py-2 rounded-lg font-semibold shadow hover:opacity-95 focus-visible:ring-2 ring-primary">
-                            <Icon icon="mdi:whatsapp" width="18" />
+                            <span class="icon-[mdi--whatsapp] w-5 h-5"></span>
                             Começar agora
                         </a>
                     </div>
@@ -122,14 +122,14 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
                 <!-- Sites e Landings -->
                 <article class="card rounded-2xl shadow-md p-8 border border-gray-100 text-left hover:shadow-xl transition">
                     <div class="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center mb-6">
-                        <Icon icon="mdi:monitor-dashboard" width="34" class="text-primary" />
+                        <span class="icon-[mdi--monitor-dashboard] text-primary text-[34px]"></span>
                     </div>
                     <h3 class="text-xl font-semibold text-gray-900">Sites e Landing Pages</h3>
                     <p class="mt-3 text-gray-600">Páginas rápidas, bonitas e com SEO — alinhadas ao funil do WhatsApp.</p>
                     <ul class="mt-5 space-y-2 text-sm text-gray-700">
-                        <li class="flex items-center gap-2"><Icon icon="mdi:check" width="16" class="text-primary" /> Landing com foco em conversão</li>
-                        <li class="flex items-center gap-2"><Icon icon="mdi:check" width="16" class="text-primary" /> Integrações e pixels</li>
-                        <li class="flex items-center gap-2"><Icon icon="mdi:check" width="16" class="text-primary" /> Performance e SEO</li>
+                        <li class="flex items-center gap-2"><span class="icon-[mdi--check] text-primary w-4 h-4"></span> Landing com foco em conversão</li>
+                        <li class="flex items-center gap-2"><span class="icon-[mdi--check] text-primary w-4 h-4"></span> Integrações e pixels</li>
+                        <li class="flex items-center gap-2"><span class="icon-[mdi--check] text-primary w-4 h-4"></span> Performance e SEO</li>
                     </ul>
                 </article>
             </div>
@@ -147,9 +147,9 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
                     Somos especialistas em transformar a comunicação do seu negócio em vendas. Montamos o seu catálogo no WhatsApp, estruturamos o conteúdo e o fluxo de respostas, e criamos campanhas que geram resultado.
                 </p>
                 <ul class="mt-6 space-y-3 text-gray-700">
-                    <li class="flex items-center gap-2"><Icon icon="mdi:check-decagram" width="18" class="text-primary" /> Foco total em conversão</li>
-                    <li class="flex items-center gap-2"><Icon icon="mdi:check-decagram" width="18" class="text-primary" /> Processos simples e sem complicação</li>
-                    <li class="flex items-center gap-2"><Icon icon="mdi:check-decagram" width="18" class="text-primary" /> Atendimento humano, direto no WhatsApp</li>
+                    <li class="flex items-center gap-2"><span class="icon-[mdi--check-decagram] text-primary w-5 h-5"></span> Foco total em conversão</li>
+                    <li class="flex items-center gap-2"><span class="icon-[mdi--check-decagram] text-primary w-5 h-5"></span> Processos simples e sem complicação</li>
+                    <li class="flex items-center gap-2"><span class="icon-[mdi--check-decagram] text-primary w-5 h-5"></span> Atendimento humano, direto no WhatsApp</li>
                 </ul>
             </div>
 
@@ -179,10 +179,10 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
     <section id="avaliacoes" class="w-full py-16 md:py-24 bg-white">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center">
-        <span class="inline-flex items-center gap-2 text-sm md:text-base font-semibold uppercase tracking-wide text-primary">
-          <Icon icon="mdi:google" width="20" class="text-primary" />
-          Avaliações no Google
-        </span>
+                <span class="inline-flex items-center gap-2 text-sm md:text-base font-semibold uppercase tracking-wide text-primary">
+                    <span class="icon-[mdi--google] w-5 h-5 text-primary"></span>
+                    Avaliações no Google
+                </span>
                 <h2 class="mt-2 text-3xl md:text-4xl font-extrabold tracking-tight text-gray-900">
                     O que dizem sobre a <span class="text-primary">LideraZap</span>
                 </h2>
@@ -190,18 +190,18 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
                 <div class="mt-4 inline-flex items-center gap-3 rounded-full border border-gray-200 px-4 py-2 bg-white shadow-sm">
                     <div class="flex items-center gap-1" aria-label="Classificação média 5 de 5">
                         {[...Array(5)].map((_, i) => (
-                                <Icon icon="mdi:star" width="18" class="text-yellow-400" />
+                                <span class="icon-[mdi--star] text-yellow-400 w-5 h-5"></span>
                         ))}
                     </div>
                     <span class="text-sm text-gray-700">
-            <strong class="font-semibold">5.0</strong> / 5 — baseado em <span class="font-semibold">N</span> avaliações
-          </span>
+                        <strong class="font-semibold">5.0</strong> / 5 — baseado em <span class="font-semibold">N</span> avaliações
+                    </span>
                 </div>
 
                 <div class="mt-5">
                     <a href="SUA_URL_DE_AVALIACOES_GOOGLE" target="_blank" rel="noopener"
                        class="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:opacity-90 focus-visible:ring-2 ring-primary rounded-lg px-3 py-2">
-                        <Icon icon="mdi:open-in-new" width="18" />
+                        <span class="icon-[mdi--open-in-new] w-5 h-5"></span>
                         Ver todas no Google
                     </a>
                 </div>
@@ -224,12 +224,12 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
                                 </div>
                                 <div class="mt-3 flex items-center gap-0.5" aria-label="5 de 5">
                                     {[...Array(5)].map(() => (
-                                            <Icon icon="mdi:star" width="18" class="text-yellow-400" />
+                                            <span class="icon-[mdi--star] text-yellow-400 w-5 h-5"></span>
                                     ))}
                                 </div>
                                 <p class="mt-3 text-gray-700 leading-relaxed">“Comentário de exemplo sobre os serviços da LideraZap.”</p>
                                 <div class="mt-4 flex items-center gap-2 text-xs text-gray-500">
-                                    <Icon icon="mdi:google" width="16" />
+                                    <span class="icon-[mdi--google] w-4 h-4"></span>
                                     <span>Avaliação do Google</span>
                                 </div>
                             </li>
@@ -252,12 +252,12 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
     <!-- CONTATO -->
     <section id="contato" class="w-full py-16 md:py-24 bg-primary text-white">
         <div class="max-w-3xl mx-auto px-6 text-center">
-            <Icon icon="mdi:whatsapp" width="80" class="text-white/95 inline-block mb-4" />
+            <span class="icon-[mdi--whatsapp] text-white/95 text-[80px] inline-block mb-4"></span>
             <h2 class="text-4xl md:text-5xl font-extrabold text-balance">Pronto para impulsionar seu negócio?</h2>
             <p class="mt-4 text-lg md:text-xl text-white/90">Sem formulários e sem espera. Clique e fale direto no WhatsApp.</p>
             <a href={wa('Olá! Gostaria de saber mais sobre os serviços da LideraZap.')} target="_blank" rel="noopener"
                class="mt-8 inline-flex items-center gap-3 bg-white text-primary px-8 py-4 rounded-full font-extrabold shadow-lg transition-transform hover:scale-[1.02] hover:bg-gray-100 focus-visible:ring-2 ring-white/70">
-                <Icon icon="mdi:whatsapp" width="26" />
+                <span class="icon-[mdi--whatsapp] w-6 h-6"></span>
                 <span class="text-xl">(32) 9 9840-8646</span>
             </a>
         </div>
@@ -266,7 +266,7 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
 
 <!-- BOTÃO FIXO WHATSAPP -->
 <a href={wa('Olá! Vim pelo site.')} target="_blank" rel="noopener" class="fab-whatsapp">
-    <Icon icon="mdi:whatsapp" width="22" />
+    <span class="icon-[mdi--whatsapp] w-5 h-5"></span>
     <span class="font-semibold">Fale conosco</span>
 </a>
 

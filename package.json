@@ -8,9 +8,6 @@
       "Workers"
     ],
     "categories": [],
-    "icon_urls": [
-      "https://imagedelivery.net/wSMYJvS3Xw-n339CbDyDIA/5ca0ca32-e897-4699-d4c1-6b680512f000/public"
-    ],
     "preview_image_url": "https://imagedelivery.net/wSMYJvS3Xw-n339CbDyDIA/33bbbf02-eda2-4d3f-b244-c27a280f3900/public",
     "publish": true
   },
@@ -20,17 +17,14 @@
     "@astrojs/react": "^4.3.1",
     "@astrojs/rss": "4.0.11",
     "@astrojs/sitemap": "3.4.1",
-    "@iconify-json/mdi": "^1.2.3",
-    "@iconify/react": "^6.0.1",
     "@tailwindcss/cli": "^4.1.12",
     "@tailwindcss/vite": "^4.1.12",
     "astro": "^5.13.7",
-    "astro-iconify": "^1.2.0",
     "tailwindcss": "^4.1.12",
     "typescript": "5.8.3"
   },
   "devDependencies": {
-    "@iconify/json": "^2.2.379",
+    "@iconify/json": "^2.2.383",
     "@iconify/tailwind4": "^1.0.6",
     "wrangler": "4.21.x"
   },
