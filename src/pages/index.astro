@@ -16,7 +16,7 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
 </head>
 
 <body class="antialiased bg-[var(--surface-2)] text-gray-900 dark:text-gray-100">
-<Header />
+<Header/>
 
 <main>
     <!-- ================= HERO ================= -->
@@ -36,7 +36,8 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
                 </h1>
 
                 <p class="mt-4 text-lg md:text-xl text-gray-700/90 dark:text-gray-300">
-                    Soluções definitivas para WhatsApp Business, redes sociais e presença online — sem enrolação, com especialista de verdade.
+                    Soluções definitivas para WhatsApp Business, redes sociais e presença online — sem enrolação, com
+                    especialista de verdade.
                 </p>
 
                 <div class="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
@@ -70,6 +71,58 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
                      alt="Cliente feliz realizando compras pelo WhatsApp"
                      class="max-h-[480px] w-auto object-contain drop-shadow-xl"/>
             </div>
+        </div>
+    </section>
+
+
+    <!-- ================= PARCERIA ================= -->
+    <section id="parceria"  class="relative overflow-hidden section py-24
+           bg-gradient-to-br from-[#0050c3] via-[#3449eb] to-[#6C5CE7]
+           bg-[url('/images/bg-04.jpg')] bg-cover bg-center text-white">
+
+        <!-- Overlay opcional para dar contraste na leitura -->
+        <div class="absolute inset-0 bg-[#0050c3]/80"></div>
+
+        <div class="container relative grid grid-cols-1 lg:grid-cols-12 items-center gap-12">
+
+            <!-- Texto -->
+            <div class="lg:col-span-7 text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
+                    <span class="icon-[mdi--handshake] text-xl"></span>
+                    <span class="font-semibold">Parceiro Oficial Nuvemshop</span>
+                </div>
+
+                <h2 class="mt-6 text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
+                    Confiança e <span class="text-primary-100">especialização</span><br>
+                    em E-commerce
+                </h2>
+
+                <p class="mt-6 text-lg md:text-xl text-white/90 max-w-2xl">
+                    Como <strong>Partner Oficial Nuvemshop</strong>, a LideraZap oferece
+                    soluções completas em lojas virtuais, com tecnologia de ponta,
+                    integração total e estratégias que garantem vendas todos os dias.
+                </p>
+
+                <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="https://wa.me/5532998408646" target="_blank"
+                       class="px-6 py-3 rounded-xl bg-white text-[#0050c3] font-bold hover:bg-gray-100 transition">
+                        🚀 Quero minha loja virtual
+                    </a>
+                    <a href="#portfolio"
+                       class="px-6 py-3 rounded-xl border border-white/30 font-semibold hover:bg-white/10 transition">
+                        Ver cases de sucesso
+                    </a>
+                </div>
+            </div>
+
+            <!-- Logo/Imagem -->
+            <div class="lg:col-span-5 flex justify-center">
+                <div class="p-10 rounded-2xl bg-white shadow-2xl flex flex-col items-center gap-4 w-full max-w-sm">
+                    <img src="/images/nuvem.svg" alt="Nuvemshop Logo" class="h-16">
+                    <span class="text-lg font-semibold text-gray-800">Parceiro Oficial</span>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -157,18 +210,17 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
     </section>
 
 
-
-
     <!-- ================= PORTFÓLIO ================= -->
     <section id="portfolio" class="section">
         <div class="container text-center">
             <h2 class="text-sm md:text-base font-semibold text-primary">Marcas que Confiam na LideraZap</h2>
             <p class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight">
-                Já transformamos dezenas de negócios em cases de sucesso.<br />
+                Já transformamos dezenas de negócios em cases de sucesso.<br/>
                 Aqui estão algumas marcas que confiamos e ajudamos a construir.
             </p>
             <p class="mt-4 text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-                Se você também quer ver a sua marca neste portfólio de destaque, fale com a gente e descubra como podemos elevar o valor da sua presença digital.
+                Se você também quer ver a sua marca neste portfólio de destaque, fale com a gente e descubra como
+                podemos elevar o valor da sua presença digital.
             </p>
 
 
@@ -179,7 +231,8 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
                     <img src="/images/logos/hotchili.png" alt="Hot Chili" class="h-40 object-contain"/>
                     <h3 class="mt-4 font-semibold text-lg">Hot Chili</h3>
                     <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                        Empresa americana do setor alimentício, com uma marca ousada e vibrante que rompe barreiras e leva o sabor picante chileno para o mundo.
+                        Empresa americana do setor alimentício, com uma marca ousada e vibrante que rompe barreiras e
+                        leva o sabor picante chileno para o mundo.
                     </p>
                 </article>
 
@@ -188,13 +241,15 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
                     <img src="/images/logos/tempmobile.png" alt="Temp Mobile" class="h-40 object-contain"/>
                     <h3 class="mt-4 font-semibold text-lg">Temp Mobile</h3>
                     <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                        Projeto desenvolvido para uma empresa americana de personalização de chips — rompendo barreiras e conectando negócios além do Brasil.
+                        Projeto desenvolvido para uma empresa americana de personalização de chips — rompendo barreiras
+                        e conectando negócios além do Brasil.
                     </p>
                 </article>
 
                 <!-- Assembleia de Deus -->
                 <article class="card p-6 flex flex-col items-center text-center card-hover">
-                    <img src="/images/logos/adsalvos.png" alt="Assembleia de Deus - Salvos pela Graça" class="h-40 object-contain"/>
+                    <img src="/images/logos/adsalvos.png" alt="Assembleia de Deus - Salvos pela Graça"
+                         class="h-40 object-contain"/>
                     <h3 class="mt-4 font-semibold text-lg">Assembleia de Deus</h3>
                     <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
                         Identidade visual para igreja — tradição e fé.
@@ -278,22 +333,14 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
                     <img src="/images/logos/canalnerddoti.png" alt="Canal Nerd do TI" class="h-40 object-contain"/>
                     <h3 class="mt-4 font-semibold text-lg">Canal Nerd do TI</h3>
                     <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                        Identidade criada para canal de tecnologia e inovação, conectando conteúdos de TI com uma linguagem acessível e moderna.
+                        Identidade criada para canal de tecnologia e inovação, conectando conteúdos de TI com uma
+                        linguagem acessível e moderna.
                     </p>
                 </article>
 
             </div>
         </div>
     </section>
-
-
-
-
-
-
-
-
-
 
 
     <!-- ================= SOBRE ================= -->
@@ -304,12 +351,21 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
                     Sobre a <span class="text-primary">LideraZap</span>
                 </h2>
                 <p class="mt-4 text-gray-700 dark:text-gray-300">
-                    Somos especialistas em transformar a comunicação do seu negócio em vendas. Montamos o catálogo no WhatsApp, estruturamos conteúdo e fluxo de respostas, e criamos campanhas que geram resultado.
+                    Somos especialistas em transformar a comunicação do seu negócio em vendas. Montamos o catálogo no
+                    WhatsApp, estruturamos conteúdo e fluxo de respostas, e criamos campanhas que geram resultado.
                 </p>
                 <ul class="mt-6 space-y-3 text-gray-700 dark:text-gray-300">
-                    <li class="flex items-center gap-2"><span class="icon-[mdi--check-decagram] text-primary text-[20px]"></span> Foco total em conversão</li>
-                    <li class="flex items-center gap-2"><span class="icon-[mdi--check-decagram] text-primary text-[20px]"></span> Processos simples e sem complicação</li>
-                    <li class="flex items-center gap-2"><span class="icon-[mdi--check-decagram] text-primary text-[20px]"></span> Atendimento humano, direto no WhatsApp</li>
+                    <li class="flex items-center gap-2"><span
+                            class="icon-[mdi--check-decagram] text-primary text-[20px]"></span> Foco total em conversão
+                    </li>
+                    <li class="flex items-center gap-2"><span
+                            class="icon-[mdi--check-decagram] text-primary text-[20px]"></span> Processos simples e sem
+                        complicação
+                    </li>
+                    <li class="flex items-center gap-2"><span
+                            class="icon-[mdi--check-decagram] text-primary text-[20px]"></span> Atendimento humano,
+                        direto no WhatsApp
+                    </li>
                 </ul>
             </div>
 
@@ -368,22 +424,24 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
             <!-- Carrossel -->
             <div class="mt-10 overflow-x-auto hide-scrollbar" role="region" aria-label="Depoimentos">
                 <ul class="grid grid-cols-1 md:grid-cols-3 gap-6 min-w-[320px] md:min-w-0">
-                    {["cliente-1.jpg","cliente-2.jpg","cliente-3.jpg"].map((img, i) => (
+                    {["cliente-1.jpg", "cliente-2.jpg", "cliente-3.jpg"].map((img, i) => (
                             <li class="card p-6">
                                 <div class="flex items-center gap-4">
                                     <img src={`/images/avatars/${img}`} alt="Foto de cliente"
                                          class="h-12 w-12 rounded-full object-cover bg-gray-100 dark:bg-zinc-800"
                                          loading="lazy"
-                                         onerror={`this.src='https://placehold.co/150x150?text=Cliente+${i+1}'`} />
+                                         onerror={`this.src='https://placehold.co/150x150?text=Cliente+${i + 1}'`}/>
                                     <div>
                                         <p class="font-semibold">Nome do Cliente</p>
                                         <p class="text-xs text-gray-500 dark:text-gray-400">Data da avaliação</p>
                                     </div>
                                 </div>
                                 <div class="mt-3 flex items-center gap-0.5" aria-label="5 de 5">
-                                    {[...Array(5)].map(() => <span class="icon-[mdi--star] text-yellow-400 text-[18px]"></span>)}
+                                    {[...Array(5)].map(() => <span
+                                            class="icon-[mdi--star] text-yellow-400 text-[18px]"></span>)}
                                 </div>
-                                <p class="mt-3 text-gray-700 dark:text-gray-300 leading-relaxed">“Comentário de exemplo sobre os serviços da LideraZap.”</p>
+                                <p class="mt-3 text-gray-700 dark:text-gray-300 leading-relaxed">“Comentário de exemplo
+                                    sobre os serviços da LideraZap.”</p>
                                 <div class="mt-4 flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
                                     <span class="icon-[mdi--google] text-[16px]"></span>
                                     <span>Avaliação do Google</span>
@@ -395,15 +453,31 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
 
             <script type="application/ld+json" is:inline>
                 {
-                    "@context": "https://schema.org",
-                    "@type": "LocalBusiness",
-                    "name": "LideraZap",
-                    "url": "https://liderazap.com/",
-                    "aggregateRating": {
-                    "@type": "AggregateRating",
-                        "ratingValue": "5.0",
-                        "reviewCount": 12
-                }
+                    "@context"
+                :
+                    "https://schema.org",
+                        "@type"
+                :
+                    "LocalBusiness",
+                        "name"
+                :
+                    "LideraZap",
+                        "url"
+                :
+                    "https://liderazap.com/",
+                        "aggregateRating"
+                :
+                    {
+                        "@type"
+                    :
+                        "AggregateRating",
+                            "ratingValue"
+                    :
+                        "5.0",
+                            "reviewCount"
+                    :
+                        12
+                    }
 
                 }
             </script>
@@ -416,7 +490,8 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
             <div class="card p-10">
                 <span class="icon-[mdi--whatsapp] text-[72px] text-primary inline-block mb-4"></span>
                 <h2 class="text-4xl md:text-5xl font-extrabold text-balance">Pronto para impulsionar seu negócio?</h2>
-                <p class="mt-4 text-lg md:text-xl text-gray-700 dark:text-gray-300">Sem formulários e sem espera. Clique e fale direto no WhatsApp.</p>
+                <p class="mt-4 text-lg md:text-xl text-gray-700 dark:text-gray-300">Sem formulários e sem espera. Clique
+                    e fale direto no WhatsApp.</p>
                 <a href={wa('Olá! Gostaria de saber mais sobre os serviços da LideraZap.')}
                    target="_blank" rel="noopener"
                    class="mt-8 btn btn-primary text-lg px-8 py-4">
@@ -434,6 +509,6 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
     <span class="font-semibold">Fale conosco</span>
 </a>
 
-<Footer />
+<Footer/>
 </body>
 </html>
