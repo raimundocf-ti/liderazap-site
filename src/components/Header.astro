@@ -17,9 +17,10 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
             <!-- Menu desktop -->
             <div class="hidden md:flex items-center gap-6 text-[15px]">
                 <HeaderLink href="/">Home</HeaderLink>
+                <HeaderLink href="/planos">Planos</HeaderLink>
+                <HeaderLink href="/gestao-redes">Gestão de Redes</HeaderLink>
                 <HeaderLink href="#servicos">Serviços</HeaderLink>
                 <HeaderLink href="#sobre">Sobre</HeaderLink>
-                <HeaderLink href="#avaliacoes">Avaliações</HeaderLink>
                 <HeaderLink href="#contato">Contato</HeaderLink>
             </div>
 
@@ -48,6 +49,8 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
     <nav id="menu" class="md:hidden hidden bg-white/95 dark:bg-zinc-900/95 backdrop-blur-md shadow-sm">
         <div class="px-4 pb-4 pt-2 space-y-1">
             <NavLink href="/">Home</NavLink>
+            <NavLink href="/planos">Planos</NavLink>
+            <NavLink href="/gestao-redes">Gestão de Redes</NavLink>
             <NavLink href="#servicos">Serviços</NavLink>
             <NavLink href="#sobre">Sobre</NavLink>
             <NavLink href="#avaliacoes">Avaliações</NavLink>

@@ -1,208 +1,300 @@
 ---
+// src/pages/planos.astro
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import PricingCard from '../components/PricingCard.astro';
-import FAQ from '../components/FAQ.astro';
-import AdBanner from '../components/ads/AdBanner.astro';
 
-const title = "Planos e Preços — LideraZap";
-const description = "Escolha o plano ideal para sua presença digital: loja no WhatsApp, gestão de redes, landing pages e suporte premium. Sem complicação.";
-
-const whatsappCTA = (plano: string) =>
-    `https://wa.me/5532998408646?text=${encodeURIComponent("Olá! Quero o plano " + plano + " da LideraZap.")}`;
-
-const plans = [
-    {
-        title: "Essencial",
-        subtitle: "Para começar com presença profissional",
-        price: "R$ 79",
-        period: "/mês",
-        ctaHref: whatsappCTA("Essencial"),
-        ctaLabel: "Assinar Essencial",
-        features: [
-            "Catálogo simples no WhatsApp",
-            "Landing page 1 seção (Hero + CTA)",
-            "1 conta @ Google Meu Negócio (otimização básica)",
-            "Suporte via WhatsApp (horário comercial)",
-            "Hospedagem e SSL inclusos"
-        ]
-    },
-    {
-        title: "Pro",
-        subtitle: "O mais escolhido para crescer com consistência",
-        price: "R$ 149",
-        period: "/mês",
-        ctaHref: whatsappCTA("Pro"),
-        ctaLabel: "Assinar Pro",
-        features: [
-            "Catálogo completo no WhatsApp (categorias)",
-            "Site em Astro (Home + Serviços + Sobre + Contato)",
-            "Integrações básicas (Form/WhatsApp, Meta Pixel)",
-            "2 posts/semana para redes (templates padronizados)",
-            "Otimizações SEO on-page (títulos, descrições, schema)",
-            "Suporte prioritário"
-        ],
-        highlight: true,
-        badge: "Mais vendido"
-    },
-    {
-        title: "Expert",
-        subtitle: "Para marcas que exigem performance",
-        price: "R$ 299",
-        period: "/mês",
-        ctaHref: whatsappCTA("Expert"),
-        ctaLabel: "Assinar Expert",
-        features: [
-            "Tudo do Pro",
-            "Landing dedicada de campanhas (UTM + pixels)",
-            "4 posts/semana + variações Reels/Stories",
-            "Blog (Astro Content) + pauta mensal",
-            "Relatórios mensais (tráfego, leads e mídia)",
-            "Suporte avançado + reuniões de alinhamento"
-        ]
-    }
-];
-
-const faqItems = [
-    { q: "Posso cancelar quando quiser?", a: "Sim. Não há fidelidade. Cancelamento a qualquer momento, com o serviço ativo até o fim do ciclo." },
-    { q: "Vocês configuram o domínio e o e-mail?", a: "Sim. Ajudamos a conectar seu domínio, emitir SSL e orientar a criação de e-mail profissional." },
-    { q: "Tenho suporte para conteúdo e imagens?", a: "Sim. Fornecemos templates padronizados e orientamos melhores práticas para fotos e textos." },
-    { q: "Posso migrar de plano depois?", a: "Claro. Você pode mudar de plano a qualquer momento; o ajuste ocorre no próximo ciclo." }
-];
-
-const productJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Planos LideraZap",
-    "brand": { "@type": "Brand", "name": "LideraZap" },
-    "description": description,
-    "url": "https://liderazap.com/planos",
-    "offers": plans.map((p) => ({
-        "@type": "Offer",
-        "name": p.title,
-        "priceCurrency": "BRL",
-        "price": p.price.replace(/\D/g, ""),
-        "availability": "https://schema.org/InStock",
-        "url": "https://liderazap.com/planos",
-        "priceValidUntil": new Date(new Date().getFullYear(), 11, 31).toISOString().slice(0,10)
-    }))
-};
+const whatsapp = '5532998408646';
+const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent(msg)}`;
 ---
 
 <html lang="pt-BR" class="scroll-smooth">
 <head>
-    <BaseHead title={title} description={description} />
-    <!-- AdSense: substitua o client abaixo pelo seu ID -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-xxxxxxxxxxxxxxxx" crossorigin="anonymous"></script>
-    <script type="application/ld+json">{JSON.stringify(productJsonLd)}</script>
-    </head>
-<body class="bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-zinc-900 dark:via-zinc-950 dark:to-zinc-900 text-zinc-900 dark:text-zinc-100">
+    <BaseHead
+            title="Planos Nuvemshop Gerenciados — LideraZap"
+            description="Escolha um plano Nuvemshop gerenciado pela LideraZap: loja pronta, design profissional e posts diários nas redes. Você só precisa vender."
+            image="/images/og/planos-nuvemshop.jpg"
+    />
+</head>
+
+<body class="antialiased bg-[var(--surface-2)] text-gray-900 dark:text-gray-100">
 <Header />
 
-<section class="section pt-20">
-<div class="container text-center max-w-3xl">
-<span class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-primary/90">
-<span class="icon-[mdi--lightning-bolt]"></span> Planos e Preços
-</span>
-<h1 class="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tight">Escolha o plano perfeito para o seu momento</h1>
-<p class="mt-3 text-base text-zinc-600 dark:text-zinc-300">
-    Estrutura profissional, conteúdo padronizado e performance — tudo pensado para o Google e para vender no WhatsApp.
-</p>
-</div>
-</section>
+<main>
+    <!-- ================= HERO ================= -->
+    <section class="relative overflow-hidden pt-28 md:pt-32">
+        <div class="absolute inset-0 -z-10 bg-gradient-to-br from-[#0050c3] via-[#3449eb] to-[#6C5CE7]"></div>
+        <div class="absolute inset-0 -z-10 bg-[url('/images/bg-04.jpg')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
 
-<div class="container">
-    <AdBanner slot="1234567890" />
-</div>
+        <div class="container grid grid-cols-1 lg:grid-cols-12 items-center gap-10 text-white">
+            <div class="lg:col-span-7 text-center lg:text-left">
+            <span class="badge bg-white/10 border border-white/20 text-white">
+              <span class="icon-[mdi--handshake] text-[18px]"></span>
+              Nuvemshop + Gestão Completa
+            </span>
 
-<section class="section">
-    <div class="container">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-            {plans.map((p) => (
-                    <PricingCard
-                            title={p.title}
-                            subtitle={p.subtitle}
-                            price={p.price}
-                            period={p.period}
-                            ctaHref={p.ctaHref}
-                            ctaLabel={p.ctaLabel}
-                            features={p.features}
-                            highlight={p.highlight}
-                            badge={p.badge}
-                    />
-            ))}
+                <h1 class="mt-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-balance">
+                    Sua loja Nuvemshop <span class="whitespace-nowrap">pronta para vender</span>
+                </h1>
+
+                <p class="mt-4 text-lg md:text-xl text-white/90">
+                    Configuramos, personalizamos e divulgamos sua loja. Posts diários nas redes incluídos nos planos.
+                </p>
+
+                <div class="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
+                    <a href={wa('Quero o plano Impulsiona da LideraZap')} target="_blank" rel="noopener" class="btn btn-primary">
+                        <span class="icon-[mdi--whatsapp] text-[22px]"></span>
+                        Começar pelo Impulsiona
+                    </a>
+                    <a href="#planos" class="btn btn-ghost bg-white/10 hover:bg-white/20">
+                        <span class="icon-[mdi--lightning-bolt] text-[18px]"></span>
+                        Ver planos e preços
+                    </a>
+                </div>
+
+                <!-- Prova social -->
+                <div class="mt-6 inline-flex items-center gap-3 rounded-full border border-white/30 bg-white/10 backdrop-blur px-4 py-2">
+                    <div class="flex items-center gap-0.5" aria-label="Classificação média 5 de 5">
+                        {[...Array(5)].map(() => <span class="icon-[mdi--star] text-yellow-300 text-[18px]"></span>)}
+                    </div>
+                    <span class="text-sm text-white/90">
+                <strong class="font-semibold">5.0</strong> / 5 — clientes satisfeitos com lojas vendendo diariamente
+              </span>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5">
+                <div class="p-8 rounded-2xl bg-white/90 dark:bg-zinc-900/90 text-gray-900 dark:text-gray-100 shadow-2xl">
+                    <h3 class="text-xl font-bold">O que você recebe</h3>
+                    <ul class="mt-4 space-y-3 text-sm">
+                        <li class="flex items-start gap-2"><span class="icon-[mdi--check-decagram] text-primary text-[20px]"></span> Loja Nuvemshop configurada e otimizada</li>
+                        <li class="flex items-start gap-2"><span class="icon-[mdi--check-decagram] text-primary text-[20px]"></span> Design profissional (banners e identidade visual)</li>
+                        <li class="flex items-start gap-2"><span class="icon-[mdi--check-decagram] text-primary text-[20px]"></span> Posts diários nas redes (conforme plano)</li>
+                        <li class="flex items-start gap-2"><span class="icon-[mdi--check-decagram] text-primary text-[20px]"></span> Integração com WhatsApp e meios de pagamento</li>
+                        <li class="flex items-start gap-2"><span class="icon-[mdi--check-decagram] text-primary text-[20px]"></span> Relatórios e recomendações de crescimento</li>
+                    </ul>
+                    <a href={wa('Olá! Quero minha loja Nuvemshop gerenciada.')} target="_blank" rel="noopener" class="mt-6 w-full btn btn-primary justify-center">
+                        Falar no WhatsApp
+                    </a>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="mt-12 overflow-x-auto rounded-2xl border border-zinc-200/70 dark:border-zinc-700/50 bg-white dark:bg-zinc-900">
-            <table class="min-w-[800px] w-full text-sm">
-                <thead class="bg-zinc-50 dark:bg-zinc-900/60">
-                <tr>
-                    <th class="text-left p-4">Recurso</th>
-                    <th class="text-left p-4">Essencial</th>
-                    <th class="text-left p-4">Pro</th>
-                    <th class="text-left p-4">Expert</th>
-                </tr>
-                </thead>
-                <tbody class="[&_tr:nth-child(even)]:bg-zinc-50/50 dark:[&_tr:nth-child(even)]:bg-zinc-900/40">
-                <tr>
-                    <td class="p-4">Catálogo no WhatsApp</td>
-                    <td class="p-4"><span class="icon-[mdi--check]"></span></td>
-                    <td class="p-4"><span class="icon-[mdi--check]"></span></td>
-                    <td class="p-4"><span class="icon-[mdi--check]"></span></td>
-                </tr>
-                <tr>
-                    <td class="p-4">Site em Astro (páginas)</td>
-                    <td class="p-4">Landing básica</td>
-                    <td class="p-4">4 páginas</td>
-                    <td class="p-4">4 páginas + Blog</td>
-                </tr>
-                <tr>
-                    <td class="p-4">SEO on-page + Schema</td>
-                    <td class="p-4">Básico</td>
-                    <td class="p-4">Completo</td>
-                    <td class="p-4">Avançado</td>
-                </tr>
-                <tr>
-                    <td class="p-4">Conteúdo para redes</td>
-                    <td class="p-4">—</td>
-                    <td class="p-4">2 posts/semana</td>
-                    <td class="p-4">4 posts/semana + Reels</td>
-                </tr>
-                <tr>
-                    <td class="p-4">Suporte</td>
-                    <td class="p-4">Comercial</td>
-                    <td class="p-4">Prioritário</td>
-                    <td class="p-4">Avançado</td>
-                </tr>
-                </tbody>
-            </table>
+    <!-- ================= COMO FUNCIONA ================= -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center max-w-3xl mx-auto">
+                <h2 class="text-sm md:text-base font-semibold text-primary">Como funciona</h2>
+                <p class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight">Do plano à primeira venda em 4 passos</p>
+            </div>
+
+            <div class="mt-10 grid grid-cols-1 md:grid-cols-4 gap-6">
+                {[
+                    ["Escolha o plano", "Defina Essência, Impulsiona ou Escala."],
+                    ["Personalização", "Cores, layout e banners prontos para sua marca."],
+                    ["Catálogo e redes", "Produtos publicados + posts diários incluídos."],
+                    ["Venda todo dia", "Relatórios e otimizações contínuas."]
+                ].map(([title, desc], i) => (
+                        <article class="card p-6">
+                            <div class="w-10 h-10 grid place-items-center rounded-full bg-primary/15 text-primary font-bold">{i+1}</div>
+                            <h3 class="mt-4 font-semibold">{title}</h3>
+                            <p class="mt-2 text-sm text-gray-600 dark:text-gray-300">{desc}</p>
+                        </article>
+                ))}
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<div class="container">
-    <AdBanner slot="1234567890" />
-</div>
+    <!-- ================= PLANOS ================= -->
+    <section id="planos" class="section bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-zinc-900 dark:via-zinc-950 dark:to-zinc-900">
+        <div class="container text-center">
+            <h2 class="text-sm md:text-base font-semibold text-primary">Planos e preços</h2>
+            <p class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight">Nuvemshop gerenciada pela LideraZap</p>
+            <p class="mt-3 text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
+                Todos os planos incluem: loja configurada, banners mensais e suporte no WhatsApp. Posts extras podem ser adicionados à parte.
+            </p>
 
-<FAQ items={faqItems} jsonLdId="https://liderazap.com/planos#faq" />
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
 
-<section class="section pb-24">
-    <div class="container">
-        <div class="rounded-2xl p-8 md:p-10 text-center bg-gradient-to-br from-primary/10 via-white to-primary/10 dark:from-primary/10 dark:via-zinc-900 dark:to-primary/10 border border-primary/20">
-            <h3 class="text-2xl md:text-3xl font-extrabold tracking-tight">Pronto para acelerar suas vendas?</h3>
-            <p class="mt-3 text-zinc-700 dark:text-zinc-300">Fale com um especialista e ative seu plano ainda hoje. Sem burocracia.</p>
-            <a href={whatsappCTA("Pro")} class="mt-6 inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-3 text-white font-medium hover:opacity-90">
-                <span class="icon-[mdi--whatsapp] text-xl"></span>
-                Falar no WhatsApp
-            </a>
+                <!-- Essência -->
+                <div class="relative card p-8 text-left flex flex-col">
+                    <div class="flex items-center gap-3">
+                        <span class="icon-[mdi--leaf] text-primary text-[24px]"></span>
+                        <h3 class="text-2xl font-extrabold">Essência</h3>
+                    </div>
+                    <p class="mt-2 text-gray-600 dark:text-gray-300">Comece simples, já vendendo.</p>
+
+                    <div class="mt-4">
+                        <div class="text-4xl font-extrabold">R$ 190<span class="text-xl font-semibold">/mês</span></div>
+                    </div>
+
+                    <ul class="mt-6 space-y-3 text-sm">
+                        <li class="flex gap-2"><span class="icon-[mdi--check] text-primary"></span> Loja Nuvemshop configurada (plano básico)</li>
+                        <li class="flex gap-2"><span class="icon-[mdi--check] text-primary"></span> Personalização inicial (cores, logo e 2 banners)</li>
+                        <li class="flex gap-2"><span class="icon-[mdi--check] text-primary"></span> Cadastro inicial de até 30 produtos</li>
+                        <li class="flex gap-2"><span class="icon-[mdi--check] text-primary"></span> Integração WhatsApp</li>
+                        <li class="flex gap-2"><span class="icon-[mdi--check] text-primary"></span> <strong>1 postagem por dia</strong> nas redes (30/mês)</li>
+                        <li class="flex gap-2"><span class="icon-[mdi--check] text-primary"></span> Relatório mensal básico</li>
+                    </ul>
+
+                    <a href={wa('Quero o plano Essência (Nuvemshop gerenciada)')} target="_blank" rel="noopener" class="mt-8 btn btn-primary">
+                        Assinar Essência
+                    </a>
+                </div>
+
+                <!-- Impulsiona (Mais Vendido) -->
+                <div class="relative card p-8 ring-2 ring-primary/30 bg-white dark:bg-zinc-900 shadow-xl text-left flex flex-col">
+                    <span class="absolute top-0 right-0 bg-primary text-white text-xs font-bold px-3 py-1 rounded-bl-lg">Mais Vendido</span>
+                    <div class="flex items-center gap-3">
+                        <span class="icon-[mdi--rocket-launch] text-primary text-[24px]"></span>
+                        <h3 class="text-2xl font-extrabold">Impulsiona</h3>
+                    </div>
+                    <p class="mt-2 text-gray-600 dark:text-gray-300">Custo-benefício absurdo.</p>
+
+                    <div class="mt-4">
+                        <div class="text-4xl font-extrabold">R$ 240<span class="text-xl font-semibold">/mês</span></div>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                            Baseado no plano <strong>Impulso</strong> da Nuvemshop (R$139/mês).
+                        </p>
+                    </div>
+
+                    <ul class="mt-6 space-y-3 text-sm">
+                        <li class="flex gap-2"><span class="icon-[mdi--check] text-primary"></span> Personalização completa de layout</li>
+                        <li class="flex gap-2"><span class="icon-[mdi--check] text-primary"></span> Cadastro/atualização de até 100 produtos</li>
+                        <li class="flex gap-2"><span class="icon-[mdi--check] text-primary"></span> 4 banners mensais (promoções/destaques)</li>
+                        <li class="flex gap-2"><span class="icon-[mdi--check] text-primary"></span> Integrações essenciais e automações</li>
+                        <li class="flex gap-2"><span class="icon-[mdi--check] text-primary"></span> <strong>1 postagem por dia</strong> nas redes (30/mês)</li>
+                        <li class="flex gap-2"><span class="icon-[mdi--check] text-primary"></span> Relatório detalhado de vendas e acessos</li>
+                    </ul>
+
+                    <a href={wa('Quero o plano Impulsiona (Nuvemshop gerenciada)')} target="_blank" rel="noopener" class="mt-8 btn btn-primary">
+                        Assinar Impulsiona
+                    </a>
+                </div>
+
+                <!-- Escala -->
+                <div class="relative card p-8 text-left flex flex-col">
+                    <div class="flex items-center gap-3">
+                        <span class="icon-[mdi--chart-box-plus-outline] text-primary text-[24px]"></span>
+                        <h3 class="text-2xl font-extrabold">Escala</h3>
+                    </div>
+                    <p class="mt-2 text-gray-600 dark:text-gray-300">Para crescer forte e rápido.</p>
+
+                    <div class="mt-4">
+                        <div class="text-4xl font-extrabold">R$ 490<span class="text-xl font-semibold">/mês</span></div>
+                    </div>
+
+                    <ul class="mt-6 space-y-3 text-sm">
+                        <li class="flex gap-2"><span class="icon-[mdi--check] text-primary"></span> Tudo do Impulsiona</li>
+                        <li class="flex gap-2"><span class="icon-[mdi--check] text-primary"></span> Identidade visual completa</li>
+                        <li class="flex gap-2"><span class="icon-[mdi--check] text-primary"></span> Catálogo sem limites de produtos</li>
+                        <li class="flex gap-2"><span class="icon-[mdi--check] text-primary"></span> 8+ banners mensais e campanhas sazonais</li>
+                        <li class="flex gap-2"><span class="icon-[mdi--check] text-primary"></span> <strong>2 postagens por dia</strong> nas redes (60/mês)</li>
+                        <li class="flex gap-2"><span class="icon-[mdi--check] text-primary"></span> Tráfego pago (setup + acompanhamento)</li>
+                        <li class="flex gap-2"><span class="icon-[mdi--check] text-primary"></span> Suporte prioritário + relatório premium</li>
+                    </ul>
+
+                    <a href={wa('Quero o plano Escala (Nuvemshop gerenciada)')} target="_blank" rel="noopener" class="mt-8 btn btn-primary">
+                        Assinar Escala
+                    </a>
+                </div>
+            </div>
+
+            <p class="mt-6 text-sm text-gray-600 dark:text-gray-400">
+                Precisa de <strong>mais postagens diárias</strong>? Podemos adicionar como extra ao seu plano.
+            </p>
         </div>
-    </div>
-</section>
+    </section>
 
-<div class="container">
-    <AdBanner slot="1234567890" />
-</div>
+    <!-- ================= BENEFÍCIOS ================= -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center max-w-3xl mx-auto">
+                <h2 class="text-sm md:text-base font-semibold text-primary">Benefícios</h2>
+                <p class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight">Por que escolher a LideraZap</p>
+            </div>
+
+            <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+                {[
+                    ["Loja pronta rápido", "Sem dor de cabeça: configuramos tudo pra você começar a vender."],
+                    ["Design que vende", "Banners e identidade pensados para conversão."],
+                    ["Conteúdo diário", "Sua marca presente todos os dias nas redes sociais."]
+                ].map(([t, d]) => (
+                        <article class="card card-hover p-8 text-left">
+                            <h3 class="text-xl font-semibold">{t}</h3>
+                            <p class="mt-3 text-gray-600 dark:text-gray-300">{d}</p>
+                        </article>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center max-w-3xl mx-auto">
+                <h2 class="text-sm md:text-base font-semibold text-primary">Perguntas Frequentes</h2>
+                <p class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight">Dúvidas comuns</p>
+            </div>
+
+            <div class="mt-8 max-w-3xl mx-auto divide-y divide-gray-200/60 dark:divide-white/10">
+                <details class="py-4 group">
+                    <summary class="cursor-pointer flex items-center justify-between">
+                        <span class="font-semibold">Preciso já ter conta na Nuvemshop?</span>
+                        <span class="icon-[mdi--chevron-down] transition group-open:rotate-180"></span>
+                    </summary>
+                    <p class="mt-2 text-gray-700 dark:text-gray-300">
+                        Não. Criamos e configuramos tudo do zero para você. Se já tiver, migramos e otimizamos.
+                    </p>
+                </details>
+
+                <details class="py-4 group">
+                    <summary class="cursor-pointer flex items-center justify-between">
+                        <span class="font-semibold">Os posts são personalizados para minha marca?</span>
+                        <span class="icon-[mdi--chevron-down] transition group-open:rotate-180"></span>
+                    </summary>
+                    <p class="mt-2 text-gray-700 dark:text-gray-300">
+                        Sim. Usamos sua identidade e pautas do seu negócio. No plano Escala incluímos identidade visual completa.
+                    </p>
+                </details>
+
+                <details class="py-4 group">
+                    <summary class="cursor-pointer flex items-center justify-between">
+                        <span class="font-semibold">Posso contratar mais postagens diárias?</span>
+                        <span class="icon-[mdi--chevron-down] transition group-open:rotate-180"></span>
+                    </summary>
+                    <p class="mt-2 text-gray-700 dark:text-gray-300">
+                        Claro. Oferecemos pacotes extras de publicações como adicional a qualquer plano.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= CTA FINAL ================= -->
+    <section id="contato" class="section">
+        <div class="container text-center">
+            <div class="card p-10">
+                <span class="icon-[mdi--whatsapp] text-[72px] text-primary inline-block mb-4"></span>
+                <h2 class="text-4xl md:text-5xl font-extrabold text-balance">Pronto para começar a vender?</h2>
+                <p class="mt-4 text-lg md:text-xl text-gray-700 dark:text-gray-300">
+                    Sem burocracia. Clique e fale direto com um especialista no WhatsApp.
+                </p>
+                <a href={wa('Olá! Quero assinar um plano Nuvemshop gerenciado.')} target="_blank" rel="noopener" class="mt-8 btn btn-primary text-lg px-8 py-4">
+                    <span class="icon-[mdi--whatsapp] text-[22px]"></span>
+                    (32) 9 9840-8646
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- BOTÃO FIXO WHATSAPP -->
+<a href={wa('Olá! Vim pela página de planos.')} target="_blank" rel="noopener" class="fab-whatsapp">
+    <span class="icon-[mdi--whatsapp] text-[18px]"></span>
+    <span class="font-semibold">Fale conosco</span>
+</a>
 
 <Footer />
 </body>

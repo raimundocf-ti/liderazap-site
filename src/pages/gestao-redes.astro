@@ -1,0 +1,153 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const whatsapp = '5532998408646';
+const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent(msg)}`;
+---
+
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <BaseHead
+            title="Gestão de Redes Sociais — LideraZap"
+            description="Posts diários, identidade visual e estratégia completa para sua marca se destacar todos os dias."
+            image="/images/og/gestao-redes.jpg"
+    />
+</head>
+
+<body class="antialiased bg-[var(--surface-2)] text-gray-900 dark:text-gray-100">
+<Header />
+
+<main>
+    <!-- HERO -->
+    <section class="relative overflow-hidden pt-28 md:pt-32">
+        <div class="absolute inset-0 -z-10 bg-gradient-to-br from-[#6C5CE7] via-[#3449eb] to-[#0050c3]"></div>
+        <div class="absolute inset-0 -z-10 bg-[url('/images/bg-03.jpeg')] bg-cover bg-center opacity-25"></div>
+
+        <div class="container grid grid-cols-1 lg:grid-cols-12 items-center gap-10 text-white">
+            <div class="lg:col-span-7 text-center lg:text-left">
+            <span class="badge bg-white/10 border border-white/20 text-white">
+              <span class="icon-[mdi--instagram] text-[18px]"></span>
+              Gestão Completa de Redes
+            </span>
+                <h1 class="mt-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
+                    Sua marca presente <span class="whitespace-nowrap">todos os dias</span>
+                </h1>
+                <p class="mt-4 text-lg md:text-xl text-white/90">
+                    Criamos conteúdo diário, banners e stories. Mantemos sua marca ativa, engajando clientes e gerando vendas.
+                </p>
+                <div class="mt-8 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+                    <a href={wa('Quero gestão de redes sociais com a LideraZap')} target="_blank" rel="noopener" class="btn btn-primary">
+                        <span class="icon-[mdi--whatsapp] text-[22px]"></span>
+                        Falar no WhatsApp
+                    </a>
+                    <a href="#planos-redes" class="btn btn-ghost bg-white/10 hover:bg-white/20">
+                        Ver planos
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5 flex justify-center">
+                <img src="/images/social-media.png" alt="Gestão de redes sociais" class="max-h-[440px] w-auto drop-shadow-xl"/>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFÍCIOS -->
+    <section class="section">
+        <div class="container text-center max-w-3xl mx-auto">
+            <h2 class="text-sm md:text-base font-semibold text-primary">Benefícios</h2>
+            <p class="mt-2 text-3xl sm:text-4xl font-extrabold">Por que sua empresa precisa de gestão de redes?</p>
+            <p class="mt-4 text-gray-700 dark:text-gray-300">Estar presente todos os dias é o que diferencia marcas que crescem das que ficam esquecidas. Nós cuidamos de tudo.</p>
+        </div>
+
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+                ["Posts diários", "Sua marca nunca some do feed."],
+                ["Identidade visual", "Coerência entre posts, stories e campanhas."],
+                ["Engajamento", "Mais curtidas, mais conversas, mais vendas."]
+            ].map(([t, d]) => (
+                    <article class="card card-hover p-8 text-left">
+                        <h3 class="text-xl font-semibold">{t}</h3>
+                        <p class="mt-3 text-gray-600 dark:text-gray-300">{d}</p>
+                    </article>
+            ))}
+        </div>
+    </section>
+
+    <!-- PLANOS REDES -->
+    <section id="planos-redes" class="section bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-zinc-900 dark:via-zinc-950 dark:to-zinc-900">
+        <div class="container text-center">
+            <h2 class="text-sm md:text-base font-semibold text-primary">Planos de Gestão de Redes</h2>
+            <p class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight">Escolha o ideal para sua marca</p>
+
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+                <!-- Essência -->
+                <div class="card p-8 text-left flex flex-col">
+                    <h3 class="text-2xl font-extrabold">Essência</h3>
+                    <p class="mt-2 text-gray-600 dark:text-gray-300">Presença mínima, mas diária.</p>
+                    <div class="mt-4 text-4xl font-extrabold">R$ 190<span class="text-xl font-semibold">/mês</span></div>
+                    <ul class="mt-6 space-y-3 text-sm">
+                        <li>1 postagem por dia (30/mês)</li>
+                        <li>Banners simples</li>
+                        <li>Suporte no WhatsApp</li>
+                    </ul>
+                    <a href={wa('Quero o plano Essência de redes sociais')} target="_blank" class="mt-8 btn btn-primary">Assinar Essência</a>
+                </div>
+
+                <!-- Impulsiona -->
+                <div class="card p-8 text-left flex flex-col ring-2 ring-primary/30 bg-white dark:bg-zinc-900 shadow-xl">
+                    <span class="absolute top-0 right-0 bg-primary text-white text-xs font-bold px-3 py-1 rounded-bl-lg">Mais Vendido</span>
+                    <h3 class="text-2xl font-extrabold">Impulsiona</h3>
+                    <p class="mt-2 text-gray-600 dark:text-gray-300">Conteúdo que engaja e converte.</p>
+                    <div class="mt-4 text-4xl font-extrabold">R$ 240<span class="text-xl font-semibold">/mês</span></div>
+                    <ul class="mt-6 space-y-3 text-sm">
+                        <li>1 postagem por dia (30/mês)</li>
+                        <li>Design personalizado</li>
+                        <li>4 banners mensais</li>
+                        <li>Relatório de desempenho</li>
+                    </ul>
+                    <a href={wa('Quero o plano Impulsiona de redes sociais')} target="_blank" class="mt-8 btn btn-primary">Assinar Impulsiona</a>
+                </div>
+
+                <!-- Escala -->
+                <div class="card p-8 text-left flex flex-col">
+                    <h3 class="text-2xl font-extrabold">Escala</h3>
+                    <p class="mt-2 text-gray-600 dark:text-gray-300">Para quem quer crescer forte.</p>
+                    <div class="mt-4 text-4xl font-extrabold">R$ 490<span class="text-xl font-semibold">/mês</span></div>
+                    <ul class="mt-6 space-y-3 text-sm">
+                        <li>2 postagens por dia (60/mês)</li>
+                        <li>Identidade visual completa</li>
+                        <li>Stories e Reels incluídos</li>
+                        <li>Suporte prioritário</li>
+                    </ul>
+                    <a href={wa('Quero o plano Escala de redes sociais')} target="_blank" class="mt-8 btn btn-primary">Assinar Escala</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="section">
+        <div class="container text-center">
+            <div class="card p-10">
+                <h2 class="text-4xl md:text-5xl font-extrabold">Pronto para destacar sua marca?</h2>
+                <p class="mt-4 text-lg md:text-xl text-gray-700 dark:text-gray-300">Clique e fale direto no WhatsApp agora mesmo.</p>
+                <a href={wa('Olá! Quero gestão de redes sociais com a LideraZap.')} target="_blank" class="mt-8 btn btn-primary text-lg px-8 py-4">
+                    <span class="icon-[mdi--whatsapp] text-[22px]"></span>
+                    (32) 9 9840-8646
+                </a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<a href={wa('Olá! Vim pela página de gestão de redes.')} target="_blank" class="fab-whatsapp">
+    <span class="icon-[mdi--whatsapp] text-[18px]"></span>
+    <span class="font-semibold">Fale conosco</span>
+</a>
+
+<Footer />
+</body>
+</html>

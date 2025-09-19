@@ -2,49 +2,52 @@
 const year = new Date().getFullYear();
 ---
 
-<footer class="w-full py-14 bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-zinc-900 dark:via-zinc-950 dark:to-zinc-900 text-gray-900 dark:text-gray-200">
+<footer class="w-full py-16 bg-gradient-to-br from-[#5b4bd9] via-[#6C5CE7] to-[#8a7cf0] text-white">
     <div class="max-w-7xl mx-auto px-6">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+
             <!-- Marca -->
             <div>
                 <a href="/" class="inline-flex items-center gap-3">
-                    <img src="/images/logo-liderazap.png" alt="LideraZap" class="h-10 w-auto"/>
+                    <img src="/images/logo-liderazap-br.png" alt="LideraZap" class="h-12 w-auto" />
                 </a>
-                <p class="mt-4 text-[var(--text-muted)] dark:text-gray-400 max-w-sm">
-                    Loja no WhatsApp, gestão de redes e presença online feita por especialistas. Sem complicação, direto ao ponto.
+                <p class="mt-4 text-sm leading-relaxed text-white/80 max-w-sm">
+                    Loja no WhatsApp, gestão de redes sociais e presença online feita por especialistas.
+                    Simples, direto e com resultado de verdade.
                 </p>
             </div>
 
             <!-- Navegação -->
             <div>
-                <h4 class="text-sm font-semibold">Navegação</h4>
-                <ul class="mt-3 space-y-2 text-[15px]">
-                    <li><a href="#servicos" class="hover:text-primary hover:underline underline-offset-4">Serviços</a></li>
-                    <li><a href="#sobre" class="hover:text-primary hover:underline underline-offset-4">Sobre</a></li>
-                    <li><a href="#avaliacoes" class="hover:text-primary hover:underline underline-offset-4">Avaliações</a></li>
-                    <li><a href="#contato" class="hover:text-primary hover:underline underline-offset-4">Contato</a></li>
+                <h4 class="text-base font-semibold tracking-wide">Navegação</h4>
+                <ul class="mt-4 space-y-3 text-sm">
+                    <li><a href="#servicos" class="hover:text-yellow-300 transition">Serviços</a></li>
+                    <li><a href="#sobre" class="hover:text-yellow-300 transition">Sobre</a></li>
+                    <li><a href="#avaliacoes" class="hover:text-yellow-300 transition">Avaliações</a></li>
+                    <li><a href="#contato" class="hover:text-yellow-300 transition">Contato</a></li>
                 </ul>
             </div>
 
             <!-- Redes -->
             <div>
-                <h4 class="text-sm font-semibold">Redes</h4>
-                <div class="mt-3 flex items-center gap-4">
-                    <a href="#" class="p-2 rounded-full bg-white/70 dark:bg-white/10 hover:bg-primary hover:text-white transition">
+                <h4 class="text-base font-semibold tracking-wide">Conecte-se</h4>
+                <div class="mt-4 flex items-center gap-4">
+                    <a href="#" class="p-3 rounded-full bg-white/10 hover:bg-yellow-300 hover:text-[#6C5CE7] transition">
                         <span class="icon-[mdi--instagram] text-[22px]"></span>
                     </a>
-                    <a href="#" class="p-2 rounded-full bg-white/70 dark:bg-white/10 hover:bg-primary hover:text-white transition">
+                    <a href="#" class="p-3 rounded-full bg-white/10 hover:bg-yellow-300 hover:text-[#6C5CE7] transition">
                         <span class="icon-[mdi--facebook] text-[22px]"></span>
                     </a>
-                    <a href="#" class="p-2 rounded-full bg-white/70 dark:bg-white/10 hover:bg-primary hover:text-white transition">
+                    <a href="#" class="p-3 rounded-full bg-white/10 hover:bg-yellow-300 hover:text-[#6C5CE7] transition">
                         <span class="icon-[mdi--youtube] text-[24px]"></span>
                     </a>
                 </div>
             </div>
         </div>
 
-        <div class="mt-10 border-t border-gray-200 dark:border-gray-800 pt-6 text-center text-[var(--text-muted)] dark:text-gray-400">
-            &copy; {year} LideraZap. Todos os direitos reservados.
+        <!-- Linha final -->
+        <div class="mt-12 border-t border-white/20 pt-6 text-center text-sm text-white/70">
+            &copy; {year} <span class="font-semibold">LideraZap</span>. Todos os direitos reservados.
         </div>
     </div>
 </footer>
