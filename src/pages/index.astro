@@ -10,8 +10,8 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
 <html lang="pt-BR" class="scroll-smooth">
 <head>
     <BaseHead
-            title="LideraZap — Transformando Negócios Digitais"
-            description="Loja no WhatsApp, gestão de redes e presença online feita por especialistas. Sem complicação, direto ao ponto."
+            title="LideraZap — Estratégias Digitais para o seu Negócio"
+            description="Transformamos suas redes sociais em máquinas de venda. Conteúdo, vídeos e estratégias digitais que geram resultados reais."
     />
 </head>
 
@@ -19,33 +19,30 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
 <Header/>
 
 <main>
-    <!-- ================= HERO ================= -->
     <section class="relative overflow-hidden section pt-24 md:pt-28">
         <div class="hero-gradient"></div>
 
         <div class="container grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-            <!-- Texto -->
             <div class="lg:col-span-7 text-center lg:text-left">
       <span class="badge">
         <span class="icon-[mdi--sparkles] text-[18px]"></span>
-        A Revolução Digital do Seu Negócio
+        Especialistas em Conteúdo Digital
       </span>
 
                 <h1 class="mt-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-balance">
-                    Loja virtual <span class="whitespace-nowrap">direto no WhatsApp</span>
+                    Transformamos suas redes sociais em <span class="whitespace-nowrap">máquinas de venda</span>
                 </h1>
 
                 <p class="mt-4 text-lg md:text-xl text-gray-700/90 dark:text-gray-300">
-                    Soluções definitivas para WhatsApp Business, redes sociais e presença online — sem enrolação, com
-                    especialista de verdade.
+                    Soluções completas para gestão de mídias, criação de vídeos estratégicos e presença digital que converte seguidores em clientes — sem enrolação, com especialistas de verdade.
                 </p>
 
                 <div class="mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start">
-                    <a href={wa('Quero aumentar minhas vendas no WhatsApp')}
+                    <a href={wa('Olá! Gostaria de saber mais sobre a gestão de redes sociais e vídeos para o meu negócio.')}
                        target="_blank" rel="noopener"
                        class="btn btn-primary">
                         <span class="icon-[mdi--whatsapp] text-[22px]"></span>
-                        Falar com um especialista
+                        Quero uma Proposta de Gestão
                     </a>
 
                     <a href="#servicos" class="btn btn-ghost">
@@ -54,7 +51,6 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
                     </a>
                 </div>
 
-                <!-- Selo confiança -->
                 <div class="mt-6 inline-flex items-center gap-3 rounded-full border border-white/60 dark:border-white/10 bg-white/60 dark:bg-white/5 backdrop-blur px-4 py-2">
                     <div class="flex items-center gap-1" aria-label="Classificação média 5 de 5">
                         {[...Array(5)].map(() => <span class="icon-[mdi--star] text-yellow-400 text-[18px]"></span>)}
@@ -65,7 +61,6 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
                 </div>
             </div>
 
-            <!-- Imagem livre -->
             <div class="lg:col-span-5 flex justify-center lg:justify-end">
                 <img src="/images/hero-1-img.png"
                      alt="Cliente feliz realizando compras pelo WhatsApp"
@@ -74,18 +69,241 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
         </div>
     </section>
 
+    <section id="servicos" class="section">
+        <div class="container">
+            <div class="text-center max-w-3xl mx-auto">
+                <h2 class="text-sm md:text-base font-semibold text-primary">Nossos Serviços</h2>
+                <p class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight">
+                    Gestão de redes sociais e soluções digitais que geram resultados
+                </p>
+            </div>
 
-    <!-- ================= PARCERIA ================= -->
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+                <article class="card card-hover p-8 text-left">
+                    <div class="rounded-full w-16 h-16 grid place-items-center mb-6 bg-[color-mix(in_oklab,var(--primary)_16%,transparent)]">
+                        <span class="icon-[mdi--instagram] text-primary text-[34px]"></span>
+                    </div>
+                    <h3 class="text-xl font-semibold">Gestão de Redes Sociais</h3>
+                    <p class="mt-3 text-gray-600 dark:text-gray-300">
+                        Postagens todos os dias, inclusive domingos e feriados, para manter sua marca sempre presente.
+                    </p>
+                </article>
+
+                <article class="card card-hover p-8 text-left">
+                    <div class="rounded-full w-16 h-16 grid place-items-center mb-6 bg-[color-mix(in_oklab,var(--primary)_16%,transparent)]">
+                        <span class="icon-[mdi--video-box] text-primary text-[34px]"></span>
+                    </div>
+                    <h3 class="text-xl font-semibold">Criação de Vídeos para Negócios</h3>
+                    <p class="mt-3 text-gray-600 dark:text-gray-300">
+                        Produção de conteúdo em vídeo profissional para Reels, Stories, TikTok e YouTube que engaja e converte.
+                    </p>
+                </article>
+
+                <article class="card card-hover p-8 text-left">
+                    <div class="rounded-full w-16 h-16 grid place-items-center mb-6 bg-[color-mix(in_oklab,var(--primary)_16%,transparent)]">
+                        <span class="icon-[mdi--palette-outline] text-primary text-[34px]"></span>
+                    </div>
+                    <h3 class="text-xl font-semibold">Criação de Logomarcas</h3>
+                    <p class="mt-3 text-gray-600 dark:text-gray-300">
+                        Identidade visual profissional para destacar sua marca em qualquer rede social.
+                    </p>
+                </article>
+
+                <article class="card card-hover p-8 text-left">
+                    <div class="rounded-full w-16 h-16 grid place-items-center mb-6 bg-[color-mix(in_oklab,var(--primary)_16%,transparent)]">
+                        <span class="icon-[mdi--whatsapp] text-primary text-[34px]"></span>
+                    </div>
+                    <h3 class="text-xl font-semibold">Catálogo de Produtos no WhatsApp</h3>
+                    <p class="mt-3 text-gray-600 dark:text-gray-300">
+                        Transforme o WhatsApp em sua loja virtual, com catálogos organizados e automatizados.
+                    </p>
+                </article>
+
+                <article class="card card-hover p-8 text-left">
+                    <div class="rounded-full w-16 h-16 grid place-items-center mb-6 bg-[color-mix(in_oklab,var(--primary)_16%,transparent)]">
+                        <span class="icon-[mdi--cart-outline] text-primary text-[34px]"></span>
+                    </div>
+                    <h3 class="text-xl font-semibold">Vendas em E-commerce</h3>
+                    <p class="mt-3 text-gray-600 dark:text-gray-300">
+                        Estrutura completa para vender online com integração ao WhatsApp e marketplaces.
+                    </p>
+                </article>
+
+                <article class="card card-hover p-8 text-left">
+                    <div class="rounded-full w-16 h-16 grid place-items-center mb-6 bg-[color-mix(in_oklab,var(--primary)_16%,transparent)]">
+                        <span class="icon-[mdi--robot-outline] text-primary text-[34px]"></span>
+                    </div>
+                    <h3 class="text-xl font-semibold">Automação de WhatsApp</h3>
+                    <p class="mt-3 text-gray-600 dark:text-gray-300">
+                        Atendimento inteligente e automatizado para responder clientes 24h por dia.
+                    </p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="section">
+        <div class="container text-center">
+            <h2 class="text-sm md:text-base font-semibold text-primary">Marcas que Confiam na LideraZap</h2>
+            <p class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight">
+                Já transformamos dezenas de negócios em cases de sucesso.<br/>
+                Aqui estão algumas marcas que confiamos e ajudamos a construir.
+            </p>
+            <p class="mt-4 text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
+                Se você também quer ver a sua marca neste portfólio de destaque, fale com a gente e descubra como podemos elevar o valor da sua presença digital.
+            </p>
+
+            <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <article class="card p-6 flex flex-col items-center text-center card-hover">
+                    <img src="/images/logos/hotchili.png" alt="Hot Chili" class="h-40 object-contain"/>
+                    <h3 class="mt-4 font-semibold text-lg">Hot Chili</h3>
+                    <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                        Empresa americana do setor alimentício, com uma marca ousada e vibrante que rompe barreiras e leva o sabor picante chileno para o mundo.
+                    </p>
+                </article>
+
+                <article class="card p-6 flex flex-col items-center text-center card-hover">
+                    <img src="/images/logos/tempmobile.png" alt="Temp Mobile" class="h-40 object-contain"/>
+                    <h3 class="mt-4 font-semibold text-lg">Temp Mobile</h3>
+                    <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                        Projeto desenvolvido para uma empresa americana de personalização de chips — rompendo barreiras e conectando negócios além do Brasil.
+                    </p>
+                </article>
+
+                <article class="card p-6 flex flex-col items-center text-center card-hover">
+                    <img src="/images/logos/adsalvos.png" alt="Assembleia de Deus - Salvos pela Graça" class="h-40 object-contain"/>
+                    <h3 class="mt-4 font-semibold text-lg">Assembleia de Deus</h3>
+                    <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                        Identidade visual para igreja — tradição e fé.
+                    </p>
+                </article>
+
+                <article class="card p-6 flex flex-col items-center text-center card-hover">
+                    <img src="/images/logos/libano.png" alt="Mercearia Empório Líbano" class="h-40 object-contain"/>
+                    <h3 class="mt-4 font-semibold text-lg">Empório Líbano</h3>
+                    <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                        Marca sofisticada para mercearia tradicional.
+                    </p>
+                </article>
+
+                <article class="card p-6 flex flex-col items-center text-center card-hover">
+                    <img src="/images/logos/arado.png" alt="Arado Grill" class="h-40 object-contain"/>
+                    <h3 class="mt-4 font-semibold text-lg">Arado Grill</h3>
+                    <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                        Logo moderno para restaurante especializado em churrasco.
+                    </p>
+                </article>
+
+                <article class="card p-6 flex flex-col items-center text-center card-hover">
+                    <img src="/images/logos/ideale.png" alt="Ideale Digital" class="h-40 object-contain"/>
+                    <h3 class="mt-4 font-semibold text-lg">Ideale Digital</h3>
+                    <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                        Agência digital focada em soluções online.
+                    </p>
+                </article>
+
+                <article class="card p-6 flex flex-col items-center text-center card-hover">
+                    <img src="/images/logos/i9criativa.png" alt="i9 Criativa" class="h-40 object-contain"/>
+                    <h3 class="mt-4 font-semibold text-lg">i9 Criativa</h3>
+                    <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                        Design criativo e comunicação inovadora.
+                    </p>
+                </article>
+
+                <article class="card p-6 flex flex-col items-center text-center card-hover">
+                    <img src="/images/logos/divcomp.png" alt="DivComp Soluções" class="h-40 object-contain"/>
+                    <h3 class="mt-4 font-semibold text-lg">DivComp</h3>
+                    <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                        Marca tecnológica para soluções em informática.
+                    </p>
+                </article>
+
+                <article class="card p-6 flex flex-col items-center text-center card-hover">
+                    <img src="/images/logos/sabio.png" alt="Sabio System" class="h-40 object-contain"/>
+                    <h3 class="mt-4 font-semibold text-lg">Sabio System</h3>
+                    <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                        Identidade para empresa de rastreamento inteligente.
+                    </p>
+                </article>
+
+                <article class="card p-6 flex flex-col items-center text-center card-hover">
+                    <img src="/images/logos/eletro-serrano.png" alt="Eletro Serrano" class="h-40 object-contain"/>
+                    <h3 class="mt-4 font-semibold text-lg">Eletro Serrano</h3>
+                    <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                        Identidade para comércio de eletrodomésticos.
+                    </p>
+                </article>
+
+                <article class="card p-6 flex flex-col items-center text-center card-hover">
+                    <img src="/images/logos/ifix.png" alt="iFix Assistência" class="h-40 object-contain"/>
+                    <h3 class="mt-4 font-semibold text-lg">iFix</h3>
+                    <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                        Serviços especializados em assistência técnica.
+                    </p>
+                </article>
+
+                <article class="card p-6 flex flex-col items-center text-center card-hover">
+                    <img src="/images/logos/canalnerddoti.png" alt="Canal Nerd do TI" class="h-40 object-contain"/>
+                    <h3 class="mt-4 font-semibold text-lg">Canal Nerd do TI</h3>
+                    <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                        Identidade criada para canal de tecnologia e inovação, conectando conteúdos de TI com uma linguagem acessível e moderna.
+                    </p>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="section">
+        <div class="container grid md:grid-cols-2 gap-10 items-center">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">
+                    Sobre a <span class="text-primary">LideraZap</span>
+                </h2>
+                <p class="mt-4 text-gray-700 dark:text-gray-300">
+                    Somos especialistas em transformar a comunicação do seu negócio em vendas. Estruturamos o conteúdo, criamos vídeos e campanhas que geram resultado.
+                </p>
+                <ul class="mt-6 space-y-3 text-gray-700 dark:text-gray-300">
+                    <li class="flex items-center gap-2"><span
+                            class="icon-[mdi--check-decagram] text-primary text-[20px]"></span> Foco total em conversão
+                    </li>
+                    <li class="flex items-center gap-2"><span
+                            class="icon-[mdi--check-decagram] text-primary text-[20px]"></span> Processos simples e sem complicação
+                    </li>
+                    <li class="flex items-center gap-2"><span
+                            class="icon-[mdi--check-decagram] text-primary text-[20px]"></span> Atendimento humano, direto no WhatsApp
+                    </li>
+                </ul>
+            </div>
+
+            <div class="relative">
+                <div class="absolute -inset-1 bg-gradient-to-tr from-indigo-500/30 to-purple-500/30 blur-xl rounded-3xl -z-10"></div>
+                <div class="card p-6">
+                    <div class="grid grid-cols-3 gap-6 text-center">
+                        <div>
+                            <div class="text-3xl font-extrabold">+100</div>
+                            <div class="mt-1 text-sm text-gray-500 dark:text-gray-400">campanhas de marketing</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-extrabold">+500</div>
+                            <div class="mt-1 text-sm text-gray-500 dark:text-gray-400">vídeos produzidos</div>
+                        </div>
+                        <div>
+                            <div class="text-3xl font-extrabold">100%</div>
+                            <div class="mt-1 text-sm text-gray-500 dark:text-gray-400">suporte humano</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="parceria"  class="relative overflow-hidden section py-24
            bg-gradient-to-br from-[#0050c3] via-[#3449eb] to-[#6C5CE7]
            bg-[url('/images/bg-04.jpg')] bg-cover bg-center text-white">
-
-        <!-- Overlay opcional para dar contraste na leitura -->
         <div class="absolute inset-0 bg-[#0050c3]/80"></div>
 
         <div class="container relative grid grid-cols-1 lg:grid-cols-12 items-center gap-12">
-
-            <!-- Texto -->
             <div class="lg:col-span-7 text-center lg:text-left">
                 <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
                     <span class="icon-[mdi--handshake] text-xl"></span>
@@ -115,384 +333,22 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
                 </div>
             </div>
 
-            <!-- Logo/Imagem -->
             <div class="lg:col-span-5 flex justify-center">
                 <div class="p-10 rounded-2xl bg-white shadow-2xl flex flex-col items-center gap-4 w-full max-w-sm">
                     <img src="/images/nuvem.svg" alt="Nuvemshop Logo" class="h-16">
                     <span class="text-lg font-semibold text-gray-800">Parceiro Oficial</span>
                 </div>
             </div>
-
         </div>
     </section>
 
-
-    <!-- ================= SERVIÇOS ================= -->
-    <section id="servicos" class="section">
-        <div class="container">
-            <div class="text-center max-w-3xl mx-auto">
-                <h2 class="text-sm md:text-base font-semibold text-primary">Nossos Serviços</h2>
-                <p class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight">
-                    Gestão de redes sociais e soluções digitais que geram resultados
-                </p>
-            </div>
-
-            <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-                <!-- Gestão de Redes -->
-                <article class="card card-hover p-8 text-left">
-                    <div class="rounded-full w-16 h-16 grid place-items-center mb-6 bg-[color-mix(in_oklab,var(--primary)_16%,transparent)]">
-                        <span class="icon-[mdi--instagram] text-primary text-[34px]"></span>
-                    </div>
-                    <h3 class="text-xl font-semibold">Gestão de Redes Sociais</h3>
-                    <p class="mt-3 text-gray-600 dark:text-gray-300">
-                        Postagens todos os dias, inclusive domingos e feriados, para manter sua marca sempre presente.
-                    </p>
-                </article>
-
-                <!-- Catálogo WhatsApp -->
-                <article class="card card-hover p-8 text-left">
-                    <div class="rounded-full w-16 h-16 grid place-items-center mb-6 bg-[color-mix(in_oklab,var(--primary)_16%,transparent)]">
-                        <span class="icon-[mdi--whatsapp] text-primary text-[34px]"></span>
-                    </div>
-                    <h3 class="text-xl font-semibold">Catálogo de Produtos no WhatsApp</h3>
-                    <p class="mt-3 text-gray-600 dark:text-gray-300">
-                        Transforme o WhatsApp em sua loja virtual, com catálogos organizados e automatizados.
-                    </p>
-                </article>
-
-                <!-- Criação de Logomarcas -->
-                <article class="card card-hover p-8 text-left">
-                    <div class="rounded-full w-16 h-16 grid place-items-center mb-6 bg-[color-mix(in_oklab,var(--primary)_16%,transparent)]">
-                        <span class="icon-[mdi--palette-outline] text-primary text-[34px]"></span>
-                    </div>
-                    <h3 class="text-xl font-semibold">Criação de Logomarcas</h3>
-                    <p class="mt-3 text-gray-600 dark:text-gray-300">
-                        Identidade visual profissional para destacar sua marca em qualquer rede social.
-                    </p>
-                </article>
-
-                <!-- Vendas em E-commerce -->
-                <article class="card card-hover p-8 text-left">
-                    <div class="rounded-full w-16 h-16 grid place-items-center mb-6 bg-[color-mix(in_oklab,var(--primary)_16%,transparent)]">
-                        <span class="icon-[mdi--cart-outline] text-primary text-[34px]"></span>
-                    </div>
-                    <h3 class="text-xl font-semibold">Vendas em E-commerce</h3>
-                    <p class="mt-3 text-gray-600 dark:text-gray-300">
-                        Estrutura completa para vender online com integração ao WhatsApp e marketplaces.
-                    </p>
-                </article>
-
-                <!-- Automação de WhatsApp -->
-                <article class="card card-hover p-8 text-left">
-                    <div class="rounded-full w-16 h-16 grid place-items-center mb-6 bg-[color-mix(in_oklab,var(--primary)_16%,transparent)]">
-                        <span class="icon-[mdi--robot-outline] text-primary text-[34px]"></span>
-                    </div>
-                    <h3 class="text-xl font-semibold">Automação de WhatsApp</h3>
-                    <p class="mt-3 text-gray-600 dark:text-gray-300">
-                        Atendimento inteligente e automatizado para responder clientes 24h por dia.
-                    </p>
-                </article>
-
-                <!-- Venda no Automático -->
-                <article class="card card-hover p-8 text-left">
-                    <div class="rounded-full w-16 h-16 grid place-items-center mb-6 bg-[color-mix(in_oklab,var(--primary)_16%,transparent)]">
-                        <span class="icon-[mdi--autorenew] text-primary text-[34px]"></span>
-                    </div>
-                    <h3 class="text-xl font-semibold">Venda no Automático</h3>
-                    <p class="mt-3 text-gray-600 dark:text-gray-300">
-                        Estruturamos funis de vendas com automação para que seus clientes comprem sozinhos —
-                        sem você precisar estar online 24h por dia.
-                    </p>
-                </article>
-
-            </div>
-        </div>
-    </section>
-
-
-    <!-- ================= PORTFÓLIO ================= -->
-    <section id="portfolio" class="section">
-        <div class="container text-center">
-            <h2 class="text-sm md:text-base font-semibold text-primary">Marcas que Confiam na LideraZap</h2>
-            <p class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight">
-                Já transformamos dezenas de negócios em cases de sucesso.<br/>
-                Aqui estão algumas marcas que confiamos e ajudamos a construir.
-            </p>
-            <p class="mt-4 text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-                Se você também quer ver a sua marca neste portfólio de destaque, fale com a gente e descubra como
-                podemos elevar o valor da sua presença digital.
-            </p>
-
-
-            <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-
-                <!-- Hot Chili -->
-                <article class="card p-6 flex flex-col items-center text-center card-hover">
-                    <img src="/images/logos/hotchili.png" alt="Hot Chili" class="h-40 object-contain"/>
-                    <h3 class="mt-4 font-semibold text-lg">Hot Chili</h3>
-                    <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                        Empresa americana do setor alimentício, com uma marca ousada e vibrante que rompe barreiras e
-                        leva o sabor picante chileno para o mundo.
-                    </p>
-                </article>
-
-                <!-- Temp Mobile -->
-                <article class="card p-6 flex flex-col items-center text-center card-hover">
-                    <img src="/images/logos/tempmobile.png" alt="Temp Mobile" class="h-40 object-contain"/>
-                    <h3 class="mt-4 font-semibold text-lg">Temp Mobile</h3>
-                    <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                        Projeto desenvolvido para uma empresa americana de personalização de chips — rompendo barreiras
-                        e conectando negócios além do Brasil.
-                    </p>
-                </article>
-
-                <!-- Assembleia de Deus -->
-                <article class="card p-6 flex flex-col items-center text-center card-hover">
-                    <img src="/images/logos/adsalvos.png" alt="Assembleia de Deus - Salvos pela Graça"
-                         class="h-40 object-contain"/>
-                    <h3 class="mt-4 font-semibold text-lg">Assembleia de Deus</h3>
-                    <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                        Identidade visual para igreja — tradição e fé.
-                    </p>
-                </article>
-
-                <!-- Empório Líbano -->
-                <article class="card p-6 flex flex-col items-center text-center card-hover">
-                    <img src="/images/logos/libano.png" alt="Mercearia Empório Líbano" class="h-40 object-contain"/>
-                    <h3 class="mt-4 font-semibold text-lg">Empório Líbano</h3>
-                    <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                        Marca sofisticada para mercearia tradicional.
-                    </p>
-                </article>
-
-                <!-- Arado Grill -->
-                <article class="card p-6 flex flex-col items-center text-center card-hover">
-                    <img src="/images/logos/arado.png" alt="Arado Grill" class="h-40 object-contain"/>
-                    <h3 class="mt-4 font-semibold text-lg">Arado Grill</h3>
-                    <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                        Logo moderno para restaurante especializado em churrasco.
-                    </p>
-                </article>
-
-                <!-- Ideale Digital -->
-                <article class="card p-6 flex flex-col items-center text-center card-hover">
-                    <img src="/images/logos/ideale.png" alt="Ideale Digital" class="h-40 object-contain"/>
-                    <h3 class="mt-4 font-semibold text-lg">Ideale Digital</h3>
-                    <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                        Agência digital focada em soluções online.
-                    </p>
-                </article>
-
-                <!-- i9 Criativa -->
-                <article class="card p-6 flex flex-col items-center text-center card-hover">
-                    <img src="/images/logos/i9criativa.png" alt="i9 Criativa" class="h-40 object-contain"/>
-                    <h3 class="mt-4 font-semibold text-lg">i9 Criativa</h3>
-                    <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                        Design criativo e comunicação inovadora.
-                    </p>
-                </article>
-
-                <!-- DivComp -->
-                <article class="card p-6 flex flex-col items-center text-center card-hover">
-                    <img src="/images/logos/divcomp.png" alt="DivComp Soluções" class="h-40 object-contain"/>
-                    <h3 class="mt-4 font-semibold text-lg">DivComp</h3>
-                    <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                        Marca tecnológica para soluções em informática.
-                    </p>
-                </article>
-
-                <!-- Sabio System -->
-                <article class="card p-6 flex flex-col items-center text-center card-hover">
-                    <img src="/images/logos/sabio.png" alt="Sabio System" class="h-40 object-contain"/>
-                    <h3 class="mt-4 font-semibold text-lg">Sabio System</h3>
-                    <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                        Identidade para empresa de rastreamento inteligente.
-                    </p>
-                </article>
-
-                <!-- Eletro Serrano -->
-                <article class="card p-6 flex flex-col items-center text-center card-hover">
-                    <img src="/images/logos/eletro-serrano.png" alt="Eletro Serrano" class="h-40 object-contain"/>
-                    <h3 class="mt-4 font-semibold text-lg">Eletro Serrano</h3>
-                    <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                        Identidade para comércio de eletrodomésticos.
-                    </p>
-                </article>
-
-                <!-- iFix -->
-                <article class="card p-6 flex flex-col items-center text-center card-hover">
-                    <img src="/images/logos/ifix.png" alt="iFix Assistência" class="h-40 object-contain"/>
-                    <h3 class="mt-4 font-semibold text-lg">iFix</h3>
-                    <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                        Serviços especializados em assistência técnica.
-                    </p>
-                </article>
-
-                <!-- Canal Nerd do TI -->
-                <article class="card p-6 flex flex-col items-center text-center card-hover">
-                    <img src="/images/logos/canalnerddoti.png" alt="Canal Nerd do TI" class="h-40 object-contain"/>
-                    <h3 class="mt-4 font-semibold text-lg">Canal Nerd do TI</h3>
-                    <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                        Identidade criada para canal de tecnologia e inovação, conectando conteúdos de TI com uma
-                        linguagem acessível e moderna.
-                    </p>
-                </article>
-
-            </div>
-        </div>
-    </section>
-
-
-    <!-- ================= SOBRE ================= -->
-    <section id="sobre" class="section">
-        <div class="container grid md:grid-cols-2 gap-10 items-center">
-            <div>
-                <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">
-                    Sobre a <span class="text-primary">LideraZap</span>
-                </h2>
-                <p class="mt-4 text-gray-700 dark:text-gray-300">
-                    Somos especialistas em transformar a comunicação do seu negócio em vendas. Montamos o catálogo no
-                    WhatsApp, estruturamos conteúdo e fluxo de respostas, e criamos campanhas que geram resultado.
-                </p>
-                <ul class="mt-6 space-y-3 text-gray-700 dark:text-gray-300">
-                    <li class="flex items-center gap-2"><span
-                            class="icon-[mdi--check-decagram] text-primary text-[20px]"></span> Foco total em conversão
-                    </li>
-                    <li class="flex items-center gap-2"><span
-                            class="icon-[mdi--check-decagram] text-primary text-[20px]"></span> Processos simples e sem
-                        complicação
-                    </li>
-                    <li class="flex items-center gap-2"><span
-                            class="icon-[mdi--check-decagram] text-primary text-[20px]"></span> Atendimento humano,
-                        direto no WhatsApp
-                    </li>
-                </ul>
-            </div>
-
-            <div class="relative">
-                <div class="absolute -inset-1 bg-gradient-to-tr from-indigo-500/30 to-purple-500/30 blur-xl rounded-3xl -z-10"></div>
-                <div class="card p-6">
-                    <div class="grid grid-cols-3 gap-6 text-center">
-                        <div>
-                            <div class="text-3xl font-extrabold">+120</div>
-                            <div class="mt-1 text-sm text-gray-500 dark:text-gray-400">itens configurados</div>
-                        </div>
-                        <div>
-                            <div class="text-3xl font-extrabold">+30</div>
-                            <div class="mt-1 text-sm text-gray-500 dark:text-gray-400">catálogos ativos</div>
-                        </div>
-                        <div>
-                            <div class="text-3xl font-extrabold">100%</div>
-                            <div class="mt-1 text-sm text-gray-500 dark:text-gray-400">suporte humano</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
- <!--   &lt;!&ndash; ================= AVALIAÇÕES ================= &ndash;&gt;
-    <section id="avaliacoes" class="section">
-        <div class="container">
-            <div class="text-center">
-          <span class="badge">
-            <span class="icon-[mdi&#45;&#45;google] text-[18px]"></span>
-            Avaliações no Google
-          </span>
-                <h2 class="mt-2 text-3xl md:text-4xl font-extrabold tracking-tight">
-                    O que dizem sobre a <span class="text-primary">LideraZap</span>
-                </h2>
-
-                <div class="mt-4 inline-flex items-center gap-3 rounded-full border border-white/60 dark:border-white/10 bg-white/60 dark:bg-white/5 backdrop-blur px-4 py-2">
-                    <div class="flex items-center gap-1" aria-label="Classificação média 5 de 5">
-                        {[...Array(5)].map(() => <span class="icon-[mdi&#45;&#45;star] text-yellow-400 text-[18px]"></span>)}
-                    </div>
-                    <span class="text-sm text-gray-700 dark:text-gray-300">
-              <strong class="font-semibold">5.0</strong> / 5 — baseado em <span class="font-semibold">N</span> avaliações
-            </span>
-                </div>
-
-                <div class="mt-5">
-                    <a href="SUA_URL_DE_AVALIACOES_GOOGLE" target="_blank" rel="noopener"
-                       class="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:opacity-90">
-                        <span class="icon-[mdi&#45;&#45;open-in-new] text-[18px]"></span>
-                        Ver todas no Google
-                    </a>
-                </div>
-            </div>
-
-            &lt;!&ndash; Carrossel &ndash;&gt;
-            <div class="mt-10 overflow-x-auto hide-scrollbar" role="region" aria-label="Depoimentos">
-                <ul class="grid grid-cols-1 md:grid-cols-3 gap-6 min-w-[320px] md:min-w-0">
-                    {["cliente-1.jpg", "cliente-2.jpg", "cliente-3.jpg"].map((img, i) => (
-                            <li class="card p-6">
-                                <div class="flex items-center gap-4">
-                                    <img src={`/images/avatars/${img}`} alt="Foto de cliente"
-                                         class="h-12 w-12 rounded-full object-cover bg-gray-100 dark:bg-zinc-800"
-                                         loading="lazy"
-                                         onerror={`this.src='https://placehold.co/150x150?text=Cliente+${i + 1}'`}/>
-                                    <div>
-                                        <p class="font-semibold">Nome do Cliente</p>
-                                        <p class="text-xs text-gray-500 dark:text-gray-400">Data da avaliação</p>
-                                    </div>
-                                </div>
-                                <div class="mt-3 flex items-center gap-0.5" aria-label="5 de 5">
-                                    {[...Array(5)].map(() => <span
-                                            class="icon-[mdi&#45;&#45;star] text-yellow-400 text-[18px]"></span>)}
-                                </div>
-                                <p class="mt-3 text-gray-700 dark:text-gray-300 leading-relaxed">“Comentário de exemplo
-                                    sobre os serviços da LideraZap.”</p>
-                                <div class="mt-4 flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
-                                    <span class="icon-[mdi&#45;&#45;google] text-[16px]"></span>
-                                    <span>Avaliação do Google</span>
-                                </div>
-                            </li>
-                    ))}
-                </ul>
-            </div>
-
-            <script type="application/ld+json" is:inline>
-                {
-                    "@context"
-                :
-                    "https://schema.org",
-                        "@type"
-                :
-                    "LocalBusiness",
-                        "name"
-                :
-                    "LideraZap",
-                        "url"
-                :
-                    "https://liderazap.com/",
-                        "aggregateRating"
-                :
-                    {
-                        "@type"
-                    :
-                        "AggregateRating",
-                            "ratingValue"
-                    :
-                        "5.0",
-                            "reviewCount"
-                    :
-                        12
-                    }
-
-                }
-            </script>
-        </div>
-    </section>
--->
-    <!-- ================= CTA FINAL ================= -->
     <section id="contato" class="section">
         <div class="container text-center">
             <div class="card p-10">
                 <span class="icon-[mdi--whatsapp] text-[72px] text-primary inline-block mb-4"></span>
                 <h2 class="text-4xl md:text-5xl font-extrabold text-balance">Pronto para impulsionar seu negócio?</h2>
-                <p class="mt-4 text-lg md:text-xl text-gray-700 dark:text-gray-300">Sem formulários e sem espera. Clique
-                    e fale direto no WhatsApp.</p>
-                <a href={wa('Olá! Gostaria de saber mais sobre os serviços da LideraZap.')}
+                <p class="mt-4 text-lg md:text-xl text-gray-700 dark:text-gray-300">Sem formulários e sem espera. Clique e fale direto no WhatsApp.</p>
+                <a href={wa('Olá! Gostaria de saber mais sobre os serviços de redes sociais e vídeos da LideraZap.')}
                    target="_blank" rel="noopener"
                    class="mt-8 btn btn-primary text-lg px-8 py-4">
                     <span class="icon-[mdi--whatsapp] text-[22px]"></span>
@@ -503,7 +359,6 @@ const wa = (msg: string) => `https://wa.me/${whatsapp}?text=${encodeURIComponent
     </section>
 </main>
 
-<!-- BOTÃO FIXO WHATSAPP -->
 <a href={wa('Olá! Vim pelo site.')} target="_blank" rel="noopener" class="fab-whatsapp">
     <span class="icon-[mdi--whatsapp] text-[18px]"></span>
     <span class="font-semibold">Fale conosco</span>
