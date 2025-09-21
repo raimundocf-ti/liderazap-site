@@ -21,18 +21,15 @@ const absoluteImage = new URL(image, Astro.site ?? Astro.url);
 <meta name="description" content={description} />
 <meta name="robots" content="index,follow" />
 
-<!-- Ícones -->
 <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32x32.png" />
 <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-touch-icon.png" />
 <link rel="manifest" href="/site.webmanifest" />
 <meta name="theme-color" content="#6C5CE7" />
 
-<!-- Tipografia -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-<!-- Open Graph -->
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="LideraZap" />
 <meta property="og:url" content={canonicalURL} />
@@ -40,20 +37,18 @@ const absoluteImage = new URL(image, Astro.site ?? Astro.url);
 <meta property="og:description" content={description} />
 <meta property="og:image" content={absoluteImage} />
 
-<!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={absoluteImage} />
 
-<!-- Schema -->
 <script type="application/ld+json">
     {JSON.stringify({
         "@context": "https://schema.org",
         "@type": "Organization",
-        "name": "LideraZap",
+        "name": "LideraZap - Marketing Digital",
         "url": "https://liderazap.com/",
         "logo": "https://liderazap.com/images/logo.png",
-        "sameAs": ["https://wa.me/5532998408646"]
+        "sameAs": ["https://wa.me/5532998408646", "SUA_URL_INSTAGRAM", "SUA_URL_FACEBOOK"] // Adicione aqui os links das suas redes sociais
     })}
 </script>
